@@ -1,0 +1,64 @@
+namespace MandAjuda.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class profissional : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Cliente",
+                c => new
+                    {
+                        ClienteId = c.Int(nullable: false, identity: true),
+                        Nome = c.String(unicode: false),
+                        SobreNome = c.String(unicode: false),
+                        Cpf = c.String(unicode: false),
+                        CEP = c.String(unicode: false),
+                        Endereco = c.String(unicode: false),
+                        Bairro = c.String(unicode: false),
+                        Cidade = c.String(unicode: false),
+                        Estado = c.String(unicode: false),
+                        Complemento = c.String(unicode: false),
+                        Contato = c.String(unicode: false),
+                        Email = c.String(unicode: false),
+                        Senha = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.ClienteId);
+            
+            CreateTable(
+                "dbo.Profissional",
+                c => new
+                    {
+                        ProfissionalId = c.Int(nullable: false, identity: true),
+                        NomeCompleto = c.String(unicode: false),
+                        Profissao = c.String(unicode: false),
+                        Cpf = c.String(unicode: false),
+                        Cep = c.String(unicode: false),
+                        Endereco = c.String(unicode: false),
+                        Bairro = c.String(unicode: false),
+                        Cidade = c.String(unicode: false),
+                        Estado = c.String(unicode: false),
+                        Complemento = c.String(unicode: false),
+                        CidadeAtende = c.String(unicode: false),
+                        Contato = c.String(unicode: false),
+                        Email = c.String(unicode: false),
+                        Senha = c.String(unicode: false),
+                        Profissional_ProfissionalId = c.Int(),
+                    })
+                .PrimaryKey(t => t.ProfissionalId)
+                .ForeignKey("dbo.Profissional", t => t.Profissional_ProfissionalId)
+                .Index(t => t.Profissional_ProfissionalId);
+            
+        }
+        
+        public override void Down()
+        {
+            DropForeignKey("dbo.Profissional", "Profissional_ProfissionalId", "dbo.Profissional");
+            DropIndex("dbo.Profissional", new[] { "Profissional_ProfissionalId" });
+            DropTable("dbo.Profissional");
+            DropTable("dbo.Cliente");
+        }
+    }
+}
