@@ -15,6 +15,12 @@ namespace MandAjuda.Controllers
         private Context db = new Context();
 
         // GET: Profissionais
+        
+        public ActionResult Search()
+        {
+            return View(db.Profissionais.ToList());
+        }
+
         public ActionResult Pesquisar()
         {
             return View();
@@ -33,7 +39,7 @@ namespace MandAjuda.Controllers
             {
                 ViewBag.Pesquisa = searchString;
                 var profissionais = db.Profissionais.Include(c => c.Profissionais).Where(c => c.Profissao.Contains(searchString)).OrderBy(o => o.Profissao);
-                return View("Index", profissionais.ToList());
+                return View("Search", profissionais.ToList());
             }
             else
             {

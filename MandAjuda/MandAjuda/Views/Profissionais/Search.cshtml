@@ -90,13 +90,38 @@
         </div>
     </header>
     <!--================Header Area =================-->
-    
+
     <div class="row" style="height: 500px;">
         <div class="col-sm-12">
             @model IEnumerable<MandAjuda.Models.Profissional>
 
+
             @{
-                ViewBag.Title = "Index";
+                ViewBag.Title = "Search";
+            }
+
+            <center>
+                <hr />
+                <h2>Pesquisar Profissional </h2>
+                <hr />
+            </center>
+
+            @using (Html.BeginForm("Search", "Profissionais", null, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row" style="margin-left: 50px; margin-bottom: 20px;">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <br />
+                            <input type="text" name="SearchString" id="SearchString"
+                                   class="form-control" value="@ViewBag.Pesquisa" />
+
+                            <br />
+                            <input type="submit" value="Pesquisar" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
             }
 
             <center>
@@ -191,7 +216,6 @@
         </div>
     </section>
     <!--================End Address Area =================-->
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="~/js/jquery-2.2.4.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -219,3 +243,5 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
+
+
