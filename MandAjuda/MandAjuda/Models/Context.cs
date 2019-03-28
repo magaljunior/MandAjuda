@@ -18,6 +18,10 @@ namespace MandAjuda.Models
 
         public DbSet<Cliente> Clientes { get; set; }
 
+        public DbSet<Chamado> Chamados { get; set; }
+
+        public DbSet<Status> Status { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
