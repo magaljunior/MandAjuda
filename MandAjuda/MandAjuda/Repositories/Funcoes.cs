@@ -32,7 +32,7 @@ namespace MandAjuda.Repositories
 			HttpContext.Current.Session["Cliente"] = cli.Email;
 			return true;
 		}
-		public static Cliente Getusuario()
+		public static Cliente GetUsuario()
 		{
 			string _login = HttpContext.Current.User.Identity.Name;
 			if (HttpContext.Current.Session.Count > 0 || HttpContext.Current.Session["Cliente"] != null)

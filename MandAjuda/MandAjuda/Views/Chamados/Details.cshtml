@@ -1,0 +1,58 @@
+﻿@model MandAjuda.Models.Chamado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Chamado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tituloChamado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tituloChamado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricaoChamado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricaoChamado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qualificacaoChamado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qualificacaoChamado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricaoQualificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricaoQualificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pontucaoEstrela)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pontucaoEstrela)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChamadoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

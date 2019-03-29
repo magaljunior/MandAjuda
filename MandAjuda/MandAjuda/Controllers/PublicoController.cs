@@ -11,12 +11,13 @@ namespace MandAjuda.Controllers
 	public class PublicoController : Controller
 	{
 		// GET: Publico
+			
 		//[HttpPost]
 		public ActionResult Logar(string email, string senha)
 		{
 			if (Funcoes.AutenticarUsuario(email, senha) == false)
 			{
-				ViewBag.Error = "Usuário ou Senha inválida";
+				//ViewBag.Error = "Usuário ou Senha inválida";
 				return View();
 			}
 			return RedirectToAction("Index", "Home");
