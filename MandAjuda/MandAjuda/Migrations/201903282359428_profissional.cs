@@ -8,6 +8,19 @@ namespace MandAjuda.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Chamado",
+                c => new
+                    {
+                        ChamadoID = c.Int(nullable: false, identity: true),
+                        tituloChamado = c.String(unicode: false),
+                        descricaoChamado = c.String(unicode: false),
+                        qualificacaoChamado = c.String(unicode: false),
+                        descricaoQualificacao = c.String(unicode: false),
+                        pontucaoEstrela = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ChamadoID);
+            
+            CreateTable(
                 "dbo.Cliente",
                 c => new
                     {
@@ -51,14 +64,25 @@ namespace MandAjuda.Migrations
                 .ForeignKey("dbo.Profissional", t => t.Profissional_ProfissionalId)
                 .Index(t => t.Profissional_ProfissionalId);
             
+            CreateTable(
+                "dbo.Status",
+                c => new
+                    {
+                        StatusID = c.Int(nullable: false, identity: true),
+                        Nome = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.StatusID);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Profissional", "Profissional_ProfissionalId", "dbo.Profissional");
             DropIndex("dbo.Profissional", new[] { "Profissional_ProfissionalId" });
+            DropTable("dbo.Status");
             DropTable("dbo.Profissional");
             DropTable("dbo.Cliente");
+            DropTable("dbo.Chamado");
         }
     }
 }
