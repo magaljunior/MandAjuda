@@ -11,7 +11,9 @@ namespace MandAjuda.Controllers
 	public class PublicoController : Controller
 	{
 		// GET: Publico
-		//[HttpPost]
+
+		
+		[HttpPost]
 		public ActionResult Logar(string email, string senha)
 		{
 			if (Funcoes.AutenticarUsuario(email, senha) == false)
