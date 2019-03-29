@@ -139,10 +139,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CadastroController.cs" />
+    <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -537,6 +539,16 @@
     <Content Include="Views\Cadastro\Index.cshtml" />
     <Content Include="Views\Publico\AcessoNegado.cshtml" />
     <Content Include="Views\Publico\Logar.cshtml" />
+    <Content Include="Views\Chamados\Create.cshtml" />
+    <Content Include="Views\Chamados\Delete.cshtml" />
+    <Content Include="Views\Chamados\Details.cshtml" />
+    <Content Include="Views\Chamados\Edit.cshtml" />
+    <Content Include="Views\Chamados\Index.cshtml" />
+    <Content Include="Views\Status\Create.cshtml" />
+    <Content Include="Views\Status\Delete.cshtml" />
+    <Content Include="Views\Status\Details.cshtml" />
+    <Content Include="Views\Status\Edit.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
