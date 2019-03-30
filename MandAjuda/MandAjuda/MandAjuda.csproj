@@ -148,21 +148,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903282359428_profissional.cs" />
-    <Compile Include="Migrations\201903282359428_profissional.Designer.cs">
-      <DependentUpon>201903282359428_profissional.cs</DependentUpon>
+    <Compile Include="Migrations\201903300215036_profissional.cs" />
+    <Compile Include="Migrations\201903300215036_profissional.Designer.cs">
+      <DependentUpon>201903300215036_profissional.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903290000473_cliente.cs" />
-    <Compile Include="Migrations\201903290000473_cliente.Designer.cs">
-      <DependentUpon>201903290000473_cliente.cs</DependentUpon>
+    <Compile Include="Migrations\201903300220488_Status.cs" />
+    <Compile Include="Migrations\201903300220488_Status.Designer.cs">
+      <DependentUpon>201903300220488_Status.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903290001370_chamado.cs" />
-    <Compile Include="Migrations\201903290001370_chamado.Designer.cs">
-      <DependentUpon>201903290001370_chamado.cs</DependentUpon>
+    <Compile Include="Migrations\201903300231552_cliente.cs" />
+    <Compile Include="Migrations\201903300231552_cliente.Designer.cs">
+      <DependentUpon>201903300231552_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903290002129_status.cs" />
-    <Compile Include="Migrations\201903290002129_status.Designer.cs">
-      <DependentUpon>201903290002129_status.cs</DependentUpon>
+    <Compile Include="Migrations\201903300232310_chamado.cs" />
+    <Compile Include="Migrations\201903300232310_chamado.Designer.cs">
+      <DependentUpon>201903300232310_chamado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chamado.cs" />
@@ -637,17 +637,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903282359428_profissional.resx">
-      <DependentUpon>201903282359428_profissional.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903300215036_profissional.resx">
+      <DependentUpon>201903300215036_profissional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903290000473_cliente.resx">
-      <DependentUpon>201903290000473_cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903300220488_Status.resx">
+      <DependentUpon>201903300220488_Status.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903290001370_chamado.resx">
-      <DependentUpon>201903290001370_chamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903300231552_cliente.resx">
+      <DependentUpon>201903300231552_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903290002129_status.resx">
-      <DependentUpon>201903290002129_status.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903300232310_chamado.resx">
+      <DependentUpon>201903300232310_chamado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,9 +1,11 @@
+using System;
+using System.Data.Entity.Migrations;
+
 namespace MandAjuda.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
+
     
-    public partial class status : DbMigration
+    public partial class Status : DbMigration
     {
         public override void Up()
         {

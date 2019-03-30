@@ -7,13 +7,13 @@ namespace MandAjuda.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class profissional : IMigrationMetadata
+    public sealed partial class chamado : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(profissional));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(chamado));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903282359428_profissional"; }
+            get { return "201903300232310_chamado"; }
         }
         
         string IMigrationMetadata.Source
