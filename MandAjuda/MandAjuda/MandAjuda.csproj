@@ -148,21 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903300215036_profissional.cs" />
-    <Compile Include="Migrations\201903300215036_profissional.Designer.cs">
-      <DependentUpon>201903300215036_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903300220488_Status.cs" />
-    <Compile Include="Migrations\201903300220488_Status.Designer.cs">
-      <DependentUpon>201903300220488_Status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903300231552_cliente.cs" />
-    <Compile Include="Migrations\201903300231552_cliente.Designer.cs">
-      <DependentUpon>201903300231552_cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903300232310_chamado.cs" />
-    <Compile Include="Migrations\201903300232310_chamado.Designer.cs">
-      <DependentUpon>201903300232310_chamado.cs</DependentUpon>
+    <Compile Include="Migrations\201903302318415_clientes.cs" />
+    <Compile Include="Migrations\201903302318415_clientes.Designer.cs">
+      <DependentUpon>201903302318415_clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chamado.cs" />
@@ -619,6 +607,7 @@
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutProfissional.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Clientes\Perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -637,17 +626,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903300215036_profissional.resx">
-      <DependentUpon>201903300215036_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903300220488_Status.resx">
-      <DependentUpon>201903300220488_Status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903300231552_cliente.resx">
-      <DependentUpon>201903300231552_cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903300232310_chamado.resx">
-      <DependentUpon>201903300232310_chamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903302318415_clientes.resx">
+      <DependentUpon>201903302318415_clientes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
