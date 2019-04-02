@@ -46,7 +46,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ChamadoID,tituloChamado,descricaoChamado,qualificacaoChamado,descricaoQualificacao,pontucaoEstrela")] Chamado chamado)
+        public ActionResult Create([Bind(Include = "ChamadoID,TituloChamado,DescricaoChamado,QualificacaoChamado,DescricaoQualificacao,PontuacaoEstrela")] Chamado chamado)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ChamadoID,tituloChamado,descricaoChamado,qualificacaoChamado,descricaoQualificacao,pontucaoEstrela")] Chamado chamado)
+        public ActionResult Edit([Bind(Include = "ChamadoID,TituloChamado,DescricaoChamado,QualificacaoChamado,DescricaoQualificacao,PontuacaoEstrela")] Chamado chamado)
         {
             if (ModelState.IsValid)
             {

@@ -12,11 +12,11 @@ namespace MandAjuda.Migrations
                 c => new
                     {
                         ChamadoID = c.Int(nullable: false, identity: true),
-                        tituloChamado = c.String(unicode: false),
-                        descricaoChamado = c.String(unicode: false),
-                        qualificacaoChamado = c.String(unicode: false),
-                        descricaoQualificacao = c.String(unicode: false),
-                        pontucaoEstrela = c.Int(nullable: false),
+                        TituloChamado = c.String(unicode: false),
+                        DescricaoChamado = c.String(unicode: false),
+                        QualificacaoChamado = c.String(unicode: false),
+                        DescricaoQualificacao = c.String(unicode: false),
+                        PontuacaoEstrela = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.ChamadoID);
             
@@ -58,6 +58,7 @@ namespace MandAjuda.Migrations
                         Contato = c.String(unicode: false),
                         Email = c.String(unicode: false),
                         Senha = c.String(unicode: false),
+                        Status = c.Boolean(nullable: false),
                         Profissional_ProfissionalId = c.Int(),
                     })
                 .PrimaryKey(t => t.ProfissionalId)

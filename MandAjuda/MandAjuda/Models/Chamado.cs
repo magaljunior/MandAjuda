@@ -10,12 +10,14 @@ namespace MandAjuda.Models
     {
         [Key]
         public int ChamadoID { get; set; }
-        public string tituloChamado { get; set; }
-        public string descricaoChamado { get; set; }
-        public string qualificacaoChamado { get; set; }
-        public string descricaoQualificacao { get; set; }
-        public int pontucaoEstrela { get; set; }
+        public string TituloChamado { get; set; }
+        public string DescricaoChamado { get; set; }
+        public string QualificacaoChamado { get; set; }
+        public string DescricaoQualificacao { get; set; }
+        public string PontuacaoEstrela { get; set; }
 
+        public Profissional Profissional;
+        public Cliente Cliente;
         public Status Status;
     }
 }

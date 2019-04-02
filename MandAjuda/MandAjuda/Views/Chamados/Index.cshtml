@@ -12,19 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.tituloChamado)
+            @Html.DisplayNameFor(model => model.TituloChamado)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.descricaoChamado)
+            @Html.DisplayNameFor(model => model.DescricaoChamado)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.qualificacaoChamado)
+            @Html.DisplayNameFor(model => model.QualificacaoChamado)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.descricaoQualificacao)
+            @Html.DisplayNameFor(model => model.DescricaoQualificacao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.pontucaoEstrela)
+            @Html.DisplayNameFor(model => model.PontuacaoEstrela)
         </th>
         <th></th>
     </tr>
@@ -32,19 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.tituloChamado)
+            @Html.DisplayFor(modelItem => item.TituloChamado)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.descricaoChamado)
+            @Html.DisplayFor(modelItem => item.DescricaoChamado)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.qualificacaoChamado)
+            @Html.DisplayFor(modelItem => item.QualificacaoChamado)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.descricaoQualificacao)
+            @Html.DisplayFor(modelItem => item.DescricaoQualificacao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.pontucaoEstrela)
+            @Html.DisplayFor(modelItem => item.PontuacaoEstrela)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ChamadoID }) |

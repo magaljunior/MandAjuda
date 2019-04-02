@@ -150,5 +150,29 @@ namespace MandAjuda.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //Desativar
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Desativar([Bind(Include = "Status")] Profissional profissional)
+        {
+            if (ModelState.IsValid)
+            {
+
+                //Profissional p = new Profissional();
+
+                //Profissional profissional = p.Select(Status);
+
+                //if (profissional.Status)
+                //    p.Desativar(codigo, false);
+                //else
+                //    p.Desativar(codigo, true);
+
+                db.Entry(profissional).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(profissional);
+        }
     }
 }

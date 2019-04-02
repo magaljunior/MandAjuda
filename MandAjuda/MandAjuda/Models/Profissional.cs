@@ -23,6 +23,7 @@ namespace MandAjuda.Models
         public string Contato { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+        public bool Status { get; set; }
 
         public List<Profissional> Profissionais { get; set; }
     }
