@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+	<link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Construction - WeBuilder Template</title>
 
@@ -43,16 +45,13 @@
 		<div class="header_top_area">
 			<div class="container">
 				<div class="pull-left">
-					<a href="#"><i class="fa fa-phone"></i>(012) - 3456789</a>
-					<a href="#"><i class="fa fa-map-marker"></i>1234 Cafficic, California</a>
-					<a href="#"><i class="mdi mdi-clock"></i>08 AM - 10 PM</a>
+					<a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+					<a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
 				</div>
 				<div class="pull-right">
 					<ul class="header_social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -74,15 +73,29 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-
-							<li><a href="http://localhost:51258">Home</a></li>
-
-							@*<li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
-
-							<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>*@
-
-							<li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
-							</ul>
+							<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+								<ul class="dropdown-menu">
+									<li><a href="index.html">Home 01</a></li>
+									<li><a href="index-2.html">Home 02</a></li>
+								</ul>
+							</li>
+							<li class="dropdown submenu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+								<ul class="dropdown-menu">
+									<li><a href="project-full-width.html">Project Full Width</a></li>
+									<li><a href="project-grid-three-column.html">Project Grid 01</a></li>
+									<li><a href="project-grid-two-column.html">Project Grid 02</a></li>
+									<li><a href="project-three-column.html">Project Grid 03</a></li>
+									<li><a href="project-single.html">Single Project</a></li>
+								</ul>
+							</li>
+							<li><a href="service-single.html">Services</a></li>
+							<li><a href="#">about us</a></li>
+							<li><a href="blog-details.html">blog</a></li>
+							<li><a href="#">Contact</a></li>
+							<li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 			</div>
@@ -90,50 +103,40 @@
 	</header>
 	<!--================Header Area =================-->
 
-	
-		
-	<div class="form-horizontal">
-		<hr />
-		
+	<div class="row" style="height: 500px;">
+		<center>
+			<div class="col-sm-12; col-lg-12; col-md-12">
+				@model SendMail.Models.MailModel
+				@{
+					ViewBag.Title = "Index";
+				}
+				
+				<fieldset>
+					<legend>
+						Enviar e-mail
+					</legend>
+					<br/>
+					<br/>
+					@using (Html.BeginForm())
+					{
+						@Html.ValidationSummary()
+						<p>From: </p>
+						<p>@Html.TextBoxFor(m => m.From)</p>
+						<p>To: </p>
+						<p>@Html.TextBoxFor(m => m.To)</p>
+						<p>Subject: </p>
+						<p>@Html.TextBoxFor(m => m.Subject)</p>
+						<p>Body: </p>
+						<p>@Html.TextAreaFor(m => m.Body)</p>
+						<input type="submit" value="Send" />
+					}
+				</fieldset>
 
-		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-		<h3 class="text-center">Entrar no Sistema</h3>
-		<div class="form-group">
-			<label class="control-label col-md-2">
-				Email
-			</label>
-			<div>
-				<div class="col-md-3 ">
-					<input type="text" name="email" id="email" class="form-control" />
-				</div>
+
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-md-2">
-				Senha
-			</label>
-			<div class="col-md-3">
-				<input type="password" name="senha" id="senha" class="form-control" />
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-offset-2 col-md-3">
-				<input type="submit" value="Entrar" class="btn btn-default" />
-			</div>
-		</div>
+		</center>
 	</div>
-	<hr />
 
-	@*<!--================Map Area =================-->
-		<div id="mapBox" class="mapBox row m0"
-			 data-lat="40.7112969"
-			 data-lon="-74.1393991"
-			 data-zoom="10"
-			 data-marker="img/map-marker.png"
-			 data-info="Dhaka, uttara, Sector 10, Road 22"
-			 data-mlat="40.7112969"
-			 data-mlon="-74.1393991"></div>
-		<!--================End Map Area =================-->*@
 	<!--================Address Area =================-->
 	<section class="address_area">
 		<div class="container">
@@ -144,8 +147,8 @@
 							<img src="~/img/icon/place-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h4>Office Address :</h4>
-							<h5>1234 Cafficic, California, USA</h5>
+							<h4>Endereço :</h4>
+							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
 						</div>
 					</div>
 				</div>
@@ -155,8 +158,8 @@
 							<img src="~/img/icon/phone-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h5>(012) 3456789</h5>
-							<h5>(012) 3456789</h5>
+							<h5>(XX) XXXXX-XXXX</h5>
+
 						</div>
 					</div>
 				</div>
@@ -166,8 +169,8 @@
 							<img src="~/img/icon/inbox-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h5>info@domain.com</h5>
-							<h5>info@domain.com</h5>
+							<h5>mandajudaservico@gmail.com</h5>
+
 						</div>
 					</div>
 				</div>

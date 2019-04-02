@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" href="img/fav-icon.png" type="image/x-icon" />
+	<link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Mand'Ajuda</title>
 	<!-- Icon css link -->
@@ -40,16 +40,15 @@
 		<div class="header_top_area">
 			<div class="container">
 				<div class="pull-left">
-					<a href="#"><i class="fa fa-phone"></i>(012) - 3456789</a>
-					<a href="#"><i class="fa fa-map-marker"></i>1234 Cafficic, California</a>
-					<a href="#"><i class="mdi mdi-clock"></i>08 AM - 10 PM</a>
+					<a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+					<a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+					
 				</div>
 				<div class="pull-right">
 					<ul class="header_social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+										
 					</ul>
 				</div>
 			</div>
@@ -68,160 +67,127 @@
 						<a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
+					@{
+						MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuario();
+					}
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right">
 
-                            <li><a href="http://localhost:51258">Home</a></li>
+							<li><a href="http://localhost:51258">Home</a></li>
 
-                            <li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
+							<li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
 
-                            <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
+							<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
 
-                            <li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
+							<li>@Html.ActionLink("Entrar", "Logar", "Publico")</li>
 
-                            <li>@Html.ActionLink("Entrar", "Logar", "Publico")</li>
-
-                            <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
-                        </ul>
+							<li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 			</div>
 		</div>
 	</header>
-	
-		@RenderBody()
 
-    <!--================Footer Area =================-->
-		<footer class="footer_area">
-			<div class="footer_widgets_area">
-				<div class="container">
-					<div class="row footer_widgets_inner">
-						<div class="col-md-3 col-sm-6">
-							<aside class="f_widget about_widget">
-								@*<img src="~/img/Mandajuda.jpeg" />*@
-								<!--<img src="img/footer-logo.png" alt="">-->
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan-tium doloremque laudantium. ed quia consequuntur magni dolores eos qui ratione.</p>
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-								</ul>
-							</aside>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<aside class="f_widget recent_widget">
-								<div class="f_w_title">
-									<h3>Recent Posts</h3>
-								</div>
-								<div class="recent_w_inner">
-									<div class="media">
-										<div class="media-left">
-											<img src="img/blog/recent-post/recent-1.png" alt="">
-										</div>
-										<div class="media-body">
-											<a href="#"><p>The road to success is always under con-struction</p></a>
-										</div>
+	@RenderBody()
+
+	<!--================Footer Area =================-->
+	<footer class="footer_area">
+		<div class="footer_widgets_area">
+			<div class="container">
+				<div class="row footer_widgets_inner">
+					<br />
+					<br />
+					<br />
+
+				
+					<div class="col-md-6 col-sm-6">
+						<aside class="f_widget address_widget">
+							<div class="f_w_title">
+								<h3>Endereço:</h3>
+							</div>
+							<div class="address_w_inner">
+								<div class="media">
+									<div class="media-left">
+										<i class="fa fa-map-marker"></i>
 									</div>
-									<div class="media">
-										<div class="media-left">
-											<img src="img/blog/recent-post/recent-2.png" alt="">
-										</div>
-										<div class="media-body">
-											<a href="#"><p>The road to success is always under con-struction</p></a>
-										</div>
+									<div class="media-body">
+										<p>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</p>
 									</div>
 								</div>
-							</aside>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<aside class="f_widget address_widget">
-								<div class="f_w_title">
-									<h3>Office Address</h3>
-								</div>
-								<div class="address_w_inner">
-									<div class="media">
-										<div class="media-left">
-											<i class="fa fa-map-marker"></i>
-										</div>
-										<div class="media-body">
-											<p>1234 Cafficic, California, USA</p>
-										</div>
+								<div class="media">
+									<div class="media-left">
+										<i class="fa fa-phone"></i>
 									</div>
-									<div class="media">
-										<div class="media-left">
-											<i class="fa fa-phone"></i>
-										</div>
-										<div class="media-body">
-											<p>(012) 3456789 </p>
-											<p>(012) 3456789 </p>
-										</div>
-									</div>
-									<div class="media">
-										<div class="media-left">
-											<i class="fa fa-envelope"></i>
-										</div>
-										<div class="media-body">
-											<p>info@domain.com</p>
-										</div>
+									<div class="media-body">
+										<p>(XX)XXXXX-XXXX </p>
 									</div>
 								</div>
-							</aside>
-						</div>
-						<div class="col-md-3 col-sm-6">
-							<aside class="f_widget give_us_widget">
-								<h5>Give Us A Call</h5>
-								<h4>(012) 3456789</h4>
-								<h5>or</h5>
-								<a class="get_bg_btn" href="#">GET A QUOTE</a>
-							</aside>
-						</div>
+								<div class="media">
+									<div class="media-left">
+										<i class="fa fa-envelope"></i>
+									</div>
+									<div class="media-body">
+										<p>mandajudaservico@gmail.com</p>
+									</div>
+								</div>
+							</div>
+						</aside>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<aside class="f_widget give_us_widget">
+							<h5>Fale conosco</h5>
+							<h4>(XX) XXXXX-XXXX</h4>
+							<h5>ou</h5>
+							<a class="get_bg_btn" href="#">Solicite um orçamento</a>
+						</aside>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="footer_copy_right">
-				<div class="container">
-					<h4>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</h4>
-				</div>
+		<div class="footer_copy_right">
+			<div class="container">
+				<h4>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Mand'Ajuda &copy;
+					<script>(new Date().getFullYear());</script>  2019 <a href="https://colorlib.com" target="_blank"></a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				</h4>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
-		@Scripts.Render("~/bundles/jquery")
-		@Scripts.Render("~/bundles/bootstrap")
-		@RenderSection("scripts", required: false)
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
 
-		<!--================End Footer Area =================-->
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!--================End Footer Area =================-->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-		<script src="js/jquery-2.2.4.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Rev slider js -->
-		<script src="vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-		<script src="vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-		<script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-		<script src="vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-		<script src="vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+	<script src="js/jquery-2.2.4.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Rev slider js -->
+	<script src="vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+	<script src="vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+	<script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script src="vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script src="vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 
-		<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-		<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-		<script src="vendors/isotope/isotope.pkgd.min.js"></script>
-		<script src="vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendors/counterup/waypoints.min.js"></script>
-		<script src="vendors/counterup/jquery.counterup.min.js"></script>
-		<script src="vendors/flex-slider/jquery.flexslider-min.js"></script>
+	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="vendors/isotope/isotope.pkgd.min.js"></script>
+	<script src="vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="vendors/counterup/waypoints.min.js"></script>
+	<script src="vendors/counterup/jquery.counterup.min.js"></script>
+	<script src="vendors/flex-slider/jquery.flexslider-min.js"></script>
 
-		<!--gmaps Js-->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-		<script src="js/gmaps.min.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="js/gmaps.min.js"></script>
 
-		<script src="js/theme.js"></script>
+	<script src="js/theme.js"></script>
 </body>
 </html>

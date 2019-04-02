@@ -123,5 +123,10 @@ namespace MandAjuda.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Perfil(int id)
+        {
+            Cliente cliente = db.Clientes.Find(id);
+            return View();
+        }
     }
 }
