@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SendMail.Models
+namespace MandAjuda.Models
 {
 	public class MailModel
 	{
@@ -11,5 +11,7 @@ namespace SendMail.Models
 		public string To { get; set; }
 		public string Subject { get; set; }
 		public string Body { get; set; }
-	}
+
+        public Profissional Email;
+    }
 }

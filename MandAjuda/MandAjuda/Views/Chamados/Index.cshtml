@@ -26,6 +26,15 @@
         <th>
             @Html.DisplayNameFor(model => model.PontuacaoEstrela)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfissionalID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClienteID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusID)
+        </th>
         <th></th>
     </tr>
 
@@ -45,6 +54,15 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PontuacaoEstrela)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfissionalID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusID)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ChamadoID }) |
