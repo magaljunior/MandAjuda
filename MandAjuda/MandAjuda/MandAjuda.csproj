@@ -141,6 +141,8 @@
     <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LayoutClienteController.cs" />
+    <Compile Include="Controllers\LayoutProfissionalController.cs" />
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
     <Compile Include="Controllers\SendMailerController.cs" />
@@ -618,6 +620,8 @@
     <Content Include="Views\Publico\LogarCliente.cshtml" />
     <Content Include="Views\Publico\LogarProfissional.cshtml" />
     <Content Include="Views\Shared\_LayoutProfissional.cshtml" />
+    <Content Include="Views\LayoutCliente\Index.cshtml" />
+    <Content Include="Views\LayoutProfissional\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
