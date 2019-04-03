@@ -604,7 +604,6 @@
     <Content Include="Views\Profissionais\Pesquisar.cshtml" />
     <Content Include="Views\Profissionais\Search.cshtml" />
     <Content Include="Views\Cadastro\Index.cshtml" />
-    <Content Include="Views\Publico\AcessoNegado.cshtml" />
     <Content Include="Views\Status\Create.cshtml" />
     <Content Include="Views\Status\Delete.cshtml" />
     <Content Include="Views\Status\Details.cshtml" />
@@ -616,9 +615,11 @@
     <Content Include="Views\Chamados\Edit.cshtml" />
     <Content Include="Views\Chamados\Index.cshtml" />
     <Content Include="Views\Profissionais\Desativar.cshtml" />
-    <Content Include="Views\Publico\Logar.cshtml" />
     <Content Include="Views\SendMailer\Index.cshtml" />
+    <Content Include="Views\Publico\LogarCliente.cshtml" />
+    <Content Include="Views\Publico\LogarProfissional.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Shared\_LayoutProfissional.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

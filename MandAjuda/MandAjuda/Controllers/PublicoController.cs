@@ -8,23 +8,53 @@ using System.Web.Mvc;
 
 namespace MandAjuda.Controllers
 {
-    public class PublicoController : Controller
-    {
-        // GET: Publico
-        public ActionResult Logar()
-        {
-            return View();
-        }
-		[HttpPost]
-		public ActionResult Logar(string email, string senha)
+	public class PublicoController : Controller
+	{
+		// GET: Publico
+		public ActionResult LogarCliente()
 		{
-			if (Funcoes.AutenticarUsuario(email, senha) == false)
+			return View();
+		}
+
+		public ActionResult LogarProfissional()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public ActionResult LogarCliente(int id, string email, string senha)
+		{
+			if (Funcoes.AutenticarUsuarioCliente(email, senha) == false)
 			{
-				ViewBag.Error = "Usuário ou Senha inválidos";
+				ViewBag.Error = "Nome de usuário e/ou senha inválida";
 				return View();
 			}
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Index", "LayoutCliente");
 		}
+
+		[HttpPost]
+		public ActionResult LogarProfissional(int id, string email, string senha)
+		{
+			if (Funcoes.AutenticarUsuarioProfissional(email, senha) == false)
+			{
+				ViewBag.Error = "Nome de usuário e/ou senha inválida";
+				return View();
+			}
+			return RedirectToAction("Index", "LayoutProfissional");
+		}
+
+		public ActionResult LogoffCliente()
+		{
+			MandAjuda.Repositories.Funcoes.Deslogar();
+			return RedirectToAction("LogarCliente", "Publico");
+		}
+
+		public ActionResult LogoffProfissional()
+		{
+			MandAjuda.Repositories.Funcoes.Deslogar();
+			return RedirectToAction("LogarProfissional", "Publico");
+		}
+
 		public ActionResult AcessoNegado()
 		{
 			using (Context c = new Context())
@@ -33,10 +63,5 @@ namespace MandAjuda.Controllers
 			}
 		}
 
-		public ActionResult Logoff()
-		{
-			MandAjuda.Repositories.Funcoes.Deslogar();
-			return RedirectToAction("Logar", "Publico");
-		}
 	}
 }

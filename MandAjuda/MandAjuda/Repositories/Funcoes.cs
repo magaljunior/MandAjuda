@@ -9,10 +9,13 @@ namespace MandAjuda.Repositories
 {
 	public class Funcoes
 	{
-		public static bool AutenticarUsuario(string login, string senha)
+		public static bool AutenticarUsuarioCliente(string login, string senha)
 		{
 			Context _db = new Context();
-			var query = (from u in _db.Clientes where u.Email == login && u.Senha == senha select u).SingleOrDefault();
+			var query = (from u in _db.Clientes
+						 where u.Email == login &&
+						 u.Senha == senha
+						 select u).SingleOrDefault();
 			if (query == null)
 			{
 				return false;
@@ -24,7 +27,25 @@ namespace MandAjuda.Repositories
 			return true;
 		}
 
-		public static Cliente GetUsuario()
+		public static bool AutenticarUsuarioProfissional(string login, string senha)
+		{
+			Context _db = new Context();
+			var query = (from u in _db.Profissionais
+						 where u.Email == login &&
+						 u.Senha == senha
+						 select u).SingleOrDefault();
+			if (query == null)
+			{
+				return false;
+			}
+			FormsAuthentication.SetAuthCookie(query.Email, false);
+			//HttpContext.Current.Response.Cookies["Usuario"].Value = query.Email;
+			//HttpContext.Current.Response.Cookies["Usuario"].Expires = DateTime.Now.AddDays(10);
+			HttpContext.Current.Session["Usuario"] = query.Email;
+			return true;
+		}
+
+		public static Cliente GetUsuarioCliente()
 		{
 			string _login = HttpContext.Current.User.Identity.Name;
 			//if (HttpContext.Current.Request.Cookies.Count > 0 ||HttpContext.Current.Request.Cookies["Usuario"] != null)
@@ -40,7 +61,9 @@ namespace MandAjuda.Repositories
 				else
 				{
 					Context _db = new Context();
-					Cliente cliente = (from u in _db.Clientes where u.Email == _login select u).SingleOrDefault();
+					Cliente cliente = (from u in _db.Clientes
+									   where u.Email == _login
+									   select u).SingleOrDefault();
 					return cliente;
 				}
 			}
@@ -49,7 +72,36 @@ namespace MandAjuda.Repositories
 				return null;
 			}
 		}
-		public static Cliente GetUsuario(string _login)
+
+		public static Profissional GetUsuarioProfissional()
+		{
+			string _login = HttpContext.Current.User.Identity.Name;
+			//if (HttpContext.Current.Request.Cookies.Count > 0 ||HttpContext.Current.Request.Cookies["Usuario"] != null)
+
+			if (HttpContext.Current.Session.Count > 0 || HttpContext.Current.Session["Usuario"] != null)
+			{
+				_login = HttpContext.Current.Session["Usuario"].ToString();
+				//_login = HttpContext.Current.Request.Cookies["Usuario"].Value.ToString();
+				if (_login == "")
+				{
+					return null;
+				}
+				else
+				{
+					Context _db = new Context();
+					Profissional profissional = (from u in _db.Profissionais
+												 where u.Email == _login
+												 select u).SingleOrDefault();
+					return profissional;
+				}
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		public static Cliente GetUsuarioCliente(string _login)
 		{
 			if (_login == "")
 			{
@@ -58,10 +110,29 @@ namespace MandAjuda.Repositories
 			else
 			{
 				Context _db = new Context();
-				Cliente cliente = (from u in _db.Clientes where u.Email == _login select u).SingleOrDefault();
+				Cliente cliente = (from u in _db.Clientes
+								   where u.Email == _login
+								   select u).SingleOrDefault();
 				return cliente;
 			}
 		}
+
+		public static Profissional GetUsuarioProfissional(string _login)
+		{
+			if (_login == "")
+			{
+				return null;
+			}
+			else
+			{
+				Context _db = new Context();
+				Profissional profissional = (from u in _db.Profissionais
+											 where u.Email == _login
+											 select u).SingleOrDefault();
+				return profissional;
+			}
+		}
+
 		public static void Deslogar()
 		{
 			HttpContext.Current.Session["Usuario"] = "";

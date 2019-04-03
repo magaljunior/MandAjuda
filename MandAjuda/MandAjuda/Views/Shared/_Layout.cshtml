@@ -79,9 +79,15 @@
 
 							<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
 
-							<li>@Html.ActionLink("Entrar", "Logar", "Publico")</li>
+							<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logar</a>
+								<ul class="dropdown-menu">
+									<li>@Html.ActionLink("Cliente", "LogarCliente", "Publico")</li>
+									<li>@Html.ActionLink("Profissional", "LogarProfissional", "Publico")</li>
+								</ul>
+							</li>
 
-							
+
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
