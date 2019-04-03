@@ -148,9 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904030033010_chamado.cs" />
-    <Compile Include="Migrations\201904030033010_chamado.Designer.cs">
-      <DependentUpon>201904030033010_chamado.cs</DependentUpon>
+    <Compile Include="Migrations\201904031747294_profissional.cs" />
+    <Compile Include="Migrations\201904031747294_profissional.Designer.cs">
+      <DependentUpon>201904031747294_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chamado.cs" />
@@ -609,12 +609,15 @@
     <Content Include="Views\Publico\Logar.cshtml" />
     <Content Include="Views\SendMailer\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Profissionais\Chamado.cshtml" />
     <Content Include="Views\Chamados\Create.cshtml" />
     <Content Include="Views\Chamados\Delete.cshtml" />
     <Content Include="Views\Chamados\Details.cshtml" />
     <Content Include="Views\Chamados\Edit.cshtml" />
     <Content Include="Views\Chamados\Index.cshtml" />
-    <Content Include="Views\Profissionais\Chamado.cshtml" />
+    <Content Include="Views\Publico\LogarCliente.cshtml" />
+    <Content Include="Views\Publico\LogarProfissional.cshtml" />
+    <Content Include="Views\Shared\_LayoutProfissional.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -633,8 +636,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904030033010_chamado.resx">
-      <DependentUpon>201904030033010_chamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904031747294_profissional.resx">
+      <DependentUpon>201904031747294_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,7 +22,7 @@ namespace MandAjuda.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult LogarCliente(int id, string email, string senha)
+		public ActionResult LogarCliente( string email, string senha)
 		{
 			if (Funcoes.AutenticarUsuarioCliente(email, senha) == false)
 			{
@@ -33,7 +33,7 @@ namespace MandAjuda.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult LogarProfissional(int id, string email, string senha)
+		public ActionResult LogarProfissional( string email, string senha)
 		{
 			if (Funcoes.AutenticarUsuarioProfissional(email, senha) == false)
 			{

@@ -21,11 +21,13 @@ namespace MandAjuda.Models
         public string DescricaoQualificacao { get; set; }
         [DisplayName("Pontuação Estrela:")]
         public string PontuacaoEstrela { get; set; }
-        [DisplayName("Profissional:")]
-        public int ProfissionalID { get; set; }
-        [DisplayName("Cliente:")]
-        public int ClienteID { get; set; }
-        [DisplayName("Situação:")]
-        public int StatusID { get; set; }
+
+        public virtual ICollection<Status> Statuss { get; set; }
+
+        public Profissional ProfissionalID { get; set; }
+
+        public Cliente ClienteID { get; set; }
+
+        public Status StatusID { get; set; }
     }
 }

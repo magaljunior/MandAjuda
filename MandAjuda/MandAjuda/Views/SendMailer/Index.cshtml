@@ -105,35 +105,37 @@
 
 	<div class="row" style="height: 500px;">
 		<center>
-			<div class="col-sm-12; col-lg-12; col-md-12">
-				@model MandAjuda.Models.MailModel
-				@{
-					ViewBag.Title = "Index";
-				}
-				
-				<fieldset>
-					<legend>
-						Enviar e-mail
-					</legend>
-					<br/>
-					<br/>
-					@using (Html.BeginForm())
-					{
-						@Html.ValidationSummary()
-						<p>From: </p>
-						<p>@Html.TextBoxFor(m => m.From, new { @Value = "mandajudaservico@gmail.com" })</p>
-						<p>To: </p>
-						<p>@Html.TextBoxFor(m => m.To@*, new { @Value = Model.Email }*@)</p>
-						<p>Subject: </p>
-						<p>@Html.TextBoxFor(m => m.Subject)</p>
-						<p>Body: </p>
-						<p>@Html.TextAreaFor(m => m.Body)</p>
-						<input type="submit" value="Send" />
-					}
-				</fieldset>
+            <div class="col-sm-12; col-lg-12; col-md-12">
+                @model MandAjuda.Models.MailModel
+                @{
+                    ViewBag.Title = "Index";
+                }
+
+                @*@Html.HiddenFor(model => model.ProfissionalId)*@
+
+                <fieldset>
+                    <legend>
+                        Enviar e-mail
+                    </legend>
+                    <br />
+                    <br />
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary()
+                        <p>From: </p>
+                        <p>@Html.TextBoxFor(m => m.From, new { @Value = "mandajudaservico@gmail.com" })</p>
+                        <p>To: </p>
+                        <p>@Html.TextBoxFor(m => m.To, new { @Value = Model.Email })</p>
+                        <p>Subject: </p>
+                        <p>@Html.TextBoxFor(m => m.Subject)</p>
+                        <p>Body: </p>
+                        <p>@Html.TextAreaFor(m => m.Body)</p>
+                        <input type="submit" value="Send" />
+                    }
+                </fieldset>
 
 
-			</div>
+            </div>
 		</center>
 	</div>
 
