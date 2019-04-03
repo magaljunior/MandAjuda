@@ -246,6 +246,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\24891639.jpg" />
     <Content Include="img\b-company-img.png" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\banner\single-page-banner.jpg" />
@@ -263,6 +264,7 @@
     <Content Include="img\blog\trending-post\t-post-1.jpg" />
     <Content Include="img\blog\trending-post\t-post-2.jpg" />
     <Content Include="img\blog\trending-post\t-post-3.jpg" />
+    <Content Include="img\brenda.jpeg" />
     <Content Include="img\clients\client-1.png" />
     <Content Include="img\clients\client-2.png" />
     <Content Include="img\clients\client-3.png" />
@@ -304,10 +306,12 @@
     <Content Include="img\icon\s2-icon-hover-5.png" />
     <Content Include="img\icon\s2-icon-hover-6.png" />
     <Content Include="img\icon\video-puse.png" />
+    <Content Include="img\josé.jpeg" />
     <Content Include="img\logo-white.png" />
     <Content Include="img\logo.png" />
     <Content Include="img\Mandajuda.jpeg" />
     <Content Include="img\map-marker.png" />
+    <Content Include="img\pedro.jpeg" />
     <Content Include="img\pre-cons-left.jpg" />
     <Content Include="img\pre-cons-right.jpg" />
     <Content Include="img\project\project-1.jpg" />
@@ -365,6 +369,8 @@
     <Content Include="img\project\project-two-column\project-two-6.jpg" />
     <Content Include="img\quoto-slider-bg.jpg" />
     <Content Include="img\service-bg.jpg" />
+    <Content Include="img\stock-photo-beautiful-woman.jpg" />
+    <Content Include="img\tais.jpeg" />
     <Content Include="img\team\team-1.jpg" />
     <Content Include="img\team\team-2\team-1.jpg" />
     <Content Include="img\team\team-2\team-2.jpg" />
