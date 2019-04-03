@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SendMail.Controllers
+namespace MandAjuda.Controllers
 {
 	public class SendMailerController : Controller
 	{
@@ -16,7 +16,7 @@ namespace SendMail.Controllers
 			return View();
 		}
 		[HttpPost]
-		public ViewResult Index(SendMail.Models.MailModel _objModelMail)
+		public ViewResult Index(MandAjuda.Models.MailModel _objModelMail)
 		{
 			if (ModelState.IsValid)
 			{

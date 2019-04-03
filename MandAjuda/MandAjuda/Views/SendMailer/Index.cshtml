@@ -106,7 +106,7 @@
 	<div class="row" style="height: 500px;">
 		<center>
 			<div class="col-sm-12; col-lg-12; col-md-12">
-				@model SendMail.Models.MailModel
+				@model MandAjuda.Models.MailModel
 				@{
 					ViewBag.Title = "Index";
 				}
@@ -121,9 +121,9 @@
 					{
 						@Html.ValidationSummary()
 						<p>From: </p>
-						<p>@Html.TextBoxFor(m => m.From)</p>
+						<p>@Html.TextBoxFor(m => m.From, new { @Value = "mandajudaservico@gmail.com" })</p>
 						<p>To: </p>
-						<p>@Html.TextBoxFor(m => m.To)</p>
+						<p>@Html.TextBoxFor(m => m.To@*, new { @Value = Model.Email }*@)</p>
 						<p>Subject: </p>
 						<p>@Html.TextBoxFor(m => m.Subject)</p>
 						<p>Body: </p>
