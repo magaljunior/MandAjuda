@@ -20,6 +20,11 @@ namespace MandAjuda.Controllers
             return View(db.Clientes.ToList());
         }
 
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
+
         // GET: Clientes/Details/5
         public ActionResult Details(int? id)
         {
@@ -52,7 +57,7 @@ namespace MandAjuda.Controllers
             {
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Cadastro");
             }
 
             return View(cliente);

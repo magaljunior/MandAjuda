@@ -76,13 +76,6 @@
 
                             <li><a href="http://localhost:51258">Home</a></li>
 
-                            <li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
-
-                            <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
-
-                            <li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
-
-                            <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -91,31 +84,32 @@
     </header>
     <!--================Header Area =================-->
 
-    <div class="row" style="">
+    <div class="row" style="margin-bottom: 25px;">
         <div class="col-sm-12">
+            @model MandAjuda.Models.Profissional
 
             @{
-                ViewBag.Title = "Index";
+                ViewBag.Title = "Cadastro";
             }
 
-            <hr />
-            <center style="margin-top: 25px; margin-bottom: 25px;"><h2 class="aria-haspopup=" true"">Cadastre - se como um Profissional Liberal</h2></center>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-            <center>
-                <p style="margin-bottom: 25px;">
-                    @Html.ActionLink("Cadastrar - se", "Create", "Profissionais")
-                </p>
-            </center>
-            <hr />
-            <hr />
-            <center style="margin-top: 25px; margin-bottom: 25px;"><h2 class="aria-haspopup=" true"">Cadastre - se como um Cliente</h2></center>
+            <div class="container">
+                <hr />
+                <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Cadastro realizado com sucesso</h2></center>
+                <hr />
+                <center>
+                <h3>Para logar na plataforma @Html.ActionLink("clique aqui", "LogarProfissional", "Publico")</h3>
+                </center>
+                <hr />
+            </div>
+            }
 
-            <center>
-                <p style="margin-bottom: 25px;">
-                    @Html.ActionLink("Cadastrar - se", "Create", "Clientes")
-                </p>
-            </center>
-            <hr />
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
         </div>
     </div>
     <!--================Address Area =================-->
@@ -186,4 +180,3 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
-

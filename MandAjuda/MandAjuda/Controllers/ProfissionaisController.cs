@@ -73,6 +73,11 @@ namespace MandAjuda.Controllers
             return View();
         }
 
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
+
         // POST: Profissionais/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -84,7 +89,7 @@ namespace MandAjuda.Controllers
             {
                 db.Profissionais.Add(profissional);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Cadastro");
             }
 
             return View(profissional);
