@@ -14,8 +14,6 @@ namespace MandAjuda.Controllers
     {
         private Context db = new Context();
 
-        // GET: Profissionais
-        
         public ActionResult Search()
         {
             return View(db.Profissionais.ToList());
@@ -26,25 +24,20 @@ namespace MandAjuda.Controllers
             return View();
         }
 
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
+
+        public ActionResult Desativar()
+        {
+            return View();
+        }
+
+        // GET: Profissionais
         public ActionResult Index()
         {
             return View(db.Profissionais.ToList());
-        }
-
-        [HttpPost]
-        public ActionResult Search(FormCollection fc, string searchString)
-        {
-            ViewBag.Pesquisa = "";
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                ViewBag.Pesquisa = searchString;
-                var profissionais = db.Profissionais.Include(c => c.Profissionais).Where(c => c.Profissao.Contains(searchString)).OrderBy(o => o.Profissao);
-                return View("Search", profissionais.ToList());
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
         }
 
         // GET: Profissionais/Details/5
@@ -68,22 +61,12 @@ namespace MandAjuda.Controllers
             return View();
         }
 
-        public ActionResult Chamados()
-        {
-            return View();
-        }
-
-        public ActionResult Cadastro()
-        {
-            return View();
-        }
-
         // POST: Profissionais/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha")] Profissional profissional)
+        public ActionResult Create([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +98,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha")] Profissional profissional)
+        public ActionResult Edit([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
@@ -159,30 +142,6 @@ namespace MandAjuda.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        //Desativar
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Desativar([Bind(Include = "Status")] Profissional profissional)
-        {
-            if (ModelState.IsValid)
-            {
-
-                //Profissional p = new Profissional();
-
-                //Profissional profissional = p.Select(Status);
-
-                //if (profissional.Status)
-                //    p.Desativar(codigo, false);
-                //else
-                //    p.Desativar(codigo, true);
-
-                db.Entry(profissional).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(profissional);
         }
     }
 }

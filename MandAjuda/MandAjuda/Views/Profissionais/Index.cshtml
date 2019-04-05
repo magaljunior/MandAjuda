@@ -43,16 +43,15 @@
         <div class="header_top_area">
             <div class="container">
                 <div class="pull-left">
-                    <a href="#"><i class="fa fa-phone"></i>(012) - 3456789</a>
-                    <a href="#"><i class="fa fa-map-marker"></i>1234 Cafficic, California</a>
-                    <a href="#"><i class="mdi mdi-clock"></i>08 AM - 10 PM</a>
+                    <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+                    <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -68,21 +67,27 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
                     </div>
+
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown submenu active">
 
-                            <li><a href="http://localhost:51258">Home</a></li>
-
-                            <li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
+                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
 
                             <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
 
-                            <li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
+                            <li class="dropdown submenu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+                                </ul>
+                            </li>
 
-                            <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -90,9 +95,10 @@
         </div>
     </header>
     <!--================Header Area =================-->
-    
-    <div class="row" style="height: 500px;">
-        <div class="col-sm-12">
+
+    <div class="container-fluid">
+        <div>
+
             @model IEnumerable<MandAjuda.Models.Profissional>
 
             @{
@@ -105,6 +111,7 @@
                 <hr />
             </center>
 
+
             <table class="table">
                 <tr>
                     <th>
@@ -116,29 +123,41 @@
                     <th>
                         @Html.DisplayNameFor(model => model.CidadeAtende)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
                 </tr>
 
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NomeCompleto)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Profissao)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CidadeAtende)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.ProfissionalId })
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeCompleto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Profissao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CidadeAtende)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.ProfissionalId })
+                        <br />
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ProfissionalId })
+                        <br />
+                        @Html.ActionLink("Desativar", "Edit", new { id = item.ProfissionalId })
+                    </td>
+                </tr>
                 }
 
             </table>
         </div>
     </div>
+
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">
@@ -180,7 +199,6 @@
         </div>
     </section>
     <!--================End Address Area =================-->
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="~/js/jquery-2.2.4.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -208,3 +226,4 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
+

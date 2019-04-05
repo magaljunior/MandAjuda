@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201904041943363_chamado.Designer.cs">
       <DependentUpon>201904041943363_chamado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904051750489_profissional.cs" />
+    <Compile Include="Migrations\201904051750489_profissional.Designer.cs">
+      <DependentUpon>201904051750489_profissional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
     <Compile Include="Models\Chamado.cs" />
@@ -590,27 +594,19 @@
     <Content Include="vendors\revolution\js\extensions\.DS_Store" />
     <Content Include="vendors\revolution\php\.DS_Store" />
     <Content Include="vendors\revolution\php\twitter\.DS_Store" />
-    <Content Include="Views\Profissionais\Create.cshtml" />
-    <Content Include="Views\Profissionais\Details.cshtml" />
-    <Content Include="Views\Profissionais\Edit.cshtml" />
-    <Content Include="Views\Profissionais\Index.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\Details.cshtml" />
     <Content Include="Views\Clientes\Edit.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\Profissionais\Pesquisar.cshtml" />
-    <Content Include="Views\Profissionais\Search.cshtml" />
     <Content Include="Views\Status\Create.cshtml" />
     <Content Include="Views\Status\Delete.cshtml" />
     <Content Include="Views\Status\Details.cshtml" />
     <Content Include="Views\Status\Edit.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
-    <Content Include="Views\Profissionais\Desativar.cshtml" />
     <Content Include="Views\Publico\LogarCliente.cshtml" />
     <Content Include="Views\Publico\LogarProfissional.cshtml" />
     <Content Include="Views\LayoutCliente\Index.cshtml" />
     <Content Include="Views\LayoutProfissional\Index.cshtml" />
-    <Content Include="Views\Profissionais\Cadastro.cshtml" />
     <Content Include="Views\Clientes\Cadastro.cshtml" />
     <Content Include="Views\Chamados\Create.cshtml" />
     <Content Include="Views\Chamados\Details.cshtml" />
@@ -619,6 +615,13 @@
     <Content Include="Views\Publico\AcessoNegado.cshtml" />
     <Content Include="Views\Cancelar\Cancelar.cshtml" />
     <Content Include="Views\Cancelar\Confirmacao.cshtml" />
+    <Content Include="Views\Profissionais\Create.cshtml" />
+    <Content Include="Views\Profissionais\Details.cshtml" />
+    <Content Include="Views\Profissionais\Edit.cshtml" />
+    <Content Include="Views\Profissionais\Index.cshtml" />
+    <Content Include="Views\Profissionais\Cadastro.cshtml" />
+    <Content Include="Views\Profissionais\Pesquisar.cshtml" />
+    <Content Include="Views\Profissionais\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -639,6 +642,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904041943363_chamado.resx">
       <DependentUpon>201904041943363_chamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904051750489_profissional.resx">
+      <DependentUpon>201904051750489_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

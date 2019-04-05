@@ -49,6 +49,8 @@ namespace MandAjuda.Models
         [Required(ErrorMessage = "Por favor digite uma senha")]
         [DisplayName("Senha:")]
         public string Senha { get; set; }
+        //[Range(typeof(bool), "true", "true", ErrorMessage = "Por favor ative o cadastro para se cadastrar")]
+        [DisplayName("Situação:")]
         public bool Status { get; set; }
 
         public List<Profissional> Profissionais { get; set; }
