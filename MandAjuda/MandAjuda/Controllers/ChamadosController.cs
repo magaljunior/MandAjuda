@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using MandAjuda.Models;
@@ -46,12 +47,30 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ChamadoID,TituloChamado,DescricaoChamado,QualificacaoChamado,DescricaoQualificacao,PontuacaoEstrela")] Chamado chamado)
+        public ActionResult Create([Bind(Include = "ChamadoID,From,To,Subject,Body")] Chamado chamado, MandAjuda.Models.Chamado _objModelMail)
         {
             if (ModelState.IsValid)
             {
                 db.Chamados.Add(chamado);
                 db.SaveChanges();
+
+                MailMessage mail = new MailMessage();
+                mail.To.Add(_objModelMail.To);
+                mail.From = new MailAddress(_objModelMail.From);
+                mail.Subject = _objModelMail.Subject;
+                string Body = _objModelMail.Body;
+                mail.Body = Body;
+                mail.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential
+                ("mandajudaservico@gmail.com", "Mand@judaPI");
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
+
                 return RedirectToAction("Index");
             }
 
@@ -78,7 +97,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ChamadoID,TituloChamado,DescricaoChamado,QualificacaoChamado,DescricaoQualificacao,PontuacaoEstrela")] Chamado chamado)
+        public ActionResult Edit([Bind(Include = "ChamadoID,From,To,Subject,Body")] Chamado chamado)
         {
             if (ModelState.IsValid)
             {

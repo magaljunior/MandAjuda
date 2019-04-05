@@ -102,7 +102,7 @@
             <div>
                 <center>
                     <hr />
-                    <h2>Detalhes de Cadastro</h2>
+                    <h2>Detalhes</h2>
                     <hr />
                 </center>
                 <dl class="dl-horizontal">
@@ -120,14 +120,6 @@
 
                     <dd>
                         @Html.DisplayFor(model => model.Profissao)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Cpf)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Cpf)
                     </dd>
 
                     <dt>
@@ -187,36 +179,22 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Contato)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Contato)
-                    </dd>
-
-                    <dt>
                         @Html.DisplayNameFor(model => model.Email)
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.Email)
                     </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Senha)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Senha)
-                    </dd>
-
                 </dl>
             </div>
+            <strong><p style="margin-left: 50px; color:red">
+            OBS: Para requisitar o profissional copie o E-mail do mesmo listado acima
+            </p></strong>
             <p style="margin-left: 50px;">
-                @Html.ActionLink("Requisitar", "Chamado",  new { id = Model.ProfissionalId }) 
+                <a class="btn btn-default" href="http://localhost:51258/Chamados/Create">Requisitar</a>
             </p>
         </div>
-    </div>
+        </div>
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">

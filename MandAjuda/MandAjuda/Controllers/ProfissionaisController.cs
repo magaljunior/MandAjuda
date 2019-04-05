@@ -68,7 +68,7 @@ namespace MandAjuda.Controllers
             return View();
         }
 
-        public ActionResult Chamado()
+        public ActionResult Chamados()
         {
             return View();
         }

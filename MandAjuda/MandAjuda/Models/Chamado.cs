@@ -11,23 +11,16 @@ namespace MandAjuda.Models
     {
         [Key]
         public int ChamadoID { get; set; }
-        [DisplayName("Titulo Chamado:")]
-        public string TituloChamado { get; set; }
-        [DisplayName("Descrição Chamado:")]
-        public string DescricaoChamado { get; set; }
-        [DisplayName("Qualificação Chamado:")]
-        public string QualificacaoChamado { get; set; }
-        [DisplayName("Descrição Qualificação:")]
-        public string DescricaoQualificacao { get; set; }
-        [DisplayName("Pontuação Estrela:")]
-        public string PontuacaoEstrela { get; set; }
-
-        public virtual ICollection<Status> Statuss { get; set; }
-
-        public Profissional ProfissionalID { get; set; }
-
-        public Cliente ClienteID { get; set; }
-
-        public Status StatusID { get; set; }
+        [DisplayName("De:")]
+        public string From { get; set; }
+        [Required(ErrorMessage = "Por favor digite o email do profissional como exibido acima")]
+        [DisplayName("Para:")]
+        public string To { get; set; }
+        [Required(ErrorMessage = "Por favor digite um título para a requisição")]
+        [DisplayName("Título:")]
+        public string Subject { get; set; }
+        [Required(ErrorMessage = "Por favor digite uma breve descrição para a requisição")]
+        [DisplayName("Descrição:")]
+        public string Body { get; set; }
     }
 }
