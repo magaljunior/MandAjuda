@@ -76,30 +76,31 @@
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown submenu active">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="index.html">Home 01</a></li>
-                                            <li><a href="index-2.html">Home 02</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="project-full-width.html">Project Full Width</a></li>
-                                            <li><a href="project-grid-three-column.html">Project Grid 01</a></li>
-                                            <li><a href="project-grid-two-column.html">Project Grid 02</a></li>
-                                            <li><a href="project-three-column.html">Project Grid 03</a></li>
-                                            <li><a href="project-single.html">Single Project</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="service-single.html">Services</a></li>
-                                    <li><a href="#">about us</a></li>
-                                    <li><a href="blog-details.html">blog</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
-                                </ul>
+								<ul class="nav navbar-nav navbar-right">
+									<li class="dropdown submenu active">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+										<ul class="dropdown-menu">
+											<li><a href="index.html">Home 01</a></li>
+											<li><a href="index-2.html">Home 02</a></li>
+										</ul>
+									</li>
+									<li class="dropdown submenu">
+									<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
+									@*<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>*@
+									<ul class="dropdown-menu">
+										<li><a href="project-full-width.html">Project Full Width</a></li>
+										<li><a href="project-grid-three-column.html">Project Grid 01</a></li>
+										<li><a href="project-grid-two-column.html">Project Grid 02</a></li>
+										<li><a href="project-three-column.html">Project Grid 03</a></li>
+										<li><a href="project-single.html">Single Project</a></li>
+									</ul>
+									</li>
+									<li>@Html.ActionLink("Abrir Chamado", "Index", "Chamados")</li>
+									<li><a href="#">about us</a></li>
+									<li><a href="blog-details.html">blog</a></li>
+									<li><a href="#">Contact</a></li>
+									<li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+								</ul>
                             </div><!-- /.navbar-collapse -->
                         </nav>
                     </div>
