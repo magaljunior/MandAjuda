@@ -44,7 +44,7 @@ namespace MandAjuda.Models
         [DisplayName("Contato:")]
         public string Contato { get; set; }
         [Required(ErrorMessage = "Por favor digite um email")]
-        [DisplayName("Email:")]
+        [DisplayName("EmailProfissional:")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Por favor digite uma senha")]
         [DisplayName("Senha:")]

@@ -138,6 +138,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CancelarController.cs" />
     <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -154,6 +155,7 @@
       <DependentUpon>201904041943363_chamado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cancelar.cs" />
     <Compile Include="Models\Chamado.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
@@ -620,6 +622,8 @@
     <Content Include="Views\Chamados\Edit.cshtml" />
     <Content Include="Views\Chamados\Index.cshtml" />
     <Content Include="Views\Publico\AcessoNegado.cshtml" />
+    <Content Include="Views\Cancelar\Cancelar.cshtml" />
+    <Content Include="Views\Cancelar\Confirmacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

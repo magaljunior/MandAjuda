@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Construction - WeBuilder Template</title>
 
@@ -43,16 +43,13 @@
         <div class="header_top_area">
             <div class="container">
                 <div class="pull-left">
-                    <a href="#"><i class="fa fa-phone"></i>(012) - 3456789</a>
-                    <a href="#"><i class="fa fa-map-marker"></i>1234 Cafficic, California</a>
-                    <a href="#"><i class="mdi mdi-clock"></i>08 AM - 10 PM</a>
+                    <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+                    <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -74,6 +71,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
+
                             <li><a href="http://localhost:51258">Home</a></li>
 
                             <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
@@ -86,6 +84,7 @@
                             </li>
 
                             <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -95,62 +94,65 @@
     <!--================Header Area =================-->
 
     <div class="container-fluid">
-        <div class="col-sm-12">
-            @model IEnumerable<MandAjuda.Models.Chamado>
+        @model MandAjuda.Models.Cancelar
 
-            @{
-                ViewBag.Title = "Index";
-            }
+        @{
+            ViewBag.Title = "Create";
+        }
 
-            <center>
+        <center>
+            <hr />
+            <h2>Cancelar Chamado</h2>
+        </center>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
                 <hr />
-                <h2 style="margin-top:20px;">Meus Chamados</h2>
-                <hr />
-            </center>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.From, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.From, new { @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-group" } })
+                        @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
+                <div class="form-group">
+                    @Html.LabelFor(model => model.To, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.To)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Subject)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Body)
-                    </th>
-                    <th></th>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-                    @foreach (var item in Model)
-                    {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.To)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Body)
-                    </td>
-                    <td>
-                        <strong>
-                            <p style="margin-left: 50px; color:red">
-                                OBS: Para cancelar o chamado copie o E-mail do profissional listado ao lado
-                            </p>
-                        </strong>
-                        <p style="margin-left: 50px;">
-                            <a class="btn btn-danger" href="http://localhost:51258/Cancelar/Cancelar">Cancelar</a>
-                        </p>
-                    </td>
-                </tr>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-                }
-                </table>
-                <hr />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-3">
+                        <input type="submit" value="Cancelar" class="btn btn-danger" />
+                    </div>
+                </div>
             </div>
+        }
     </div>
+    <hr />
 
     <!--================Address Area =================-->
     <section class="address_area">
@@ -162,8 +164,8 @@
                             <img src="~/img/icon/place-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
+                            <h4>Endereço :</h4>
+                            <h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
                         </div>
                     </div>
                 </div>
@@ -173,8 +175,8 @@
                             <img src="~/img/icon/phone-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
+                            <h5>(XX) XXXXX-XXXX</h5>
+
                         </div>
                     </div>
                 </div>
@@ -184,8 +186,8 @@
                             <img src="~/img/icon/inbox-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
+                            <h5>mandajudaservico@gmail.com</h5>
+
                         </div>
                     </div>
                 </div>
@@ -220,4 +222,3 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
-

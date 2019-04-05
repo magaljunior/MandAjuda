@@ -46,13 +46,13 @@ namespace WebApplication1.Controllers
         public ActionResult LogoffCliente()
         {
             MandAjuda.Repositories.Funcoes.Deslogar();
-            return RedirectToAction("LogarCliente", "Publico");
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult LogoffProfissional()
         {
             MandAjuda.Repositories.Funcoes.Deslogar();
-            return RedirectToAction("LogarProfissional", "Publico");
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult AcessoNegado()

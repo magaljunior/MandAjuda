@@ -21,6 +21,11 @@ namespace MandAjuda.Controllers
             return View(db.Chamados.ToList());
         }
 
+        public ActionResult Cancelar()
+        {
+            return View();
+        }
+
         // GET: Chamados/Details/5
         public ActionResult Details(int? id)
         {
