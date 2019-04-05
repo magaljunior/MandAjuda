@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Construction - WeBuilder Template</title>
 
@@ -45,13 +45,11 @@
                 <div class="pull-left">
                     <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
                     <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
-
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
                         <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
-
                     </ul>
                 </div>
             </div>
@@ -69,6 +67,7 @@
                         </button>
                         <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
                     </div>
+
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
@@ -94,144 +93,67 @@
     </header>
     <!--================Header Area =================-->
 
-    <div class="container-fluid" style="margin-bottom: 25px;">
-        <div class="col-sm-12">
-            @model MandAjuda.Models.Profissional
+    <div class="container-fluid">
+        @model MandAjuda.Models.Cancelar
 
-            @{
-                ViewBag.Title = "Details";
-            }
-            <center>
-                <hr />
-                <h2>Detalhes</h2>
-                <hr />
-            </center>
+        @{
+            ViewBag.Title = "Create";
+        }
 
-            <div>
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.NomeCompleto)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.NomeCompleto)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Profissao)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Profissao)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Cpf)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Cpf)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Cep)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Cep)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Endereco)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Endereco)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Bairro)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Bairro)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Cidade)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Cidade)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Estado)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Estado)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Complemento)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Complemento)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.CidadeAtende)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.CidadeAtende)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Contato)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Contato)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Email)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Email)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Senha)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Senha)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Status)
-                    </dd>
-
-                </dl>
-            </div>
-            @*<strong><p style="margin-left: 50px; color:red">
-        OBS: Para requisitar o profissional copie o E-mail do mesmo listado acima
-        </p></strong>*@
-            <p style="margin-left: 50px;">
-                <a class="btn btn-default" href="http://localhost:51258/Chamados/Create">Requisitar</a>
-            </p>
+        <center>
             <hr />
-        </div>
+            <h2>Cancelar Chamado</h2>
+        </center>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.From, new { style = "display:none;" } @*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-group" } })
+                        @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.To, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.To, new { style = "display:none;", @Value = "pedrosantos0509@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-3">
+                        <input type="submit" value="Cancelar" class="btn btn-danger" />
+                    </div>
+                </div>
+            </div>
+        }
     </div>
+    <hr />
+
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">
@@ -242,8 +164,8 @@
                             <img src="~/img/icon/place-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
+                            <h4>Endereço :</h4>
+                            <h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
                         </div>
                     </div>
                 </div>
@@ -253,8 +175,8 @@
                             <img src="~/img/icon/phone-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
+                            <h5>(XX) XXXXX-XXXX</h5>
+
                         </div>
                     </div>
                 </div>
@@ -264,8 +186,8 @@
                             <img src="~/img/icon/inbox-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
+                            <h5>mandajudaservico@gmail.com</h5>
+
                         </div>
                     </div>
                 </div>
@@ -300,4 +222,3 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
-

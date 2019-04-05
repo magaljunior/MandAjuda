@@ -43,16 +43,15 @@
         <div class="header_top_area">
             <div class="container">
                 <div class="pull-left">
-                    <a href="#"><i class="fa fa-phone"></i>(012) - 3456789</a>
-                    <a href="#"><i class="fa fa-map-marker"></i>1234 Cafficic, California</a>
-                    <a href="#"><i class="mdi mdi-clock"></i>08 AM - 10 PM</a>
+                    <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+                    <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -68,21 +67,27 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
                     </div>
+
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown submenu active">
 
-                            <li><a href="http://localhost:51258">Home</a></li>
-
-                            <li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
+                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
 
                             <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
 
-                            <li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
+                            <li class="dropdown submenu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+                                </ul>
+                            </li>
 
-                            <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -91,186 +96,157 @@
     </header>
     <!--================Header Area =================-->
 
-    <div class="row" style="margin-bottom: 25px;">
-        <div class="col-sm-12">
+    <div class="container-fluid">
+        <div class="row">
+
             @model MandAjuda.Models.Profissional
 
             @{
                 ViewBag.Title = "Edit";
             }
+            <center>
+                <hr />
+                <h2>Editar</h2>
+                <hr />
+            </center>
 
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
+                    @*DIV*@
+                    <div class="col-sm-6">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ProfissionalId)
 
-                    <center>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.NomeCompleto, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.NomeCompleto, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NomeCompleto, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Profissao, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Cpf, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Endereco, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    @*DIV*@
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Complemento, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CidadeAtende, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.CidadeAtende, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CidadeAtende, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Contato, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Contato, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Contato, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left:25px;" class="col-md-3">
+                                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-3">
+                                <div style="margin-left:25px;" class="checkbox">
+                                    @Html.EditorFor(model => model.Status)
+                                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Salvar" class="btn btn-default" />
+                            </div>
+                        </div>
                         <hr />
-                        <h2>Editar Cadastro</h2>
-                        <hr />
-                    </center>
-
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(model => model.ProfissionalId)
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.NomeCompleto, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.NomeCompleto, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.NomeCompleto, "", new { @class = "text-danger" })
-                        </div>
                     </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Profissao, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
-                        </div>
                     </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cpf, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Endereco, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Complemento, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CidadeAtende, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.CidadeAtende, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.CidadeAtende, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Contato, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Contato, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Contato, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-3">
-                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Save" class="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
-            }
-
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
             }
         </div>
     </div>
-    <!--================Address Area =================-->
-    <section class="address_area">
-        <div class="container">
-            <div class="row address_inner">
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/place-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/phone-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/inbox-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!--================End Address Area =================-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="~/js/jquery-2.2.4.js"></script>
@@ -299,4 +275,5 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
+
 

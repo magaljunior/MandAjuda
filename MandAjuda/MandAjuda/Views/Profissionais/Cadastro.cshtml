@@ -39,71 +39,77 @@
 
 
     <!--================Header Area =================-->
-    @*@{
-        MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
-        if (profissional != null)
-        {*@
-    <header class="main_header_area">
-        <div class="header_top_area">
-            <div class="container">
-                <div class="pull-left">
-                    <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
-                    <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
-                </div>
-                <div class="pull-right">
-                    <ul class="header_social">
-                        <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                </div>
+    <div class="header_top_area">
+        <div class="container">
+            <div class="pull-left">
+                <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+                <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+
             </div>
-        </div>
-        <div class="main_menu_area">
-            <div class="container">
-                <nav class="navbar navbar-default">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
-                    </div>
+            <div class="pull-right">
+                <ul class="header_social">
+                    <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="http://localhost:51258">Home</a></li>
-
-                            <li><a href="http://localhost:51258">Meu Perfil</a></li>
-
-                            <li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
-
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </nav>
+                </ul>
             </div>
-        </div>
-    </header>
-        @*}
-        else
-        {
-            <script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
-        }
-    }*@
-    <!--================Header Area =================-->
-
-    <div class="container-fluid" style="height: 500px;">
-        <div class="col-sm-12">
-
-
-
         </div>
     </div>
+    <div class="main_menu_area">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
 
+                        <li><a href="http://localhost:51258">Home</a></li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+    </div>
+    </header>
+    <!--================Header Area =================-->
+
+    <div class="row" style="margin-bottom: 25px;">
+        <div class="col-sm-12">
+            @model MandAjuda.Models.Profissional
+
+            @{
+                ViewBag.Title = "Cadastro";
+            }
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="container">
+                    <hr />
+                    <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Cadastro realizado com sucesso</h2></center>
+                    <hr />
+                    <center>
+                        <h3>Para logar na plataforma @Html.ActionLink("clique aqui", "LogarProfissional", "Publico")</h3>
+                    </center>
+                    <hr />
+                </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+    </div>
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">
@@ -172,6 +178,3 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
-
-
-

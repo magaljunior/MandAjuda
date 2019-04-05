@@ -68,21 +68,25 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
 
-                            <li><a href="http://localhost:51258">Home</a></li>
-
-                            <li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
+                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
 
                             <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
 
-                            <li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
+                            <li class="dropdown submenu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+                                </ul>
+                            </li>
 
-                            <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -91,31 +95,28 @@
     </header>
     <!--================Header Area =================-->
 
-    <div class="row" style="">
+    <div class="row" style="margin-bottom: 25px;">
         <div class="col-sm-12">
+            @model MandAjuda.Models.Cancelar
 
             @{
-                ViewBag.Title = "Index";
+                ViewBag.Title = "Confirmacao";
             }
 
-            <hr />
-            <center style="margin-top: 25px; margin-bottom: 25px;"><h2 class="aria-haspopup=" true"">Cadastre - se como um Profissional Liberal</h2></center>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-            <center>
-                <p style="margin-bottom: 25px;">
-                    @Html.ActionLink("Cadastrar - se", "Create", "Profissionais")
-                </p>
-            </center>
-            <hr />
-            <hr />
-            <center style="margin-top: 25px; margin-bottom: 25px;"><h2 class="aria-haspopup=" true"">Cadastre - se como um Cliente</h2></center>
+                <div class="container">
+                    <hr />
+                    <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Chamado cancelado com sucesso</h2></center>
+                    <hr />
+                </div>
+            }
 
-            <center>
-                <p style="margin-bottom: 25px;">
-                    @Html.ActionLink("Cadastrar - se", "Create", "Clientes")
-                </p>
-            </center>
-            <hr />
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
         </div>
     </div>
     <!--================Address Area =================-->
@@ -186,4 +187,3 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
-

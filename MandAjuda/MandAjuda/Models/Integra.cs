@@ -7,10 +7,11 @@ using System.Web;
 
 namespace MandAjuda.Models
 {
-    public class Profissional
+    public class Integra
     {
-        [Key]
+        //Profissional
         public int ProfissionalId { get; set; }
+        public int IntegraID { get; set; }
         [Required(ErrorMessage = "Por favor digite um nome")]
         [DisplayName("NomeCompleto:")]
         public string NomeCompleto { get; set; }
@@ -44,15 +45,42 @@ namespace MandAjuda.Models
         [DisplayName("Contato:")]
         public string Contato { get; set; }
         [Required(ErrorMessage = "Por favor digite um email")]
-        [DisplayName("EmailProfissional:")]
+        [DisplayName("Email:")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Por favor digite uma senha")]
         [DisplayName("Senha:")]
         public string Senha { get; set; }
-        //[Range(typeof(bool), "true", "true", ErrorMessage = "Por favor ative o cadastro para se cadastrar")]
-        [DisplayName("Situação:")]
         public bool Status { get; set; }
 
         public List<Profissional> Profissionais { get; set; }
+        //Profissional
+
+        //Cliente
+        public int ClienteId { get; set; }
+        [Required(ErrorMessage = "Por favor digite um nome")]
+        [DisplayName("Nome:")]
+        public string Nome { get; set; }
+        [Required(ErrorMessage = "Por favor digite um nome sobrenome")]
+        [DisplayName("Sobrenome:")]
+        public string SobreNome { get; set; }
+        [Required(ErrorMessage = "Por favor digite um nome Cep")]
+        [DisplayName("Cep:")]
+        public string CEP { get; set; }
+        //Cliente
+
+        //Chamado
+        public int ChamadoID { get; set; }
+        [DisplayName("De:")]
+        public string From { get; set; }
+        [Required(ErrorMessage = "Por favor digite o email do profissional como exibido acima")]
+        [DisplayName("Para:")]
+        public string To { get; set; }
+        [Required(ErrorMessage = "Por favor digite um título para a requisição")]
+        [DisplayName("Título:")]
+        public string Subject { get; set; }
+        [Required(ErrorMessage = "Por favor digite uma breve descrição para a requisição")]
+        [DisplayName("Descrição:")]
+        public string Body { get; set; }
+        //Chamado
     }
 }
