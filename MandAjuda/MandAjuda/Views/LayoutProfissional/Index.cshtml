@@ -39,10 +39,10 @@
 
 
     <!--================Header Area =================-->
-    @{
+    @*@{
         MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
         if (profissional != null)
-        {
+        {*@
             <header class="main_header_area">
                 <div class="header_top_area">
                     <div class="container">
@@ -106,12 +106,12 @@
                     </div>
                 </div>
             </header>
-        }
+        @*}
         else
         {
             <script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
         }
-    }
+    }*@
     <!--================Header Area =================-->
 
     <div class="row" style="height: 500px;">
