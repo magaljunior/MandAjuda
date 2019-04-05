@@ -65,34 +65,27 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"><img src="~/img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown submenu active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+
+                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+
+                            <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
+
+                            <li class="dropdown submenu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="index.html">Home 01</a></li>
-                                    <li><a href="index-2.html">Home 02</a></li>
+                                    <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
                                 </ul>
                             </li>
-                            <li class="dropdown submenu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="project-full-width.html">Project Full Width</a></li>
-                                    <li><a href="project-grid-three-column.html">Project Grid 01</a></li>
-                                    <li><a href="project-grid-two-column.html">Project Grid 02</a></li>
-                                    <li><a href="project-three-column.html">Project Grid 03</a></li>
-                                    <li><a href="project-single.html">Single Project</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="service-single.html">Services</a></li>
-                            <li><a href="#">about us</a></li>
-                            <li><a href="blog-details.html">blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
+
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -121,17 +114,17 @@
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(model => model.From, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.From, new { style = "display:none;" } @*htmlAttributes: new { @class = "control-label col-md-2" }*@)
                     <div class="col-md-3">
-                        @Html.TextBoxFor(model => model.From, new { @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-group" } })
+                        @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-group" } })
                         @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.To, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.To, new { style = "display:none;" } @*htmlAttributes: new { @class = "control-label col-md-2" }*@)
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.To, new { style = "display:none;", @Value = "pedrosantos0509@gmail.com", htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
                     </div>
                 </div>
