@@ -22,7 +22,9 @@ namespace MandAjuda.Models
 
         public DbSet<Status> Status { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		public DbSet<Qualificar> Qualificar { get; set; }
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

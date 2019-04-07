@@ -146,25 +146,30 @@
     <Compile Include="Controllers\LayoutProfissionalController.cs" />
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
+    <Compile Include="Controllers\QualificarController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904070258312_profissional.cs" />
-    <Compile Include="Migrations\201904070258312_profissional.Designer.cs">
-      <DependentUpon>201904070258312_profissional.cs</DependentUpon>
+    <Compile Include="Migrations\201904071347234_profissional.cs" />
+    <Compile Include="Migrations\201904071347234_profissional.Designer.cs">
+      <DependentUpon>201904071347234_profissional.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904070259038_cliente.cs" />
-    <Compile Include="Migrations\201904070259038_cliente.Designer.cs">
-      <DependentUpon>201904070259038_cliente.cs</DependentUpon>
+    <Compile Include="Migrations\201904071348158_cliente.cs" />
+    <Compile Include="Migrations\201904071348158_cliente.Designer.cs">
+      <DependentUpon>201904071348158_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904070259510_status.cs" />
-    <Compile Include="Migrations\201904070259510_status.Designer.cs">
-      <DependentUpon>201904070259510_status.cs</DependentUpon>
+    <Compile Include="Migrations\201904071350269_status.cs" />
+    <Compile Include="Migrations\201904071350269_status.Designer.cs">
+      <DependentUpon>201904071350269_status.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904070300183_chamado.cs" />
-    <Compile Include="Migrations\201904070300183_chamado.Designer.cs">
-      <DependentUpon>201904070300183_chamado.cs</DependentUpon>
+    <Compile Include="Migrations\201904071351089_chamado.cs" />
+    <Compile Include="Migrations\201904071351089_chamado.Designer.cs">
+      <DependentUpon>201904071351089_chamado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904071409558_qualificar.cs" />
+    <Compile Include="Migrations\201904071409558_qualificar.Designer.cs">
+      <DependentUpon>201904071409558_qualificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -173,6 +178,7 @@
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Integra.cs" />
     <Compile Include="Models\Profissional.cs" />
+    <Compile Include="Models\Qualificar.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Funcoes.cs" />
@@ -274,7 +280,6 @@
     <Content Include="img\blog\trending-post\t-post-1.jpg" />
     <Content Include="img\blog\trending-post\t-post-2.jpg" />
     <Content Include="img\blog\trending-post\t-post-3.jpg" />
-    <Content Include="img\brenda.jpeg" />
     <Content Include="img\clients\client-1.png" />
     <Content Include="img\clients\client-2.png" />
     <Content Include="img\clients\client-3.png" />
@@ -283,7 +288,7 @@
     <Content Include="img\clients\client-6.png" />
     <Content Include="img\comment-user\comment-user-1.jpg" />
     <Content Include="img\comment-user\comment-user-2.jpg" />
-    <Content Include="img\fav-icon.png" />
+    <Content Include="img\favicon.ico" />
     <Content Include="img\footer-bg.jpg" />
     <Content Include="img\footer-logo.png" />
     <Content Include="img\home-slider\slider-1.jpg" />
@@ -316,7 +321,6 @@
     <Content Include="img\icon\s2-icon-hover-5.png" />
     <Content Include="img\icon\s2-icon-hover-6.png" />
     <Content Include="img\icon\video-puse.png" />
-    <Content Include="img\josé.jpeg" />
     <Content Include="img\logo-white.png" />
     <Content Include="img\logoMA.png" />
     <Content Include="img\Logo\logo.png" />
@@ -381,7 +385,6 @@
     <Content Include="img\quoto-slider-bg.jpg" />
     <Content Include="img\service-bg.jpg" />
     <Content Include="img\stock-photo-beautiful-woman.jpg" />
-    <Content Include="img\tais.jpeg" />
     <Content Include="img\team\team-1.jpg" />
     <Content Include="img\team\team-2\team-1.jpg" />
     <Content Include="img\team\team-2\team-2.jpg" />
@@ -630,6 +633,11 @@
     <Content Include="Views\Profissionais\Cadastro.cshtml" />
     <Content Include="Views\Profissionais\Pesquisar.cshtml" />
     <Content Include="Views\Profissionais\Search.cshtml" />
+    <Content Include="Views\Qualificar\Create.cshtml" />
+    <Content Include="Views\Qualificar\Delete.cshtml" />
+    <Content Include="Views\Qualificar\Details.cshtml" />
+    <Content Include="Views\Qualificar\Edit.cshtml" />
+    <Content Include="Views\Qualificar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -648,17 +656,20 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904070258312_profissional.resx">
-      <DependentUpon>201904070258312_profissional.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904071347234_profissional.resx">
+      <DependentUpon>201904071347234_profissional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904070259038_cliente.resx">
-      <DependentUpon>201904070259038_cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904071348158_cliente.resx">
+      <DependentUpon>201904071348158_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904070259510_status.resx">
-      <DependentUpon>201904070259510_status.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904071350269_status.resx">
+      <DependentUpon>201904071350269_status.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904070300183_chamado.resx">
-      <DependentUpon>201904070300183_chamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904071351089_chamado.resx">
+      <DependentUpon>201904071351089_chamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904071409558_qualificar.resx">
+      <DependentUpon>201904071409558_qualificar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
