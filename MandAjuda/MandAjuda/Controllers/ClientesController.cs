@@ -130,8 +130,16 @@ namespace MandAjuda.Controllers
         }
         public ActionResult Perfil(int id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             Cliente cliente = db.Clientes.Find(id);
-            return View();
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
         }
     }
 }

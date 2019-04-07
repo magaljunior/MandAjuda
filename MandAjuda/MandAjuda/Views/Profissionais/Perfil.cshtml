@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Construction - WeBuilder Template</title>
 
@@ -45,13 +45,11 @@
                 <div class="pull-left">
                     <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
                     <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
-
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
                         <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
-
                     </ul>
                 </div>
             </div>
@@ -73,7 +71,6 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown submenu active">
 
                             <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
 
@@ -97,67 +94,81 @@
     <!--================Header Area =================-->
 
     <div class="container-fluid">
-        <div>
-
-            @model IEnumerable<MandAjuda.Models.Profissional>
+        <div class="col-sm-12">
+            @model MandAjuda.Models.Profissional
 
             @{
-                ViewBag.Title = "Index";
+                ViewBag.Title = "Perfil";
             }
 
             <center>
                 <hr />
-                <h2>Profissionais</h2>
+                <h2>Perfil do Profissional</h2>
                 <hr />
             </center>
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+                    <span class="profile-picture">
+                        <img src="~/img/24891639.jpg" alt=" Avatar" class="editable img-responsive" id="" />
+                    </span>
+                    <hr />
+                    <div class="space space-4">
+                        <a href="#" class="get_bg_btn">
+                            <i class="ace-icon fa fa-envelope-o bigger-110"></i>
+                            <span class="bigger-110">Envie uma mensagem</span>
+                        </a>
+                    </div>
+                </div>
 
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NomeCompleto)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Profissao)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CidadeAtende)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </th>
-                </tr>
+                <div class="col-xs-12 col-sm-9">
+                    <dl class="dl-horizontal">
+                       
 
-                @foreach (var item in Model)
-                {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NomeCompleto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Profissao)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CidadeAtende)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Cidade)
+                        </dt>
 
-                    <td>
-                        @Html.ActionLink("Details", "Details", new { id = item.ProfissionalId })
-                        <br />
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ProfissionalId })
-                        <br />
-                        @Html.ActionLink("Desativar", "Edit", new { id = item.ProfissionalId })
-                        <br />
-                        @Html.ActionLink("Perfil", "Perfil", new { id = item.ProfissionalId })
-                    </td>
-                </tr>
-                }
+                        <dd>
+                            @Html.DisplayFor(model => model.Cidade)
+                        </dd>
 
-            </table>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Estado)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Contato)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Contato)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+                    </dl>
+                </div>
+                <hr />
+            </div>
         </div>
+    </div>
+    <div>
+        <center>
+            <hr />
+            <h2></h2>
+            <hr />
+        </center>
     </div>
 
     <!--================Address Area =================-->

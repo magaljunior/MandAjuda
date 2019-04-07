@@ -638,6 +638,8 @@
     <Content Include="Views\Qualificar\Details.cshtml" />
     <Content Include="Views\Qualificar\Edit.cshtml" />
     <Content Include="Views\Qualificar\Index.cshtml" />
+    <Content Include="Views\Clientes\Perfil.cshtml" />
+    <Content Include="Views\Profissionais\Perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
