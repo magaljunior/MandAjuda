@@ -112,7 +112,7 @@
             </center>
 
 
-            <table class="table">
+            <table class="table table-striped">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.NomeCompleto)
@@ -126,36 +126,38 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Status)
                     </th>
+                    <th>
+                        
+                    </th>
                 </tr>
 
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NomeCompleto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Profissao)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CidadeAtende)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NomeCompleto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Profissao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CidadeAtende)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
 
-                    <td>
-                        @Html.ActionLink("Details", "Details", new { id = item.ProfissionalId })
-                        <br />
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ProfissionalId })
-                        <br />
-                        @Html.ActionLink("Desativar", "Edit", new { id = item.ProfissionalId })
-                        <br />
-                        @Html.ActionLink("Perfil", "Perfil", new { id = item.ProfissionalId })
-                    </td>
-                </tr>
+                        <td>
+                            @*@Html.ActionLink("Details", "Details", new { id = item.ProfissionalId })
+                            <br />
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ProfissionalId })*@
+                            @*<br />*@
+                            @Html.ActionLink("Desativar", "Edit", new { id = item.ProfissionalId })
+                            <br />
+                            @Html.ActionLink("Perfil", "Perfil", new { id = item.ProfissionalId })
+                        </td>
+                    </tr>
                 }
-
             </table>
         </div>
     </div>

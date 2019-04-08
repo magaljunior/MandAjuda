@@ -107,7 +107,7 @@
                 <hr />
             </center>
 
-            <table class="table">
+            <table class="table table-striped">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Nome)
@@ -121,9 +121,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.CEP)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Endereco)
-                    </th>
+                    
                     <th>
                         @Html.DisplayNameFor(model => model.Bairro)
                     </th>
@@ -133,19 +131,16 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Estado)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Complemento)
-                    </th>
+                    
                     <th>
                         @Html.DisplayNameFor(model => model.Contato)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Email)
-                    </th>
+                    </th>                    
                     <th>
-                        @Html.DisplayNameFor(model => model.Senha)
+
                     </th>
-                    <th></th>
                 </tr>
 
                 @foreach (var item in Model)
@@ -163,9 +158,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.CEP)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Endereco)
-                        </td>
+                        
                         <td>
                             @Html.DisplayFor(modelItem => item.Bairro)
                         </td>
@@ -175,26 +168,21 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Estado)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Complemento)
-                        </td>
+                        
                         <td>
                             @Html.DisplayFor(modelItem => item.Contato)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Email)
                         </td>
+                        
                         <td>
-                            @Html.DisplayFor(modelItem => item.Senha)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Editar", "Edit", new { id = item.ClienteId })
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.ClienteId })
-                            @Html.ActionLink("Perfil", "Perfil", new { id = item.ClienteId }) |
+                            @*@Html.ActionLink("Editar", "Edit", new { id = item.ClienteId })
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.ClienteId })*@
+                            @Html.ActionLink("Perfil", "Perfil", new { id = item.ClienteId }) 
                         </td>
                     </tr>
                 }
-
             </table>
         </div>
     </div>
