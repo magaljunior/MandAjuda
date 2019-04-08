@@ -111,10 +111,10 @@
 			{
 				@Html.AntiForgeryToken()
             <div class="form-horizontal">
-                <hr />
+                @*<hr />
                 <center>
                     <h2>Logon de Profissionais</h2>
-                </center>
+                </center>*@
                 <hr />
                 <h3 class="text-center">@ViewBag.Error</h3>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
