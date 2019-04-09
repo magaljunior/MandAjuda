@@ -74,15 +74,17 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right">
 
-                            <li><a href="http://localhost:51258">Home</a></li>
+							<li><a href="http://localhost:51258">Home</a></li>
 
-                            <li><a href="http://localhost:51258">Meu Perfil</a></li>
+							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+							<li>@Html.ActionLink("Qualificação", "Index", "Qualificar")</li>
+							<li>@Html.ActionLink("Perfil", "Perfil", "Profissionais")</li>
 
-                            <li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
+							<li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
 
-                        </ul>
+						</ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div>
