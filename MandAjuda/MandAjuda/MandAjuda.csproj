@@ -280,6 +280,7 @@
     <Content Include="img\blog\trending-post\t-post-1.jpg" />
     <Content Include="img\blog\trending-post\t-post-2.jpg" />
     <Content Include="img\blog\trending-post\t-post-3.jpg" />
+    <Content Include="img\Brenda.jpg" />
     <Content Include="img\clients\client-1.png" />
     <Content Include="img\clients\client-2.png" />
     <Content Include="img\clients\client-3.png" />
@@ -321,6 +322,7 @@
     <Content Include="img\icon\s2-icon-hover-5.png" />
     <Content Include="img\icon\s2-icon-hover-6.png" />
     <Content Include="img\icon\video-puse.png" />
+    <Content Include="img\José.jpeg" />
     <Content Include="img\logo-white.png" />
     <Content Include="img\logoMA.png" />
     <Content Include="img\Logo\logo.png" />
@@ -385,6 +387,7 @@
     <Content Include="img\quoto-slider-bg.jpg" />
     <Content Include="img\service-bg.jpg" />
     <Content Include="img\stock-photo-beautiful-woman.jpg" />
+    <Content Include="img\Tais.jpeg" />
     <Content Include="img\team\team-1.jpg" />
     <Content Include="img\team\team-2\team-1.jpg" />
     <Content Include="img\team\team-2\team-2.jpg" />
