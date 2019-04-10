@@ -72,22 +72,21 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right">
 
-                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+							<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+							<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
+								<ul class="dropdown-menu">
+									<li>@Html.ActionLink("Abrir Chamado", "Create", "Chamados")</li>
+									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+								</ul>
+							</li>
 
-                            <li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
+							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 
-                            <li class="dropdown submenu active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
-                                </ul>
-                            </li>
-
-                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
-
-                        </ul>
+						</ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div>

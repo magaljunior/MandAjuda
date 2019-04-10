@@ -76,11 +76,18 @@
 
 							<li><a href="http://localhost:51258">Home</a></li>
 
-							<li>@Html.ActionLink("Meu Cadastro", "Index", "Profissionais")</li>
+							<li>@Html.ActionLink("Meu Cadastro", "Index", "Clientes")</li>
 
 							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
 
-							<li>@Html.ActionLink("Cadastre -se", "Index", "Cadastro")</li>
+							<li>@Html.ActionLink("Cadastre -se", "Create", "Cadastro")</li>
+							<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
+								<ul class="dropdown-menu">
+									<li>@Html.ActionLink("Abrir Chamado", "Create", "Chamados")</li>
+									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+								</ul>
+							</li>
 
 							<li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
 						</ul>
