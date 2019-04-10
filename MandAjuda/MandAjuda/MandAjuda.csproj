@@ -643,6 +643,7 @@
     <Content Include="Views\Qualificar\Index.cshtml" />
     <Content Include="Views\Clientes\Perfil.cshtml" />
     <Content Include="Views\Profissionais\Perfil.cshtml" />
+    <Content Include="Views\Qualificar\Confirmacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

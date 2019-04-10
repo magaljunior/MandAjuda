@@ -112,73 +112,71 @@
 		{
 			@Html.AntiForgeryToken()
 
-		<div class="form-horizontal">
+        <div class="form-horizontal">
 
-			<hr />
-			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-			<div class="form-group">
-				@Html.LabelFor(model => model.From, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-3">
-					@Html.EditorFor(model => model.From, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
-				</div>
-			</div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.From, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                <div class="col-md-3">
+                    @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-group" } })
+                    @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.To, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-3">
-					@Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
-				</div>
-			</div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.To, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                <div class="col-md-3">
+                    @Html.TextBoxFor(model => model.To, new { style = "display:none;", @Value = "pedrosantos0509@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-			@*<div class="form-group">
-				@Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-3">
-					@Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
-				</div>
-			</div>*@
+            <div class="form-group">
+            @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-			<div class="form-group">
-				@Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div class="col-md-3">
-					@Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
-				</div>
-			</div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-			<center>
-				<div class="col-md-3">
-					<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-					<div class="estrelas">
-						<input type="radio" id="cm_star-empty" name="fb" value="" checked />
-						<label for="cm_star-1"><i class="fa"></i></label>
-						<input type="radio" id="cm_star-1" name="fb" value="1" />
-						<label for="cm_star-2"><i class="fa"></i></label>
-						<input type="radio" id="cm_star-2" name="fb" value="2" />
-						<label for="cm_star-3"><i class="fa"></i></label>
-						<input type="radio" id="cm_star-3" name="fb" value="3" />
-						<label for="cm_star-4"><i class="fa"></i></label>
-						<input type="radio" id="cm_star-4" name="fb" value="4" />
-						<label for="cm_star-5"><i class="fa"></i></label>
-						<input type="radio" id="cm_star-5" name="fb" value="5" />
-					</div>
-				</div>
-			</center>
+            <center>
+                <div class="col-md-3">
+                    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                    <div class="estrelas">
+                        <input type="radio" id="cm_star-empty" name="fb" value="" checked />
+                        <label for="cm_star-1"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-1" name="fb" value="1" />
+                        <label for="cm_star-2"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-2" name="fb" value="2" />
+                        <label for="cm_star-3"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-3" name="fb" value="3" />
+                        <label for="cm_star-4"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-4" name="fb" value="4" />
+                        <label for="cm_star-5"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-5" name="fb" value="5" />
+                    </div>
+                </div>
+            </center>
 
 
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-10">
-					<input type="submit" value="Create" class="btn btn-warning" />
-				</div>
-			</div>
-		</div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Qualificar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
 		}
-
-		<div>
-			@Html.ActionLink("Back to List", "Index")
-		</div>
+        <hr />
 
 		@section Scripts {
 			@Scripts.Render("~/bundles/jqueryval")

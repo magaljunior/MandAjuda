@@ -21,6 +21,11 @@ namespace MandAjuda.Controllers
             return View(db.Qualificar.ToList());
         }
 
+        public ActionResult Confirmacao()
+        {
+            return View();
+        }
+
         // GET: Qualificar/Details/5
         public ActionResult Details(int? id)
         {
@@ -71,7 +76,7 @@ namespace MandAjuda.Controllers
 				smtp.EnableSsl = true;
 				smtp.Send(mail);
 
-				return RedirectToAction("Index");
+				return RedirectToAction("Confirmacao");
 			}
 
 			return View(qualificar);

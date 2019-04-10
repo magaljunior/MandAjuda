@@ -95,53 +95,64 @@
 	</header>
 	<!--================Header Area =================-->
 
-	<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                @model IEnumerable<MandAjuda.Models.Qualificar>
 
-		@model IEnumerable<MandAjuda.Models.Qualificar>
+                @{
+                    ViewBag.Title = "Index";
+                }
 
-		@{
-			ViewBag.Title = "Index";
-		}
+                <center>
+                    <hr />
+                    <h2 style="margin-top:20px;">Qualificar Profissional</h2>
+                    <hr />
+                </center>
 
-		<center>
-			<hr />
-			<h2 style="margin-top:20px;">Qualificar Profissional</h2>
-			<hr />
-		</center>
+                <table class="table">
+                    <tr>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.To)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Subject)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Body)
+                        </th>
+                        <th></th>
 
-		<div class="form-horizontal">
-			<div class="col-sm-4">
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.To)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Subject)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Body)
+                            </td>
+                            <td>
+                                @*<strong>
+                        <p style="margin-left: 50px; color:red">
+                        OBS: Para cancelar o chamado copie o E-mail do profissional listado ao lado
+                        </p>
+                        </strong>*@
+                                <p>
+                                    <a>@Html.ActionLink("Detalhes", "Details", new { id = item.QualificarID })</a>
+                                </p>
+                            </td>
+                        </tr>
 
-				@Html.DisplayNameFor(model => model.From)
-				
-			</div>
-		</div>
-		<div class="form-horizontal">
-			<div class="col-sm-4">
-				@Html.DisplayNameFor(model => model.To)
-			
-			</div>
-		</div>
-
-		@*<div class="form-horizontal">
-				<div class="col-sm-3">
-					@Html.DisplayNameFor(model => model.Subject)
-					<input type="text" class="form-control" placeholder="" value="" name="subject" />
-				</div>
-			</div>*@
-
-		<div class="form-horizontal">
-			<div class="col-sm-4">
-				@Html.DisplayNameFor(model => model.Body)
-				
-			</div>
-		</div>
-		<br />
-		<br />
-		<br />
-		<br />
-
-	</div>
+                    }
+                    </table>
+                <hr />
+                </div>
+            </div>
+        </div>
 	
 	<!--================Address Area =================-->
 	<section class="address_area">

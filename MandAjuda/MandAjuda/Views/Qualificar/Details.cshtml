@@ -104,10 +104,13 @@
 			ViewBag.Title = "Details";
 		}
 
-		<h2>Details</h2>
+        <center>
+            <hr />
+            <h2>Detalhes Qualificação</h2>
+            <hr />
+        </center>
 
 		<div>
-			<h4>Qualificar</h4>
 			<hr />
 			<dl class="dl-horizontal">
 				<dt>
@@ -145,10 +148,9 @@
 			</dl>
 		</div>
 		<p>
-			@Html.ActionLink("Edit", "Edit", new { id = Model.QualificarID }) |
-			@Html.ActionLink("Back to List", "Index")
+			@Html.ActionLink("Editar", "Edit", new { id = Model.QualificarID })
 		</p>
-
+        <hr />
 	</div>
 
 	<!--================Address Area =================-->
