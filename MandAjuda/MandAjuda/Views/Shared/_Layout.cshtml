@@ -42,13 +42,13 @@
 				<div class="pull-left">
 					<a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
 					<a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
-					
+
 				</div>
 				<div class="pull-right">
 					<ul class="header_social">
 						<li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
-										
+
 					</ul>
 				</div>
 			</div>
@@ -57,25 +57,27 @@
 			<div class="container">
 				<nav class="navbar navbar-default">
 					<!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
-                    </div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="~/img/logoMA.png" /></a>
+					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					@*@{
-						MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuario();
-					}*@
+							MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuario();
+						}*@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 
 							<li><a href="http://localhost:51258">Home</a></li>
-							<li>@Html.ActionLink("Quem Somos", "Index", "Home")</li>
-							<li>@Html.ActionLink("Por que Mand'Ajuda", "Index", "Home")</li>
+							<li><a href="#QuemSomos">Quem Somos</a></li>
+							<li><a href="#PqMa">Por que Mand'Ajuda</a></li>
+							<li><a href="#Team">Nosso Time</a></li>
+							<li><a href="#Avaliacoes">Avaliações</a></li>
 
 							<li class="dropdown submenu active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastre - se</a>
@@ -84,11 +86,6 @@
 									<li>@Html.ActionLink("Profissional", "Create", "Profissionais")</li>
 								</ul>
 							</li>
-
-							<li>@Html.ActionLink("Nosso Time", "Index", "Home")</li>
-							<li>@Html.ActionLink("Avaliações", "Index", "Home")</li>
-
-
 							<li class="dropdown submenu active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logar</a>
 								<ul class="dropdown-menu">
@@ -97,70 +94,70 @@
 									<li>@Html.ActionLink("Profissional", "LogarProfissional", "Publico")</li>
 								</ul>
 							</li>
-
 						</ul>
-					</div><!-- /.navbar-collapse -->
+						</div>
 				</nav>
-			</div>
+			</div><!-- /.navbar-collapse -->
 		</div>
+
 	</header>
 
 	@RenderBody()
 
 	<!--================Footer Area =================-->
 	<footer class="footer_area">
-		<div class="footer_widgets_area">
+		@*<div class="footer_widgets_area">
 			<div class="container">
 				<div class="row footer_widgets_inner">
 					<br />
 					<br />
-					<br />
+					<br />*@
 
-				
-					<div class="col-md-6 col-sm-6">
-						<aside class="f_widget address_widget">
-							<div class="f_w_title">
-								<h3>Endereço:</h3>
-							</div>
-							<div class="address_w_inner">
-								<div class="media">
-									<div class="media-left">
-										<i class="fa fa-map-marker"></i>
-									</div>
-									<div class="media-body">
-										<p>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</p>
-									</div>
-								</div>
-								<div class="media">
-									<div class="media-left">
-										<i class="fa fa-phone"></i>
-									</div>
-									<div class="media-body">
-										<p>(XX)XXXXX-XXXX </p>
-									</div>
-								</div>
-								<div class="media">
-									<div class="media-left">
-										<i class="fa fa-envelope"></i>
-									</div>
-									<div class="media-body">
-										<p>mandajudaservico@gmail.com</p>
-									</div>
-								</div>
-							</div>
-						</aside>
+
+		@*<div class="col-md-6 col-sm-6">
+				<aside class="f_widget address_widget">
+					<div class="f_w_title">
+						<h3>Endereço:</h3>
 					</div>
-					<div class="col-md-6 col-sm-6">
-						<aside class="f_widget give_us_widget">
-							<h5>Fale conosco</h5>
-							<h4>(XX) XXXXX-XXXX</h4>
-							<h5>ou</h5>
-							<a class="get_bg_btn" href="#">Solicite um orçamento</a>
-						</aside>
+					<div class="address_w_inner">
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-map-marker"></i>
+							</div>
+							<div class="media-body">
+								<p>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</p>
+							</div>
+						</div>
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="media-body">
+								<p>(XX)XXXXX-XXXX </p>
+							</div>
+						</div>
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div class="media-body">
+								<p>mandajudaservico@gmail.com</p>
+							</div>
+						</div>
 					</div>
+				</aside>
+			</div>*@
+		@*<div class="col-md-6 col-sm-6">
+					<aside class="f_widget give_us_widget">
+						<h5>Fale conosco</h5>
+						<h4>(XX) XXXXX-XXXX</h4>
+						<h5>ou</h5>
+						<a class="get_bg_btn" href="#">Solicite um orçamento</a>
+					</aside>
 				</div>
-			</div>
-		</div>
+			</div>*@
+		@*</div>
+			</div>*@
 
 		<div class="footer_copy_right">
 			<div class="container">
