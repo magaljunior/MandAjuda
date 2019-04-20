@@ -24,6 +24,12 @@ namespace MandAjuda.Models
 
 		public DbSet<Qualificar> Qualificar { get; set; }
 
+		public DbSet<ReclamarCliente> ReclamarCliente { get; set; }
+
+		public DbSet<ReclamarPlataforma> ReclamarPlataforma { get; set; }
+
+		public DbSet<ReclamarProfissional> ReclamarProfissional { get; set; }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
