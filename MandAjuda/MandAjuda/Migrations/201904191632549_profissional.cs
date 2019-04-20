@@ -65,6 +65,54 @@ namespace MandAjuda.Migrations
                 .Index(t => t.Profissional_ProfissionalId);
             
             CreateTable(
+                "dbo.Qualificar",
+                c => new
+                    {
+                        QualificarID = c.Int(nullable: false, identity: true),
+                        From = c.String(unicode: false),
+                        To = c.String(nullable: false, unicode: false),
+                        Subject = c.String(unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.QualificarID);
+            
+            CreateTable(
+                "dbo.ReclamarCliente",
+                c => new
+                    {
+                        ClienteId = c.Int(nullable: false, identity: true),
+                        From = c.String(unicode: false),
+                        To = c.String(unicode: false),
+                        Subject = c.String(nullable: false, unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.ClienteId);
+            
+            CreateTable(
+                "dbo.ReclamarPlataforma",
+                c => new
+                    {
+                        ReclamarId = c.Int(nullable: false, identity: true),
+                        From = c.String(unicode: false),
+                        To = c.String(unicode: false),
+                        Subject = c.String(unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.ReclamarId);
+            
+            CreateTable(
+                "dbo.ReclamarProfissional",
+                c => new
+                    {
+                        ProfissionalId = c.Int(nullable: false, identity: true),
+                        From = c.String(unicode: false),
+                        To = c.String(unicode: false),
+                        Subject = c.String(nullable: false, unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.ProfissionalId);
+            
+            CreateTable(
                 "dbo.Status",
                 c => new
                     {
@@ -80,6 +128,10 @@ namespace MandAjuda.Migrations
             DropForeignKey("dbo.Profissional", "Profissional_ProfissionalId", "dbo.Profissional");
             DropIndex("dbo.Profissional", new[] { "Profissional_ProfissionalId" });
             DropTable("dbo.Status");
+            DropTable("dbo.ReclamarProfissional");
+            DropTable("dbo.ReclamarPlataforma");
+            DropTable("dbo.ReclamarCliente");
+            DropTable("dbo.Qualificar");
             DropTable("dbo.Profissional");
             DropTable("dbo.Cliente");
             DropTable("dbo.Chamado");
