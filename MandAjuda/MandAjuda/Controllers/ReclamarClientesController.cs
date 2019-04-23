@@ -19,6 +19,7 @@ namespace MandAjuda.Controllers
         public ActionResult Index()
         {
             return View(db.ReclamarCliente.ToList());
+
         }
 
   

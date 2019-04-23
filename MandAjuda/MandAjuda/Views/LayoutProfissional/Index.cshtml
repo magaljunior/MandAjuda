@@ -125,7 +125,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
+						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -138,9 +138,21 @@
 							<li>@Html.ActionLink("Qualificação", "Index", "Qualificar")</li>
 							<li>@Html.ActionLink("Perfil", "Perfil", "Profissionais")</li>
 
+
+
+							<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/img/megafone.png" width="30px" /></a>
+								<ul class="dropdown-menu">
+									<li>@Html.ActionLink("ReclamarPlataformas", "Create", "ReclamarPlataformas")</li>
+								</ul>
+
+							</li>
+
 							<li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
 
 						</ul>
+
+
 					</div><!-- /.navbar-collapse -->
 				</nav>
 			</div>

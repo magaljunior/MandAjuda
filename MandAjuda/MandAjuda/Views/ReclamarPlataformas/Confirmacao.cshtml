@@ -40,23 +40,20 @@
 
     <!--================Header Area =================-->
     <header class="main_header_area">
-        <div class="header_top_area">
-            <div class="container">
-                <div class="pull-left">
-                    <a href="#"><i class="fa fa-phone"></i>(012) - 3456789</a>
-                    <a href="#"><i class="fa fa-map-marker"></i>1234 Cafficic, California</a>
-                    <a href="#"><i class="mdi mdi-clock"></i>08 AM - 10 PM</a>
-                </div>
-                <div class="pull-right">
-                    <ul class="header_social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+		<div class="header_top_area">
+			<div class="container">
+				<div class="pull-left">
+					<a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+					<a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+				</div>
+				<div class="pull-right">
+					<ul class="header_social">
+						<li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
         <div class="main_menu_area">
             <div class="container">
                 <nav class="navbar navbar-default">
@@ -95,7 +92,7 @@
     </header>
     <!--================Header Area =================-->
 
-    <div class="row" style="margin-bottom: 25px;">
+    <div class="row" style="margin-bottom: 25px; margin-top:250px">
         <div class="col-sm-12">
             @model MandAjuda.Models.ReclamarPlataforma
 
@@ -107,11 +104,14 @@
             {
                 @Html.AntiForgeryToken()
 
-                <div class="container">
-                    <hr />
-                    <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Reclamação enviada com sucesso</h2></center>
-                    <hr />
-                </div>
+			<div class="container">
+				<hr />
+				<center style="margin-top: 25px; margin-bottom: 25px;"><h2>Reclamação enviada com sucesso</h2></center>
+				<hr />
+				<br />
+				<br />
+				<br />
+			</div>
             }
 
             @section Scripts {
@@ -120,45 +120,45 @@
         </div>
     </div>
     <!--================Address Area =================-->
-    <section class="address_area">
-        <div class="container">
-            <div class="row address_inner">
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/place-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/phone-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/inbox-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="address_area">
+		<div class="container">
+			<div class="row address_inner">
+				<div class="col-md-4">
+					<div class="media">
+						<div class="media-left">
+							<img src="~/img/icon/place-icon.png" alt="">
+						</div>
+						<div class="media-body">
+							<h4>Endereço :</h4>
+							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="media">
+						<div class="media-left">
+							<img src="~/img/icon/phone-icon.png" alt="">
+						</div>
+						<div class="media-body">
+							<h5>(XX) XXXXX-XXXX</h5>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="media">
+						<div class="media-left">
+							<img src="~/img/icon/inbox-icon.png" alt="">
+						</div>
+						<div class="media-body">
+							<h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     <!--================End Address Area =================-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="~/js/jquery-2.2.4.js"></script>
