@@ -332,7 +332,8 @@
     <Content Include="img\MALogo.png" />
     <Content Include="img\Mandajuda.jpeg" />
     <Content Include="img\map-marker.png" />
-    <Content Include="img\pedro.jpeg" />
+    <Content Include="img\megafone.png" />
+    <Content Include="img\Pedro.jpeg" />
     <Content Include="img\pre-cons-left.jpg" />
     <Content Include="img\pre-cons-right.jpg" />
     <Content Include="img\project\project-1.jpg" />
