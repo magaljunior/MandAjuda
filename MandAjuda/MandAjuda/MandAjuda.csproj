@@ -148,9 +148,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig3.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FilterConfig3.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig3.cs" />
     <Compile Include="Controllers\CancelarController.cs" />
+    <Compile Include="Controllers\CepController.cs" />
     <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -165,38 +169,6 @@
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191632549_profissional.cs" />
-    <Compile Include="Migrations\201904191632549_profissional.Designer.cs">
-      <DependentUpon>201904191632549_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191633452_status.cs" />
-    <Compile Include="Migrations\201904191633452_status.Designer.cs">
-      <DependentUpon>201904191633452_status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191635524_chamado.cs" />
-    <Compile Include="Migrations\201904191635524_chamado.Designer.cs">
-      <DependentUpon>201904191635524_chamado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191636242_cliente.cs" />
-    <Compile Include="Migrations\201904191636242_cliente.Designer.cs">
-      <DependentUpon>201904191636242_cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191636519_qualificar.cs" />
-    <Compile Include="Migrations\201904191636519_qualificar.Designer.cs">
-      <DependentUpon>201904191636519_qualificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191637282_reclamarprofissional.cs" />
-    <Compile Include="Migrations\201904191637282_reclamarprofissional.Designer.cs">
-      <DependentUpon>201904191637282_reclamarprofissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191637585_reclamarplataforma.cs" />
-    <Compile Include="Migrations\201904191637585_reclamarplataforma.Designer.cs">
-      <DependentUpon>201904191637585_reclamarplataforma.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904191638341_reclamarcliente.cs" />
-    <Compile Include="Migrations\201904191638341_reclamarcliente.Designer.cs">
-      <DependentUpon>201904191638341_reclamarcliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -430,6 +402,7 @@
     <Content Include="img\who-we.jpg" />
     <Content Include="img\work-bg.jpg" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Cep.js" />
     <Content Include="js\gmaps.min.js" />
     <Content Include="js\jquery-2.2.4.js" />
     <Content Include="js\theme.js" />
@@ -684,6 +657,7 @@
     <Content Include="Views\ReclamarProfissionals\Index.cshtml" />
     <Content Include="Views\ReclamarPlataformas\Confirmacao.cshtml" />
     <Content Include="Views\ReclamarProfissionals\Confirmacao.cshtml" />
+    <Content Include="Views\Cep\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -700,32 +674,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904191632549_profissional.resx">
-      <DependentUpon>201904191632549_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191633452_status.resx">
-      <DependentUpon>201904191633452_status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191635524_chamado.resx">
-      <DependentUpon>201904191635524_chamado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191636242_cliente.resx">
-      <DependentUpon>201904191636242_cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191636519_qualificar.resx">
-      <DependentUpon>201904191636519_qualificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191637282_reclamarprofissional.resx">
-      <DependentUpon>201904191637282_reclamarprofissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191637585_reclamarplataforma.resx">
-      <DependentUpon>201904191637585_reclamarplataforma.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191638341_reclamarcliente.resx">
-      <DependentUpon>201904191638341_reclamarcliente.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
