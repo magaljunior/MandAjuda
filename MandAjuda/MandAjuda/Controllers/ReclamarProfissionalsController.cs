@@ -77,5 +77,19 @@ namespace MandAjuda.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+
+		public ActionResult ReclamarProfissionals(int id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			ReclamarProfissional reclamarProfissional = db.ReclamarProfissional.Find(id);
+			if (reclamarProfissional == null)
+			{
+				return HttpNotFound();
+			}
+			return View(reclamarProfissional);
+		}
+	}
 }

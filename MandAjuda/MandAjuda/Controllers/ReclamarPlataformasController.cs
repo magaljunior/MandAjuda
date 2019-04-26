@@ -82,5 +82,18 @@ namespace MandAjuda.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+		public ActionResult ReclamarPlataformas(int id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			ReclamarPlataforma reclamarPlataforma = db.ReclamarPlataforma.Find(id);
+			if (reclamarPlataforma == null)
+			{
+				return HttpNotFound();
+			}
+			return View(reclamarPlataforma);
+		}
+	}
 }

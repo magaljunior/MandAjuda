@@ -38,9 +38,9 @@
 <body>
 
 
-    <!--================Header Area =================-->
-    <header class="main_header_area">
-        <div class="header_top_area">
+	<!--================Header Area =================-->
+	<header class="main_header_area">
+		<div class="header_top_area">
 			<div class="header_top_area">
 				<div class="container">
 					<div class="pull-left">
@@ -55,21 +55,21 @@
 					</div>
 				</div>
 			</div>
-			</div>
-        <div class="main_menu_area">
-            <div class="container">
-                <nav class="navbar navbar-default">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+		</div>
+		<div class="main_menu_area">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" /></a>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 
@@ -83,7 +83,7 @@
 									<li>@Html.ActionLink("Profissional", "Create", "Profissionais")</li>
 								</ul>
 							</li>
-							
+
 
 							<li class="dropdown submenu active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
@@ -92,115 +92,124 @@
 									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
 								</ul>
 							</li>
+
+							<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/img/megafone.png" width="30px" /></a>
+								<ul class="dropdown-menu">
+									<li>@Html.ActionLink("Reclamar Profissional", "Create", "ReclamarProfissionals")</li>
+									<li>@Html.ActionLink("Reclamar Plataforma", "Create", "ReclamarPlataformas")</li>
+								</ul>
+
+							</li>
+
 							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
-                </nav>
-            </div>
-        </div>
-    </header>
-    <!--================Header Area =================-->
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!--================Header Area =================-->
 
-    <div class="row" style="margin-bottom: 25px;">
-        <div class="col-sm-12">
+	<div class="row" style="margin-bottom: 25px;">
+		<div class="col-sm-12">
 
-            @{
-                ViewBag.Title = "Pesquisar";
-            }
+			@{
+				ViewBag.Title = "Pesquisar";
+			}
 
-            <center>
-                <hr />
-                <h2>Pesquisar Profissional </h2>
-                <hr />
-            </center>
+			<center>
+				<hr />
+				<h2>Pesquisar Profissional </h2>
+				<hr />
+			</center>
 
-            @using (Html.BeginForm("Search", "Profissionais", null, FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
-                <div class="row" style="margin-left: 50px; margin-bottom: 20px;">
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <br />
-                            <input type="text" name="SearchString" id="SearchString" placeholder="Digite o Nome ou a Profissão"
-                                   class="form-control" value="@ViewBag.Pesquisa" />
+			@using (Html.BeginForm("Search", "Profissionais", null, FormMethod.Post))
+			{
+				@Html.AntiForgeryToken()
+				<div class="row" style="margin-left: 50px; margin-bottom: 20px;">
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+					<div class="form-group">
+						<div class="col-md-3">
+							<br />
+							<input type="text" name="SearchString" id="SearchString" placeholder="Digite o Nome ou a Profissão"
+								   class="form-control" value="@ViewBag.Pesquisa" />
 
-                            <br />
-                            <input type="submit" value="Pesquisar" class="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
-            }
+							<br />
+							<input type="submit" value="Pesquisar" class="btn btn-warning" />
+						</div>
+					</div>
+				</div>
+			}
 
 
-        </div>
-    </div>
-    <!--================Address Area =================-->
-    <section class="address_area">
-        <div class="container">
-            <div class="row address_inner">
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/place-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/phone-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="~/img/icon/inbox-icon.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Address Area =================-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="~/js/jquery-2.2.4.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="~/js/bootstrap.min.js"></script>
-    <!-- Rev slider js -->
-    <script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+		</div>
+	</div>
+	<!--================Address Area =================-->
+	<section class="address_area">
+		<div class="container">
+			<div class="row address_inner">
+				<div class="col-md-4">
+					<div class="media">
+						<div class="media-left">
+							<img src="~/img/icon/place-icon.png" alt="">
+						</div>
+						<div class="media-body">
+							<h4>Endereço:</h4>
+							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="media">
+						<div class="media-left">
+							<img src="~/img/icon/phone-icon.png" alt="">
+						</div>
+						<div class="media-body">
+							<h5>(XX) XXXXX-XXXX</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="media">
+						<div class="media-left">
+							<img src="~/img/icon/inbox-icon.png" alt="">
+						</div>
+						<div class="media-body">
+							<h6 style="font-size:17px">mandajudaservico@gmail.com</h6>
 
-    <script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
-    <script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="~/vendors/counterup/waypoints.min.js"></script>
-    <script src="~/vendors/counterup/jquery.counterup.min.js"></script>
-    <script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Address Area =================-->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="~/js/jquery-2.2.4.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="~/js/bootstrap.min.js"></script>
+	<!-- Rev slider js -->
+	<script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+	<script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 
-    <!--gmaps Js-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="~/js/gmaps.min.js"></script>
+	<script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
+	<script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="~/vendors/counterup/waypoints.min.js"></script>
+	<script src="~/vendors/counterup/jquery.counterup.min.js"></script>
+	<script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
 
-    <script src="~/js/theme.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="~/js/gmaps.min.js"></script>
+
+	<script src="~/js/theme.js"></script>
 </body>
 </html>
 

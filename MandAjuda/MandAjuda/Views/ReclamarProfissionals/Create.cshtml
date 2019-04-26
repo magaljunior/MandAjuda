@@ -161,11 +161,18 @@
 			</div>
 		}
 
+			<dl class="dl-horizontal">
+				<dt>
+					@Html.DisplayNameFor(model => model.From)
+				</dt>
+				<dt>
+				@Html.DisplayNameFor(model => model.To)
+				</dt>
+			</dl>
 
-
-		@section Scripts {
-			@Scripts.Render("~/bundles/jqueryval")
-		}
+			@section Scripts {
+				@Scripts.Render("~/bundles/jqueryval")
+			}
 
 	</div>
 
