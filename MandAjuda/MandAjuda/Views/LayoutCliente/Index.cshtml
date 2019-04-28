@@ -90,6 +90,8 @@
 			});
 		}
 	</script>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=632675940528876&autoLogAppEvents=1"></script>
 
 
 	<!--================Header Area =================-->
@@ -155,7 +157,8 @@
 
 							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 
-							<li id="FB" class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true" on-login="window.location = 'http://localhost:51258/';"></li>
+							<div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
+
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
