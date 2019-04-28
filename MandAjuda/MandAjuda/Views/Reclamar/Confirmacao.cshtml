@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+	<link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Construction - WeBuilder Template</title>
 
@@ -70,26 +70,20 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
+
 							<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
-							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+
+							<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
+
 							<li class="dropdown submenu active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
 								<ul class="dropdown-menu">
-									<li>@Html.ActionLink("Abrir Chamado", "Create", "Chamados")</li>
 									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
 								</ul>
 							</li>
 
-							<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/img/megafone.png" width="30px" /></a>
-								<ul class="dropdown-menu">
-
-									<li>@Html.ActionLink("Reclamar", "Create", "Reclamar Plataforma")</li>
-								</ul>
-
-							</li>
-
 							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -98,97 +92,31 @@
 	</header>
 	<!--================Header Area =================-->
 
-	<div class="container-fluid" style="height: 500px;">
+	<div class="row" style="margin-bottom: 25px; margin-top:250px">
 		<div class="col-sm-12">
-			@model IEnumerable<MandAjuda.Models.Cliente>
+			@model MandAjuda.Models.Reclamar
 
 			@{
-				ViewBag.Title = "Index";
+				ViewBag.Title = "Confirmacao";
 			}
 
-			<center>
-				<hr />
-				<h2>Clientes</h2>
-				<hr />
-			</center>
+			@using (Html.BeginForm())
+			{
+				@Html.AntiForgeryToken()
 
-			<table class="table table-striped">
-				<tr>
-					<th>
-						@Html.DisplayNameFor(model => model.Nome)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.SobreNome)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Cpf)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.CEP)
-					</th>
+				<div class="container">
+					<hr />
+					<center style="margin-top: 25px; margin-bottom: 25px;"><h2>Reclamação enviada com sucesso</h2></center>
+					<hr />
+					<br />
+					<br />
+					<br />
+				</div>
+			}
 
-					<th>
-						@Html.DisplayNameFor(model => model.Bairro)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Cidade)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Estado)
-					</th>
-
-					<th>
-						@Html.DisplayNameFor(model => model.Contato)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Email)
-					</th>
-					<th>
-
-					</th>
-				</tr>
-
-				@foreach (var item in Model)
-				{
-					<tr>
-						<td>
-							@Html.DisplayFor(modelItem => item.Nome)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.SobreNome)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Cpf)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.CEP)
-						</td>
-
-						<td>
-							@Html.DisplayFor(modelItem => item.Bairro)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Cidade)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Estado)
-						</td>
-
-						<td>
-							@Html.DisplayFor(modelItem => item.Contato)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Email)
-						</td>
-
-						<td>
-							@*@Html.ActionLink("Editar", "Edit", new { id = item.ClienteId })
-								@Html.ActionLink("Detalhes", "Details", new { id = item.ClienteId })*@
-							@Html.ActionLink("Perfil", "Perfil", new { id = item.ClienteId })
-						</td>
-					</tr>
-				}
-			</table>
+			@section Scripts {
+				@Scripts.Render("~/bundles/jqueryval")
+			}
 		</div>
 	</div>
 	<!--================Address Area =================-->
@@ -201,7 +129,7 @@
 							<img src="~/img/icon/place-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h4>Endereço:</h4>
+							<h4>Endereço :</h4>
 							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
 						</div>
 					</div>
@@ -213,6 +141,7 @@
 						</div>
 						<div class="media-body">
 							<h5>(XX) XXXXX-XXXX</h5>
+
 						</div>
 					</div>
 				</div>
@@ -222,7 +151,7 @@
 							<img src="~/img/icon/inbox-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h6 style="font-size:17px">mandajudaservico@gmail.com</h6>
+							<h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
 
 						</div>
 					</div>
@@ -258,4 +187,5 @@
 	<script src="~/js/theme.js"></script>
 </body>
 </html>
+
 

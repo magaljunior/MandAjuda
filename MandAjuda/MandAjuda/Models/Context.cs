@@ -24,6 +24,8 @@ namespace MandAjuda.Models
 
 		public DbSet<Qualificar> Qualificar { get; set; }
 
+		public DbSet<Reclamar> Reclamar { get; set; }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
