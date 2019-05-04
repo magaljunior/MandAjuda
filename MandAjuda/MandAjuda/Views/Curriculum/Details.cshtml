@@ -1,0 +1,74 @@
+﻿@model MandAjuda.Models.Curriculum
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Curriculum</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Escolaridade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Escolaridade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProfissionalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

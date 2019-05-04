@@ -26,6 +26,8 @@ namespace MandAjuda.Models
 
 		public DbSet<Reclamar> Reclamar { get; set; }
 
+        public DbSet<Curriculum> Curriculum { get; set; }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();

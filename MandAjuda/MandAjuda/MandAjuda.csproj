@@ -61,9 +61,8 @@
     <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.10.8\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.10.8\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -158,6 +157,7 @@
     <Compile Include="Controllers\CepController.cs" />
     <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\CurriculumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutClienteController.cs" />
     <Compile Include="Controllers\LayoutProfissionalController.cs" />
@@ -169,29 +169,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904280054125_status.cs" />
-    <Compile Include="Migrations\201904280054125_status.Designer.cs">
-      <DependentUpon>201904280054125_status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904280054479_chamado.cs" />
-    <Compile Include="Migrations\201904280054479_chamado.Designer.cs">
-      <DependentUpon>201904280054479_chamado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904280055141_qualificar.cs" />
-    <Compile Include="Migrations\201904280055141_qualificar.Designer.cs">
-      <DependentUpon>201904280055141_qualificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904280055514_profissional.cs" />
-    <Compile Include="Migrations\201904280055514_profissional.Designer.cs">
-      <DependentUpon>201904280055514_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904280056232_cliente.cs" />
-    <Compile Include="Migrations\201904280056232_cliente.Designer.cs">
-      <DependentUpon>201904280056232_cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904280103124_reclamar.cs" />
-    <Compile Include="Migrations\201904280103124_reclamar.Designer.cs">
-      <DependentUpon>201904280103124_reclamar.cs</DependentUpon>
+    <Compile Include="Migrations\201905041928496_reclamar.cs" />
+    <Compile Include="Migrations\201905041928496_reclamar.Designer.cs">
+      <DependentUpon>201905041928496_reclamar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -575,6 +555,9 @@
     <Content Include="vendors\tweet\tweet-carousel.css" />
     <Content Include="vendors\tweet\tweetie.min.js" />
     <Content Include="Views\Home\index.html" />
+    <Content Include="Views\Reclamar\Confirmacao.cshtml" />
+    <Content Include="Views\Reclamar\Create.cshtml" />
+    <Content Include="Views\Reclamar\Index.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -674,9 +657,11 @@
     <Content Include="Views\Profissionais\Perfil.cshtml" />
     <Content Include="Views\Qualificar\Confirmacao.cshtml" />
     <Content Include="Views\Cep\Index.cshtml" />
-    <Content Include="Views\Reclamar\Create.cshtml" />
-    <Content Include="Views\Reclamar\Index.cshtml" />
-    <Content Include="Views\Reclamar\Confirmacao.cshtml" />
+    <Content Include="Views\Curriculum\Create.cshtml" />
+    <Content Include="Views\Curriculum\Delete.cshtml" />
+    <Content Include="Views\Curriculum\Details.cshtml" />
+    <Content Include="Views\Curriculum\Edit.cshtml" />
+    <Content Include="Views\Curriculum\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -695,23 +680,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904280054125_status.resx">
-      <DependentUpon>201904280054125_status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904280054479_chamado.resx">
-      <DependentUpon>201904280054479_chamado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904280055141_qualificar.resx">
-      <DependentUpon>201904280055141_qualificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904280055514_profissional.resx">
-      <DependentUpon>201904280055514_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904280056232_cliente.resx">
-      <DependentUpon>201904280056232_cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904280103124_reclamar.resx">
-      <DependentUpon>201904280103124_reclamar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905041928496_reclamar.resx">
+      <DependentUpon>201905041928496_reclamar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
