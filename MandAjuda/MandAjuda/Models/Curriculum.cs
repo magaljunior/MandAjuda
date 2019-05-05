@@ -10,8 +10,17 @@ namespace MandAjuda.Models
     {
         [Key]
         public int ProfissionalId { get; set; }
-        public string Subject { get; set; }
-        public string Foto { get; set; }
+
+        public string Escolaridade { get; set; }
+
+        public string Foto1 { get; set; }
+        public string Texto1 { get; set; }
+
+        public string Foto2 { get; set; }
+        public string Texto2 { get; set; }
+
+        public string Foto3 { get; set; }
+        public string Texto3 { get; set; }
 
 
     }
