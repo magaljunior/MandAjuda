@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MandAjuda.Models.Reclamar>
+﻿@model IEnumerable<MandAjuda.Models.Chat>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ProfissionalId)
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ClienteId)
+            @Html.DisplayNameFor(model => model.Profissional.NomeCompleto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.From)
@@ -35,10 +35,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ProfissionalId)
+            @Html.DisplayFor(modelItem => item.Cliente.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ClienteId)
+            @Html.DisplayFor(modelItem => item.Profissional.NomeCompleto)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.From)
@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.Body)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReclamarId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReclamarId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReclamarId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChatId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChatId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChatId })
         </td>
     </tr>
 }

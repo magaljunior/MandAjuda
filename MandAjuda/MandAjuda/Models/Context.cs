@@ -28,6 +28,8 @@ namespace MandAjuda.Models
 
         public DbSet<Curriculum> Curriculum { get; set; }
 
+		public DbSet<Chat> Chat { get; set; }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
