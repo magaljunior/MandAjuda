@@ -165,14 +165,15 @@
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
     <Compile Include="Controllers\QualificarController.cs" />
+    <Compile Include="Controllers\RecebeChamadosController.cs" />
     <Compile Include="Controllers\ReclamacaoController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905060018334_cliente.cs" />
-    <Compile Include="Migrations\201905060018334_cliente.Designer.cs">
-      <DependentUpon>201905060018334_cliente.cs</DependentUpon>
+    <Compile Include="Migrations\201905061548018_recebechamado.cs" />
+    <Compile Include="Migrations\201905061548018_recebechamado.Designer.cs">
+      <DependentUpon>201905061548018_recebechamado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\Integra.cs" />
     <Compile Include="Models\Profissional.cs" />
     <Compile Include="Models\Qualificar.cs" />
+    <Compile Include="Models\RecebeChamado.cs" />
     <Compile Include="Models\Reclamar.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -600,6 +602,11 @@
     <Content Include="Views\Chat\Create.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Chat\Confirmacao.cshtml" />
+    <Content Include="Views\RecebeChamados\Create.cshtml" />
+    <Content Include="Views\RecebeChamados\Delete.cshtml" />
+    <Content Include="Views\RecebeChamados\Details.cshtml" />
+    <Content Include="Views\RecebeChamados\Edit.cshtml" />
+    <Content Include="Views\RecebeChamados\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -619,8 +626,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905060018334_cliente.resx">
-      <DependentUpon>201905060018334_cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905061548018_recebechamado.resx">
+      <DependentUpon>201905061548018_recebechamado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
