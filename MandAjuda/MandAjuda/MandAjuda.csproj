@@ -171,9 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905061548018_recebechamado.cs" />
-    <Compile Include="Migrations\201905061548018_recebechamado.Designer.cs">
-      <DependentUpon>201905061548018_recebechamado.cs</DependentUpon>
+    <Compile Include="Migrations\201905062333042_cliente.cs" />
+    <Compile Include="Migrations\201905062333042_cliente.Designer.cs">
+      <DependentUpon>201905062333042_cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -182,7 +182,6 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curriculum.cs" />
-    <Compile Include="Models\Integra.cs" />
     <Compile Include="Models\Profissional.cs" />
     <Compile Include="Models\Qualificar.cs" />
     <Compile Include="Models\RecebeChamado.cs" />
@@ -626,8 +625,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905061548018_recebechamado.resx">
-      <DependentUpon>201905061548018_recebechamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905062333042_cliente.resx">
+      <DependentUpon>201905062333042_cliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
