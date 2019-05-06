@@ -1,39 +1,40 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Construction - WeBuilder Template</title>
+	<link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Construction - WeBuilder Template</title>
 
-    <!-- Icon css link -->
-    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/css/materialdesignicons.min.css" rel="stylesheet" />
+	<!-- Icon css link -->
+	<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/css/materialdesignicons.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link href="~/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Rev slider css -->
-    <link href="~/vendors/revolution/css/settings.css" rel="stylesheet">
-    <link href="~/vendors/revolution/css/layers.css" rel="stylesheet">
-    <link href="~/vendors/revolution/css/navigation.css" rel="stylesheet">
-    <link href="~/vendors/animate-css/animate.css" rel="stylesheet">
-    <link href="~/vendors/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<!-- Rev slider css -->
+	<link href="~/vendors/revolution/css/settings.css" rel="stylesheet">
+	<link href="~/vendors/revolution/css/layers.css" rel="stylesheet">
+	<link href="~/vendors/revolution/css/navigation.css" rel="stylesheet">
+	<link href="~/vendors/animate-css/animate.css" rel="stylesheet">
+	<link href="~/vendors/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Extra plugin css -->
-    <link href="~/css/style.css" rel="stylesheet">
-    <link href="~/css/responsive.css" rel="stylesheet">
+	<!-- Extra plugin css -->
+	<link href="~/css/style.css" rel="stylesheet">
+	<link href="~/css/responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
 
@@ -45,13 +46,11 @@
 				<div class="pull-left">
 					<a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
 					<a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
-
 				</div>
 				<div class="pull-right">
 					<ul class="header_social">
 						<li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
-
 					</ul>
 				</div>
 			</div>
@@ -69,30 +68,20 @@
 						</button>
 						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
 					</div>
+
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 
-							<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+							<li><a href="http://localhost:51258">Home</a></li>
 
-							<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
+							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
 
 							<li class="dropdown submenu active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
 								<ul class="dropdown-menu">
 									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
 								</ul>
-							</li>
-
-							<li>@Html.ActionLink("Chat", "Create", "Chat")</li>
-
-							<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/img/megafone.png" width="30px" /></a>
-								<ul class="dropdown-menu">
-									<li>@Html.ActionLink("Reclamar Profissional", "Create", "Reclamacao")</li>
-
-								</ul>
-
 							</li>
 
 							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
@@ -105,144 +94,89 @@
 	</header>
 	<!--================Header Area =================-->
 
-	<div class="container-fluid" style="margin-bottom: 25px;">
-		<div class="col-sm-12">
-			@model MandAjuda.Models.Profissional
+	<div class="container-fluid">
+		@model MandAjuda.Models.Reclamar
 
-			@{
-				ViewBag.Title = "Details";
-			}
-			<center>
-				<hr />
-				<h2>Detalhes</h2>
-				<hr />
-			</center>
+		@{
+			ViewBag.Title = "Create";
+		}
 
-			<div>
-				<dl class="dl-horizontal">
-					<dt>
-						@Html.DisplayNameFor(model => model.NomeCompleto)
-					</dt>
+			
 
-					<dd>
-						@Html.DisplayFor(model => model.NomeCompleto)
-					</dd>
+		@using (Html.BeginForm())
+		{
+			@Html.AntiForgeryToken()
+		<div class="container-fluid">
+			<center><h3>Canal de reclamações</h3></center>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Profissao)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Profissao)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Cpf)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Cpf)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Cep)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Cep)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Endereco)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Endereco)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Bairro)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Bairro)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Cidade)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Cidade)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Estado)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Estado)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Complemento)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Complemento)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.CidadeAtende)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.CidadeAtende)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Contato)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Contato)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Email)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Email)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Senha)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Senha)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Status)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Status)
-					</dd>
-
-				</dl>
+			<div class="col-md-6 col-sm-6">
+				<img src="~/img/bonequinho para  post  vício redibitório.jpg" />
 			</div>
-			@*<strong><p style="margin-left: 50px; color:red">
-				OBS: Para requisitar o profissional copie o E-mail do mesmo listado acima
-				</p></strong>*@
-			<p style="margin-left: 50px;">
-				<a class="btn btn-default" href="http://localhost:51258/Chamados/Create">Requisitar</a>
-			</p>
+
+			<div class="col-md-2 col-sm-2">
+				<p></p>
+			</div>
 			<hr />
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+			<div class="form-group">
+				@Html.LabelFor(model => model.ProfissionalId, "ProfissionalId", htmlAttributes: new { style = "display:none;", @class = "control-label col-md-2" })
+				
+					@Html.DropDownList("ProfissionalId", null, htmlAttributes: new { style = "display:none;", @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.ProfissionalId, "", new { @class = "text-danger" })
+				
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.ClienteId, "ClienteId", htmlAttributes: new { style = "display:none;", @class = "control-label col-md-2" })
+				
+					@Html.DropDownList("ClienteId", null, htmlAttributes: new { style = "display:none;", @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+				
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.From, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+				
+					@Html.TextBoxFor(model => model.From, new { style = "display:none;", htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+				
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.To, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+				<div>
+					@Html.TextBoxFor(model => model.To, new { style = "display:none;", htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Subject, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
+				<div>
+					@Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Reclamação Mand'Ajuda", htmlAttributes = new { @class = "form-control" } })
+
+				</div>
+			</div>
+
+
+			<div class="form-group" style="margin-top:100px">
+				@Html.LabelFor(model => model.Body, htmlAttributes: new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
+				<div class="col-md-4">
+					@Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", style = "height:150px", placeholder = "Digite sua mensagem" } })
+					@Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			
+				
+			<input type="submit" value="Enviar" class="btn btn-warning" style="margin-top:55px" />
+				
+			
 		</div>
+		}
+
 	</div>
+
 	<!--================Address Area =================-->
 	<section class="address_area">
 		<div class="container">
@@ -310,4 +244,5 @@
 	<script src="~/js/theme.js"></script>
 </body>
 </html>
+
 

@@ -1,4 +1,6 @@
 ﻿
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,26 +68,34 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
+						<a class="navbar-brand" href="#"><img src="~/img/logo.png" alt=""></a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-
-							<li><a href="http://localhost:51258">Home</a></li>
-
-							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-
 							<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 								<ul class="dropdown-menu">
-									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+									<li><a href="index.html">Home 01</a></li>
+									<li><a href="index-2.html">Home 02</a></li>
 								</ul>
 							</li>
-
-							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
-
+							<li class="dropdown submenu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+								<ul class="dropdown-menu">
+									<li><a href="project-full-width.html">Project Full Width</a></li>
+									<li><a href="project-grid-three-column.html">Project Grid 01</a></li>
+									<li><a href="project-grid-two-column.html">Project Grid 02</a></li>
+									<li><a href="project-three-column.html">Project Grid 03</a></li>
+									<li><a href="project-single.html">Single Project</a></li>
+								</ul>
+							</li>
+							<li><a href="service-single.html">Services</a></li>
+							<li><a href="#">about us</a></li>
+							<li><a href="blog-details.html">blog</a></li>
+							<li><a href="#">Contact</a></li>
+							<li class="icon_search"><a href="#"><i class="mdi mdi-cart"></i></a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -94,86 +104,75 @@
 	</header>
 	<!--================Header Area =================-->
 
-	<div class="container-fluid">
-		@model MandAjuda.Models.Reclamar
+	<div class="row" style="height: 500px;">
+		<div class="col-sm-12">
 
-		@{
-			ViewBag.Title = "Create";
-		}
+			@model IEnumerable<MandAjuda.Models.Reclamar>
 
+			@{
+				ViewBag.Title = "Index";
+			}
 
+			<h2>Index</h2>
 
+			<p>
+				@Html.ActionLink("Create New", "Create")
+			</p>
+			<table class="table">
+				<tr>
+					<th>
+						@Html.DisplayNameFor(model => model.Cliente.Nome)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Profissional.NomeCompleto)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.From)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.To)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Subject)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Body)
+					</th>
+					<th></th>
+				</tr>
 
-		@using (Html.BeginForm())
-		{
-			@Html.AntiForgeryToken()
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>
+							@Html.DisplayFor(modelItem => item.Cliente.Nome)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Profissional.NomeCompleto)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.From)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.To)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Subject)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Body)
+						</td>
+						<td>
+							@Html.ActionLink("Edit", "Edit", new { id = item.ReclamarId }) |
+							@Html.ActionLink("Details", "Details", new { id = item.ReclamarId }) |
+							@Html.ActionLink("Delete", "Delete", new { id = item.ReclamarId })
+						</td>
+					</tr>
+				}
 
-			<div class="container-fluid">
-				<center><h3>Canal de reclamações</h3></center>
+			</table>
 
-				<div class="col-md-6 col-sm-6">
-					<img src="~/img/bonequinho para  post  vício redibitório.jpg" />
-				</div>
-
-				<div class="col-md-2 col-sm-2">
-					<p></p>
-				</div>
-
-				<hr />
-				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-				<div class="form-group">
-					@Html.LabelFor(model => model.From, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
-					<div>
-						@Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
-					</div>
-				</div>
-
-				<div class="form-group">
-					@Html.LabelFor(model => model.To, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
-					<div>
-						@Html.TextBoxFor(model => model.To, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
-					</div>
-				</div>
-
-				<div class="form-group">
-					@Html.LabelFor(model => model.Subject, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
-					<div>
-						@Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Reclamação Mand'Ajuda", htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
-					</div>
-				</div>
-
-				<div class="form-group" style="margin-top:150px">
-					@Html.LabelFor(model => model.Body, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
-					<div class="col-md-4">
-						@Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", style = "height:120px", placeholder = "Digite sua reclamação" } })
-						@Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
-					</div>
-				</div>
-
-
-
-				<input type="submit" value="Enviar" class="btn btn-warning" style="margin-top:55px" />
-
-
-			</div>
-		}
-
-		<dl class="dl-horizontal">
-			<dt>
-				@Html.DisplayNameFor(model => model.From)
-			</dt>
-			<dt>
-				@Html.DisplayNameFor(model => model.To)
-			</dt>
-		</dl>
-
-		@section Scripts {
-			@Scripts.Render("~/bundles/jqueryval")
-		}
-
+		</div>
 	</div>
 
 	<!--================Address Area =================-->
@@ -186,7 +185,7 @@
 							<img src="~/img/icon/place-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h4>Endereço:</h4>
+							<h4>Endereço :</h4>
 							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
 						</div>
 					</div>
@@ -198,6 +197,7 @@
 						</div>
 						<div class="media-body">
 							<h5>(XX) XXXXX-XXXX</h5>
+
 						</div>
 					</div>
 				</div>
@@ -207,7 +207,7 @@
 							<img src="~/img/icon/inbox-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h6 style="font-size:17px">mandajudaservico@gmail.com</h6>
+							<h5>mandajudaservico@gmail.com</h5>
 
 						</div>
 					</div>
@@ -243,4 +243,3 @@
 	<script src="~/js/theme.js"></script>
 </body>
 </html>
-

@@ -11,37 +11,37 @@ using MandAjuda.Models;
 
 namespace MandAjuda.Controllers
 {
-	public class ReclamarController : Controller
-	{
-		private Context db = new Context();
+    public class ChatController : Controller
+    {
+        private Context db = new Context();
 
-		// GET: ReclamarProfissionals
-		public ActionResult Index()
-		{
-			return View(db.Reclamar.ToList());
-		}
-		public ActionResult Confirmacao()
-		{
-			return View();
-		}
+        // GET: Chat
+        public ActionResult Index()
+        {
+            var chat = db.Chat.Include(c => c.Cliente).Include(c => c.Profissional);
+            return View(chat.ToList());
+        }
 
+      
 
-		// GET: ReclamarProfissionals/Create
-		public ActionResult Create()
-		{
-			return View();
-		}
+        // GET: Chat/Create
+        public ActionResult Create()
+        {
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
+            ViewBag.ProfissionalId = new SelectList(db.Profissionais, "ProfissionalId", "NomeCompleto");
+            return View();
+        }
 
-		// POST: ReclamarProfissionals/Create
+		// POST: Chat/Create
 		// Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
 		// obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "ReclamarId,From,To,Subject,Body")] Reclamar reclamar, MandAjuda.Models.Reclamar _objModelMail)
+		public ActionResult Create([Bind(Include = "ChatId,From,To,Subject,Body")] Chat chat, MandAjuda.Models.Chat _objModelMail)
 		{
 			if (ModelState.IsValid)
 			{
-				db.Reclamar.Add(reclamar);
+				db.Chat.Add(chat);
 				db.SaveChanges();
 
 				MailMessage mail = new MailMessage();
@@ -61,35 +61,23 @@ namespace MandAjuda.Controllers
 				smtp.EnableSsl = true;
 				smtp.Send(mail);
 
-				return RedirectToAction("Confirmacao");
+				return RedirectToAction("Index");
 			}
 
-
-			return View(reclamar);
+			return View(chat);
 		}
+
+
+
 
 
 		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				db.Dispose();
-			}
-			base.Dispose(disposing);
-		}
-
-		public ActionResult Reclamar(int id)
-		{
-			if (id == null)
-			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			Reclamar reclamar = db.Reclamar.Find(id);
-			if (reclamar == null)
-			{
-				return HttpNotFound();
-			}
-			return View(reclamar);
-		}
-	}
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
 }

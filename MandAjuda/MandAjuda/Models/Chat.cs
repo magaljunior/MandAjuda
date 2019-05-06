@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MandAjuda.Models
 {
-	public class Reclamar
+	public class Chat
 	{
 		[Key]
-		public int ReclamarId { get; set; }
+		public int ChatId { get; set; }
 
 		public int ProfissionalId { get; set; }
 
