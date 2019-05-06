@@ -170,37 +170,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905050057456_cliente.cs" />
-    <Compile Include="Migrations\201905050057456_cliente.Designer.cs">
-      <DependentUpon>201905050057456_cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050058197_profissional.cs" />
-    <Compile Include="Migrations\201905050058197_profissional.Designer.cs">
-      <DependentUpon>201905050058197_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050058398_status.cs" />
-    <Compile Include="Migrations\201905050058398_status.Designer.cs">
-      <DependentUpon>201905050058398_status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050058576_chamado.cs" />
-    <Compile Include="Migrations\201905050058576_chamado.Designer.cs">
-      <DependentUpon>201905050058576_chamado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050059394_curriculum.cs" />
-    <Compile Include="Migrations\201905050059394_curriculum.Designer.cs">
-      <DependentUpon>201905050059394_curriculum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050100282_qualificar.cs" />
-    <Compile Include="Migrations\201905050100282_qualificar.Designer.cs">
-      <DependentUpon>201905050100282_qualificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050102575_reclamar.cs" />
-    <Compile Include="Migrations\201905050102575_reclamar.Designer.cs">
-      <DependentUpon>201905050102575_reclamar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050205339_chat.cs" />
-    <Compile Include="Migrations\201905050205339_chat.Designer.cs">
-      <DependentUpon>201905050205339_chat.cs</DependentUpon>
+    <Compile Include="Migrations\201905060018334_cliente.cs" />
+    <Compile Include="Migrations\201905060018334_cliente.Designer.cs">
+      <DependentUpon>201905060018334_cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -646,29 +618,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905050057456_cliente.resx">
-      <DependentUpon>201905050057456_cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050058197_profissional.resx">
-      <DependentUpon>201905050058197_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050058398_status.resx">
-      <DependentUpon>201905050058398_status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050058576_chamado.resx">
-      <DependentUpon>201905050058576_chamado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050059394_curriculum.resx">
-      <DependentUpon>201905050059394_curriculum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050100282_qualificar.resx">
-      <DependentUpon>201905050100282_qualificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050102575_reclamar.resx">
-      <DependentUpon>201905050102575_reclamar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050205339_chat.resx">
-      <DependentUpon>201905050205339_chat.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905060018334_cliente.resx">
+      <DependentUpon>201905060018334_cliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -134,7 +134,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Foto1, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
-                    <input type="file" id="Foto" name="foto" />
+                    <input type="file" id="Foto" name="foto" class="pe-7s-upload"/>
                     @{
                         string str = ViewBag.FotoMensagem;
                         if (str != "")
@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            @*<div class="form-group">
+            <div class="form-group">
                 @Html.LabelFor(model => model.Texto1, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.Texto1, new { htmlAttributes = new { @class = "form-control" } })
@@ -155,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.Foto2, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Foto2, new { htmlAttributes = new { @class = "form-control" } })

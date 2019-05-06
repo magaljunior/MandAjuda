@@ -3,7 +3,7 @@ namespace MandAjuda.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class curriculum : DbMigration
+    public partial class cliente : DbMigration
     {
         public override void Up()
         {

@@ -15,9 +15,9 @@ namespace MandAjuda.Models
         [DisplayName("Escolaridade")]
         public string Escolaridade { get; set; }
 
-        [DisplayName("Foto")]
+        [DisplayName("Escolha uma foto do seu serviço prestado")]
         public string Foto1 { get; set; }
-        [DisplayName("Descrição do serviço executado")]
+        [DisplayName("Descrição do serviço")]
         public string Texto1 { get; set; }
 
         [DisplayName("Foto")]
