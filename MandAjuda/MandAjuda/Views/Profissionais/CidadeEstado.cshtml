@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "CidadeEstado";
+}
+
+<h2>CidadeEstado</h2>
+
+<select id="Estado" onchange="buscaCidades(this.value)">
+    <option value="">Selecione o Estado</option>
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+</select>
+<br />
+<select id="Cidade"></select>
+
+@Scripts.Render("~/js/estados-cidades.js")

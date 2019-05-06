@@ -14,11 +14,11 @@ namespace MandAjuda.Models
             Configuration.ProxyCreationEnabled = false;
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
-        public DbSet<Profissional> Profissionais { get; set; }
+        public DbSet<Profissional> Profissional { get; set; }
 
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
 
-        public DbSet<Chamado> Chamados { get; set; }
+        public DbSet<Chamado> Chamado { get; set; }
 
         public DbSet<Status> Status { get; set; }
 

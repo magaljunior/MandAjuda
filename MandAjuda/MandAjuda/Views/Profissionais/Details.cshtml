@@ -106,142 +106,146 @@
 	<!--================Header Area =================-->
 
 	<div class="container-fluid" style="margin-bottom: 25px;">
-		<div class="col-sm-12">
-			@model MandAjuda.Models.Profissional
+        <div class="col-sm-12">
+            @model MandAjuda.Models.Profissional
 
-			@{
-				ViewBag.Title = "Details";
-			}
-			<center>
-				<hr />
-				<h2>Detalhes</h2>
-				<hr />
-			</center>
+            @{
+                ViewBag.Title = "Details";
+            }
+            <center>
+                <hr />
+                <h2>Detalhes</h2>
+                <hr />
+            </center>
 
-			<div>
-				<dl class="dl-horizontal">
-					<dt>
-						@Html.DisplayNameFor(model => model.NomeCompleto)
-					</dt>
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NomeCompleto)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.NomeCompleto)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.NomeCompleto)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Profissao)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Profissao)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Profissao)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Profissao)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Cpf)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cpf)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Cpf)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cpf)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Cep)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cep)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Cep)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cep)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Endereco)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Endereco)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Endereco)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Endereco)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Bairro)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Bairro)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Bairro)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Bairro)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Cidade)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cidade)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Cidade)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cidade)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Estado)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Estado)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Estado)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Estado)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Complemento)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Complemento)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Complemento)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Complemento)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.CidadeAtende)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CidadeAtende)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.CidadeAtende)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CidadeAtende)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Contato)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Contato)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Contato)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Contato)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Email)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Email)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Senha)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Senha)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Senha)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Senha)
+                    </dd>
 
-					<dt>
-						@Html.DisplayNameFor(model => model.Status)
-					</dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
 
-					<dd>
-						@Html.DisplayFor(model => model.Status)
-					</dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
 
-				</dl>
-			</div>
-			@*<strong><p style="margin-left: 50px; color:red">
-				OBS: Para requisitar o profissional copie o E-mail do mesmo listado acima
-				</p></strong>*@
-			<p style="margin-left: 50px;">
-				<a class="btn btn-default" href="http://localhost:51258/Chamados/Create">Requisitar</a>
-			</p>
-			<hr />
-		</div>
+                </dl>
+            </div>
+            @*<strong><p style="margin-left: 50px; color:red">
+        OBS: Para requisitar o profissional copie o E-mail do mesmo listado acima
+        </p></strong>*@
+            <p style="margin-left: 50px;">
+                <a class="btn btn-default" href="http://localhost:51258/Chamados/Create">Requisitar</a>
+            </p>
+            <hr />
+            <p style="margin-left: 50px;">
+                <a class="btn btn-default" href="http://localhost:51258/Reclamacao/Create">Reclamar</a>
+            </p>
+            <hr />
+        </div>
 	</div>
 	<!--================Address Area =================-->
 	<section class="address_area">

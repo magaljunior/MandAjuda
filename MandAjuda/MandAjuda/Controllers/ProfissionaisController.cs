@@ -16,7 +16,7 @@ namespace MandAjuda.Controllers
 
         public ActionResult Search()
         {
-            return View(db.Profissionais.ToList());
+            return View(db.Profissional.ToList());
         }
 
         public ActionResult Pesquisar()
@@ -24,6 +24,11 @@ namespace MandAjuda.Controllers
             return View();
         }
 
+        public ActionResult CidadeEstado()
+        {
+            return View();
+        }
+        
         public ActionResult Cadastro()
         {
             return View();
@@ -37,7 +42,7 @@ namespace MandAjuda.Controllers
         // GET: Profissionais
         public ActionResult Index()
         {
-            return View(db.Profissionais.ToList());
+            return View(db.Profissional.ToList());
         }
 
         // GET: Profissionais/Details/5
@@ -47,7 +52,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();
@@ -70,7 +75,7 @@ namespace MandAjuda.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Profissionais.Add(profissional);
+                db.Profissional.Add(profissional);
                 db.SaveChanges();
                 return RedirectToAction("Cadastro");
             }
@@ -85,7 +90,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();
@@ -116,7 +121,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();
@@ -129,8 +134,8 @@ namespace MandAjuda.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Profissional profissional = db.Profissionais.Find(id);
-            db.Profissionais.Remove(profissional);
+            Profissional profissional = db.Profissional.Find(id);
+            db.Profissional.Remove(profissional);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -150,7 +155,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();

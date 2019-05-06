@@ -170,9 +170,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905060018334_cliente.cs" />
-    <Compile Include="Migrations\201905060018334_cliente.Designer.cs">
-      <DependentUpon>201905060018334_cliente.cs</DependentUpon>
+    <Compile Include="Migrations\201905061509175_profissional.cs" />
+    <Compile Include="Migrations\201905061509175_profissional.Designer.cs">
+      <DependentUpon>201905061509175_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -181,7 +181,6 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curriculum.cs" />
-    <Compile Include="Models\Integra.cs" />
     <Compile Include="Models\Profissional.cs" />
     <Compile Include="Models\Qualificar.cs" />
     <Compile Include="Models\Reclamar.cs" />
@@ -348,6 +347,7 @@
     <Content Include="img\work-bg.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Cep.js" />
+    <Content Include="js\estados-cidades.js" />
     <Content Include="js\gmaps.min.js" />
     <Content Include="js\jquery-2.2.4.js" />
     <Content Include="js\LatLong.js" />
@@ -363,6 +363,7 @@
     <Content Include="js\.DS_Store" />
     <Content Include="css\.DS_Store" />
     <Content Include="css\style.css.map" />
+    <Content Include="js\estados-cidades.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -600,6 +601,7 @@
     <Content Include="Views\Chat\Create.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Chat\Confirmacao.cshtml" />
+    <Content Include="Views\Profissionais\CidadeEstado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -619,8 +621,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905060018334_cliente.resx">
-      <DependentUpon>201905060018334_cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905061509175_profissional.resx">
+      <DependentUpon>201905061509175_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
