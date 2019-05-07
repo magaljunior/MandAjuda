@@ -216,7 +216,7 @@
                                     <option value="MT">Mato Grosso</option>
                                     <option value="PA">Pará</option>
                                     <option value="PB">Paraíba</option>
-                                    <option value="PE">Pernambuco</option> 
+                                    <option value="PE">Pernambuco</option>
                                     <option value="PI">Piauí</option>
                                     <option value="PR">Paraná</option>
                                     <option value="RJ">Rio de Janeiro</option>
@@ -230,54 +230,55 @@
                                     <option value="TO">Tocantins</option>
                                 </select>
                             </div>
-                            </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div style="margin-left: 138px;" class="col-md-6">
-                                    Cidade de Atendimento: <select class="form-control" name="CidadeAtende" id="CidadeAtende"></select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Contato, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div style="margin-left: 25px;" class="col-md-6">
-                                    @Html.EditorFor(model => model.Contato, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Contato, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div style="margin-left: 25px;" class="col-md-6">
-                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div style="margin-left: 25px;" class="col-md-6">
-                                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-6">
-                                    <div style="margin-left: 25px;" class="checkbox">
-                                        @Html.EditorFor(model => model.Status)
-                                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Cadastre - se" class="btn btn-default" />
-                                </div>
+                        <div class="form-group">
+                            <div style="margin-left: 138px;" class="col-md-6">
+                                Cidade de Atendimento: <select class="form-control" name="CidadeAtende" id="CidadeAtende"></select>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Contato, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left: 25px;" class="col-md-6">
+                                @Html.EditorFor(model => model.Contato, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Contato, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left: 25px;" class="col-md-6">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div style="margin-left: 25px;" class="col-md-6">
+                                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div style="margin-left: 138px;" class="col-md-6">
+                                Situação do Cadastro: <select class="form-control" name="Status" id="Status">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="0">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Cadastre - se" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
                     </div>
             </div>
         }

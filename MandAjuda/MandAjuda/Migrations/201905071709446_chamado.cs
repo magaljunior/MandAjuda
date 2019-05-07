@@ -3,7 +3,7 @@ namespace MandAjuda.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class cliente : DbMigration
+    public partial class chamado : DbMigration
     {
         public override void Up()
         {
@@ -33,9 +33,7 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ChatId)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
-                .Index(t => t.ProfissionalId)
-                .Index(t => t.ClienteId);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
             
             CreateTable(
                 "dbo.Cliente",
@@ -71,6 +69,7 @@ namespace MandAjuda.Migrations
                         Cidade = c.String(nullable: false, unicode: false),
                         Estado = c.String(nullable: false, unicode: false),
                         Complemento = c.String(unicode: false),
+                        EstadoAtende = c.String(nullable: false, unicode: false),
                         CidadeAtende = c.String(nullable: false, unicode: false),
                         Contato = c.String(nullable: false, unicode: false),
                         Email = c.String(nullable: false, unicode: false),
@@ -81,9 +80,7 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ProfissionalId)
                 .ForeignKey("dbo.Profissional", t => t.Profissional_ProfissionalId)
-                .ForeignKey("dbo.Curriculum", t => t.Curriculum_ProfissionalId)
-                .Index(t => t.Profissional_ProfissionalId)
-                .Index(t => t.Curriculum_ProfissionalId);
+                .ForeignKey("dbo.Curriculum", t => t.Curriculum_ProfissionalId);
             
             CreateTable(
                 "dbo.Curriculum",
@@ -120,9 +117,7 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.RecebeChamadoId)
                 .ForeignKey("dbo.Chamado", t => t.ChamadoID, cascadeDelete: true)
-                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .Index(t => t.ChamadoID)
-                .Index(t => t.ClienteId);
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true);
             
             CreateTable(
                 "dbo.Reclamar",
@@ -138,9 +133,7 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ReclamarId)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
-                .Index(t => t.ProfissionalId)
-                .Index(t => t.ClienteId);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
             
             CreateTable(
                 "dbo.Status",

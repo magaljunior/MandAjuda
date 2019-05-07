@@ -3,16 +3,16 @@ namespace MandAjuda.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class recebechamado : DbMigration
+    public partial class profissional : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Profissional", "EstadoAtende", c => c.String(nullable: false, unicode: false));
+            AlterColumn("dbo.Profissional", "Status", c => c.String(unicode: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Profissional", "EstadoAtende");
+            AlterColumn("dbo.Profissional", "Status", c => c.Boolean(nullable: false));
         }
     }
 }

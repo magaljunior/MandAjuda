@@ -34,6 +34,11 @@ namespace MandAjuda.Controllers
             return View();
         }
 
+        public ActionResult Atualizado()
+        {
+            return View();
+        }
+
         public ActionResult Desativar()
         {
             return View();
@@ -109,7 +114,7 @@ namespace MandAjuda.Controllers
             {
                 db.Entry(profissional).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Atualizado");
             }
             return View(profissional);
         }

@@ -171,13 +171,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905062333042_cliente.cs" />
-    <Compile Include="Migrations\201905062333042_cliente.Designer.cs">
-      <DependentUpon>201905062333042_cliente.cs</DependentUpon>
+    <Compile Include="Migrations\201905071709446_chamado.cs" />
+    <Compile Include="Migrations\201905071709446_chamado.Designer.cs">
+      <DependentUpon>201905071709446_chamado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905070255598_recebechamado.cs" />
-    <Compile Include="Migrations\201905070255598_recebechamado.Designer.cs">
-      <DependentUpon>201905070255598_recebechamado.cs</DependentUpon>
+    <Compile Include="Migrations\201905071715067_profissional.cs" />
+    <Compile Include="Migrations\201905071715067_profissional.Designer.cs">
+      <DependentUpon>201905071715067_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -497,6 +497,7 @@
     <Content Include="vendors\tweet\tweet-carousel.css" />
     <Content Include="vendors\tweet\tweetie.min.js" />
     <Content Include="Views\Home\index.html" />
+    <Content Include="Views\Profissionais\Edit.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -582,7 +583,6 @@
     <Content Include="Views\Cancelar\Confirmacao.cshtml" />
     <Content Include="Views\Profissionais\Create.cshtml" />
     <Content Include="Views\Profissionais\Details.cshtml" />
-    <Content Include="Views\Profissionais\Edit.cshtml" />
     <Content Include="Views\Profissionais\Index.cshtml" />
     <Content Include="Views\Profissionais\Cadastro.cshtml" />
     <Content Include="Views\Profissionais\Pesquisar.cshtml" />
@@ -611,6 +611,7 @@
     <Content Include="Views\RecebeChamados\Details.cshtml" />
     <Content Include="Views\RecebeChamados\Index.cshtml" />
     <Content Include="Views\RecebeChamados\Confirma.cshtml" />
+    <Content Include="Views\Profissionais\Atualizado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -630,11 +631,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905062333042_cliente.resx">
-      <DependentUpon>201905062333042_cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905071709446_chamado.resx">
+      <DependentUpon>201905071709446_chamado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070255598_recebechamado.resx">
-      <DependentUpon>201905070255598_recebechamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905071715067_profissional.resx">
+      <DependentUpon>201905071715067_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
