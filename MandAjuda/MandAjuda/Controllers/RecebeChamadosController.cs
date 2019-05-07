@@ -39,8 +39,8 @@ namespace MandAjuda.Controllers
         // GET: RecebeChamados/Create
         public ActionResult Create()
         {
-            ViewBag.ChamadoID = new SelectList(db.Chamados, "ChamadoID", "From");
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
+            ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From");
+            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome");
             return View();
         }
 
@@ -58,8 +58,8 @@ namespace MandAjuda.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ChamadoID = new SelectList(db.Chamados, "ChamadoID", "From", recebeChamado.ChamadoID);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", recebeChamado.ClienteId);
+            ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
+            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", recebeChamado.ClienteId);
             return View(recebeChamado);
         }
 
@@ -75,8 +75,8 @@ namespace MandAjuda.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ChamadoID = new SelectList(db.Chamados, "ChamadoID", "From", recebeChamado.ChamadoID);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", recebeChamado.ClienteId);
+            ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
+            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", recebeChamado.ClienteId);
             return View(recebeChamado);
         }
 
@@ -93,8 +93,8 @@ namespace MandAjuda.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ChamadoID = new SelectList(db.Chamados, "ChamadoID", "From", recebeChamado.ChamadoID);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", recebeChamado.ClienteId);
+            ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
+            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", recebeChamado.ClienteId);
             return View(recebeChamado);
         }
 

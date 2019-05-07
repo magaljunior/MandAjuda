@@ -37,6 +37,9 @@ namespace MandAjuda.Models
         public string Estado { get; set; }
         [DisplayName("Complemento:")]
         public string Complemento { get; set; }
+        [Required(ErrorMessage = "Por favor digite um estado")]
+        [DisplayName("EstadoAtende:")]
+        public string EstadoAtende { get; set; }
         [Required(ErrorMessage = "Por favor digite uma cidade")]
         [DisplayName("CidadeAtende:")]
         public string CidadeAtende { get; set; }

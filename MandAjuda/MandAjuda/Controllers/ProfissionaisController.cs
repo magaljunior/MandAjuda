@@ -71,7 +71,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
+        public ActionResult Create([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,EstadoAtende,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
+        public ActionResult Edit([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,EstadoAtende,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
