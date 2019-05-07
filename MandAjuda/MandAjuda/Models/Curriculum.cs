@@ -20,15 +20,15 @@ namespace MandAjuda.Models
         [DisplayName("Descrição do serviço")]
         public string Texto1 { get; set; }
 
-        [DisplayName("Foto")]
-        public string Foto2 { get; set; }
-        [DisplayName("Descrição do serviço executado")]
-        public string Texto2 { get; set; }
+        //[DisplayName("Foto")]
+        //public string Foto2 { get; set; }
+        //[DisplayName("Descrição do serviço executado")]
+        //public string Texto2 { get; set; }
 
-        [DisplayName("Foto")]
-        public string Foto3 { get; set; }
-        [DisplayName("Descrição do serviço executado")]
-        public string Texto3 { get; set; }
+        //[DisplayName("Foto")]
+        //public string Foto3 { get; set; }
+        //[DisplayName("Descrição do serviço executado")]
+        //public string Texto3 { get; set; }
 
         public virtual ICollection<Profissional> Profissionais { get; set; }
     }

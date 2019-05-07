@@ -171,13 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905061826016_profissional.cs" />
-    <Compile Include="Migrations\201905061826016_profissional.Designer.cs">
-      <DependentUpon>201905061826016_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905061854055_chamado.cs" />
-    <Compile Include="Migrations\201905061854055_chamado.Designer.cs">
-      <DependentUpon>201905061854055_chamado.cs</DependentUpon>
+    <Compile Include="Migrations\201905062333042_cliente.cs" />
+    <Compile Include="Migrations\201905062333042_cliente.Designer.cs">
+      <DependentUpon>201905062333042_cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -353,7 +349,6 @@
     <Content Include="img\work-bg.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Cep.js" />
-    <Content Include="js\EstadoCidade.js" />
     <Content Include="js\gmaps.min.js" />
     <Content Include="js\jquery-2.2.4.js" />
     <Content Include="js\LatLong.js" />
@@ -594,6 +589,7 @@
     <Content Include="Views\Clientes\Perfil.cshtml" />
     <Content Include="Views\Profissionais\Perfil.cshtml" />
     <Content Include="Views\Qualificar\Confirmacao.cshtml" />
+    <Content Include="Views\Cep\Index.cshtml" />
     <Content Include="Views\Curriculum\Create.cshtml" />
     <Content Include="Views\Curriculum\Delete.cshtml" />
     <Content Include="Views\Curriculum\Details.cshtml" />
@@ -629,11 +625,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905061826016_profissional.resx">
-      <DependentUpon>201905061826016_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905061854055_chamado.resx">
-      <DependentUpon>201905061854055_chamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905062333042_cliente.resx">
+      <DependentUpon>201905062333042_cliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
