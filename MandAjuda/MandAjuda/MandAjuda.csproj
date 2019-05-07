@@ -182,6 +182,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curriculum.cs" />
+    <Compile Include="Models\CurriculumProfissional.cs" />
     <Compile Include="Models\Profissional.cs" />
     <Compile Include="Models\Qualificar.cs" />
     <Compile Include="Models\RecebeChamado.cs" />

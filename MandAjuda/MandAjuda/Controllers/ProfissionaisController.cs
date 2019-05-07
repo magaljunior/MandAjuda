@@ -28,7 +28,7 @@ namespace MandAjuda.Controllers
         {
             return View();
         }
-        
+
         public ActionResult Cadastro()
         {
             return View();
@@ -42,7 +42,7 @@ namespace MandAjuda.Controllers
         // GET: Profissionais
         public ActionResult Index()
         {
-            return View(db.Profissional.ToList());
+            return ViewBag(db.Profissional.ToList());
         }
 
         // GET: Profissionais/Details/5
