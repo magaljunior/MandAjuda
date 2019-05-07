@@ -65,17 +65,15 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
+						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
 					</div>
-
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown submenu active">
 
 							<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
 
-							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+							<li>@Html.ActionLink("Profissionais", "Pesquisar", "Profissionais")</li>
 
 							<li class="dropdown submenu active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
@@ -93,60 +91,38 @@
 		</div>
 	</header>
 	<!--================Header Area =================-->
-	<div class="container-fluid">
+
+	<div class="row" style="margin-bottom: 25px; margin-top:250px">
 		<div class="col-sm-12">
-			@model MandAjuda.Models.RecebeChamado
+			@model MandAjuda.Models.Reclamar
 
 			@{
-				ViewBag.Title = "Details";
+				ViewBag.Title = "Confirma";
 			}
 
-			<h2>Resposta do Chamado</h2>
+			@using (Html.BeginForm())
+			{
+				@Html.AntiForgeryToken()
 
-			<div>
-				
+			<div class="container">
 				<hr />
-				<dl class="dl-horizontal">
-					<dt>
-						@Html.DisplayNameFor(model => model.Chamado.From)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Chamado.From)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Cliente.Nome)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Cliente.Nome)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Descricao)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Descricao)
-					</dd>
-
-					<dt>
-						@Html.DisplayNameFor(model => model.Valor)
-					</dt>
-
-					<dd>
-						@Html.DisplayFor(model => model.Valor)
-					</dd>
-
-				</dl>
+				<center style="margin-top: 25px; margin-bottom: 25px;"><h2>Resposta enviada com sucesso</h2></center>
+				<hr />
+				<br />
+				<p>
+					
+					@Html.ActionLink("Back to List", "Index")
+				</p>
+				<br />
+				<br />
 			</div>
+			}
+
+			@section Scripts {
+				@Scripts.Render("~/bundles/jqueryval")
+			}
 		</div>
 	</div>
-	@*<p>
-		@Html.ActionLink("Edit", "Edit", new { id = Model.RecebeChamadoId }) |
-		@Html.ActionLink("Back to List", "Index")
-	</p>*@
 	<!--================Address Area =================-->
 	<section class="address_area">
 		<div class="container">
@@ -179,7 +155,7 @@
 							<img src="~/img/icon/inbox-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h5>mandajudaservico@gmail.com</h5>
+							<h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
 
 						</div>
 					</div>
@@ -213,9 +189,8 @@
 	<script src="~/js/gmaps.min.js"></script>
 
 	<script src="~/js/theme.js"></script>
-
-	<script src="~/Scripts/jquery-3.3.1.js"></script>
-	<script src="~/js/Cep.js"></script>
-
 </body>
 </html>
+
+
+

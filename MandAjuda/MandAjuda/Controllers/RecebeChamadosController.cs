@@ -55,7 +55,7 @@ namespace MandAjuda.Controllers
             {
                 db.RecebeChamado.Add(recebeChamado);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Confirma");
             }
 
             ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
@@ -132,5 +132,9 @@ namespace MandAjuda.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+		public ActionResult Confirma()
+		{
+			return View();
+		}
+	}
 }

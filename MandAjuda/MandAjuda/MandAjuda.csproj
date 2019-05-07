@@ -610,6 +610,7 @@
     <Content Include="Views\RecebeChamados\Create.cshtml" />
     <Content Include="Views\RecebeChamados\Details.cshtml" />
     <Content Include="Views\RecebeChamados\Index.cshtml" />
+    <Content Include="Views\RecebeChamados\Confirma.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
