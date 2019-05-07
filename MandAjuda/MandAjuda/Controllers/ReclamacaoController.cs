@@ -31,7 +31,7 @@ namespace MandAjuda.Controllers
 		public ActionResult Create()
         {
 
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome");
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
             ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
             return View();
         }
@@ -69,7 +69,7 @@ namespace MandAjuda.Controllers
                 return RedirectToAction("Confirmacao");
             }
 
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", reclamar.ClienteId);
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", reclamar.ClienteId);
             ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", reclamar.ProfissionalId);
             return View(reclamar);
         }

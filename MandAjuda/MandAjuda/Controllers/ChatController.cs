@@ -27,7 +27,7 @@ namespace MandAjuda.Controllers
         // GET: Chat/Create
         public ActionResult Create()
         {
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome");
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
             ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
             return View();
         }

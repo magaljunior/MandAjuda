@@ -12,7 +12,7 @@ namespace MandAjuda.Repositories
         public static bool AutenticarUsuarioCliente(string login, string senha)
         {
             Context _db = new Context();
-            var query = (from u in _db.Cliente
+            var query = (from u in _db.Clientes
                          where u.Email == login &&
                          u.Senha == senha
                          select u).SingleOrDefault();
@@ -61,7 +61,7 @@ namespace MandAjuda.Repositories
                 else
                 {
                     Context _db = new Context();
-                    Cliente cliente = (from u in _db.Cliente
+                    Cliente cliente = (from u in _db.Clientes
                                        where u.Email == _login
                                        select u).SingleOrDefault();
                     return cliente;
@@ -110,7 +110,7 @@ namespace MandAjuda.Repositories
             else
             {
                 Context _db = new Context();
-                Cliente cliente = (from u in _db.Cliente
+                Cliente cliente = (from u in _db.Clientes
                                    where u.Email == _login
                                    select u).SingleOrDefault();
                 return cliente;

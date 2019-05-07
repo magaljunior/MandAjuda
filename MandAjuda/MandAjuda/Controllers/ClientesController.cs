@@ -17,7 +17,7 @@ namespace MandAjuda.Controllers
         // GET: Clientes
         public ActionResult Index()
         {
-            return View(db.Cliente.ToList());
+            return View(db.Clientes.ToList());
         }
 
         public ActionResult Cadastro()
@@ -32,7 +32,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = db.Clientes.Find(id);
             if (cliente == null)
             {
                 return HttpNotFound();
@@ -55,7 +55,7 @@ namespace MandAjuda.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Cliente.Add(cliente);
+                db.Clientes.Add(cliente);
                 db.SaveChanges();
                 return RedirectToAction("Cadastro");
             }
@@ -70,7 +70,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = db.Clientes.Find(id);
             if (cliente == null)
             {
                 return HttpNotFound();
@@ -101,7 +101,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = db.Clientes.Find(id);
             if (cliente == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace MandAjuda.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cliente cliente = db.Cliente.Find(id);
-            db.Cliente.Remove(cliente);
+            Cliente cliente = db.Clientes.Find(id);
+            db.Clientes.Remove(cliente);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -134,7 +134,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Cliente.Find(id);
+            Cliente cliente = db.Clientes.Find(id);
             if (cliente == null)
             {
                 return HttpNotFound();

@@ -1,8 +1,12 @@
-﻿using MandAjuda.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using MandAjuda.Models;
 
 namespace MandAjuda.Controllers
 {
@@ -36,7 +40,7 @@ namespace MandAjuda.Controllers
         public ActionResult Create()
         {
             ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From");
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome");
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
             return View();
         }
 
@@ -55,7 +59,7 @@ namespace MandAjuda.Controllers
             }
 
             ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", recebeChamado.ClienteId);
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", recebeChamado.ClienteId);
             return View(recebeChamado);
         }
 
@@ -72,7 +76,7 @@ namespace MandAjuda.Controllers
                 return HttpNotFound();
             }
             ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", recebeChamado.ClienteId);
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", recebeChamado.ClienteId);
             return View(recebeChamado);
         }
 
@@ -90,7 +94,7 @@ namespace MandAjuda.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ChamadoID = new SelectList(db.Chamado, "ChamadoID", "From", recebeChamado.ChamadoID);
-            ViewBag.ClienteId = new SelectList(db.Cliente, "ClienteId", "Nome", recebeChamado.ClienteId);
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", recebeChamado.ClienteId);
             return View(recebeChamado);
         }
 

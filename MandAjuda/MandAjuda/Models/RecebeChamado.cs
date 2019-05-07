@@ -12,12 +12,10 @@ namespace MandAjuda.Models
 	{
 
 		public int RecebeChamadoId { get; set; }
-		[DisplayName("Solicitado para:")]
+		[DisplayName("Solicitado:")]
 		public int ChamadoID { get; set; }
 		[DisplayName("Solicitante:")]
 		public int ClienteId { get; set; }
-
-
 		[Required(ErrorMessage = "Por favor descreva o serviço realizado")]
 		[DisplayName("Descrição:")]
 		public string Descricao { get; set; }
