@@ -244,6 +244,7 @@
     <Content Include="img\clients\client-6.png" />
     <Content Include="img\comment-user\comment-user-1.jpg" />
     <Content Include="img\comment-user\comment-user-2.jpg" />
+    <Content Include="img\face.png" />
     <Content Include="img\favicon.ico" />
     <Content Include="img\footer-bg.jpg" />
     <Content Include="img\footer-logo.png" />
@@ -284,7 +285,7 @@
     <Content Include="img\Mandajuda.jpeg" />
     <Content Include="img\map-marker.png" />
     <Content Include="img\megafone.png" />
-    <Content Include="img\Pedro.jpeg" />
+    <Content Include="img\Pedro.png" />
     <Content Include="img\pre-cons-left.jpg" />
     <Content Include="img\pre-cons-right.jpg" />
     <Content Include="img\project\project-1.jpg" />
@@ -350,6 +351,7 @@
     <Content Include="img\team\team-2\team-3.jpg" />
     <Content Include="img\team\team-3.jpg" />
     <Content Include="img\testimonials\test-1.jpg" />
+    <Content Include="img\twitter.png" />
     <Content Include="img\video-1.jpg" />
     <Content Include="img\who-we.jpg" />
     <Content Include="img\work-bg.jpg" />
