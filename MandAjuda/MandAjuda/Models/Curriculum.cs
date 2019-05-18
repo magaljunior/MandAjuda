@@ -15,6 +15,15 @@ namespace MandAjuda.Models
         [DisplayName("Escolaridade")]
         public string Escolaridade { get; set; }
 
+        [DisplayName("Nome do curso")]
+        public string Curso { get; set; }
+
+        [DisplayName("Nome da Instituição de ensino")]
+        public string Instituicao { get; set; }
+
+        [DisplayName("Experiência Profissional")]
+        public string Experiencia { get; set; }
+
         [DisplayName("Escolha uma foto do seu serviço prestado")]
         public string Foto1 { get; set; }
         [DisplayName("Descrição do serviço")]
