@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.6.43, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: mandajuda
 -- ------------------------------------------------------
--- Server version	5.6.43-log
+-- Server version	8.0.15
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,14 +21,14 @@
 
 DROP TABLE IF EXISTS `__migrationhistory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `__migrationhistory` (
   `MigrationId` varchar(150) NOT NULL,
   `ContextKey` varchar(300) NOT NULL,
   `Model` longblob NOT NULL,
   `ProductVersion` varchar(32) NOT NULL,
   PRIMARY KEY (`MigrationId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `__migrationhistory` (
 
 LOCK TABLES `__migrationhistory` WRITE;
 /*!40000 ALTER TABLE `__migrationhistory` DISABLE KEYS */;
-INSERT INTO `__migrationhistory` VALUES ('201903282359428_profissional','MandAjuda.Migrations.Configuration','‹\0\0\0\0\0\0í[Yoã6~/Ðÿ è±H­d-ÚÀÞEÖ›F7GãdÑ·€‘h‡-Ei%*pPô—õ¡?©¡C<$Y’¤h—„â|spj4ùç¯¿ÇïW>µq“€Mì£Ñ¡maæaË‰ðÅ·?Øïß}ýÕøÔóWÖçbß[±(Y<±8\'v°â‘OÜ(ˆƒ¹ï /pÞþè9 lÀ²¬ñuÂ8ñqúü9\r˜‹Cž zx˜Æù:<™§¨Öòq\"OìsÄ¼“ß²½¶uB	9æ˜.l1pÄAÊãÛÏy°å<„DožBûˆÆ8—þ¸ÚÞU‘Ã7B§\", Ü$æßðèmnG\'d_»´ØîlÌŸ„Ö©ý&öôù@`[:¯ã)Ä>Óº£œæÀ*Ÿ”n\0Þ\"~¬iByá	Ã	=°®’{JÜŸñÓMð;f–P*‹ÂÁ3e–®¢ ÄºÆUàÙGÛrTrG§/©MÒL³ãoßØÖˆ‚î).ý@²Âœþ	3!Ž½+Ä9ŽàgN-i¡±„=	\rJ#glÁ!”l0ßêfKþ l¼²­3²Â^±’‹rËDž@Š¼Ž›‡c7\".ÚÃ/žd÷È³Tò‰ùÎ¹†ã	0:y„)ZçA2ØØ©¢®=)¯Âýb1£y¦XÌ˜Ï¼±X‘î+/ïÜOæÁ}„÷Âi\Z.vÏãôjç<N™‡#ìî>„? E»g3%òvüˆö‘m§RìC„íƒƒHß=ŸSºûL€ÙÚ2—Î¥dYXTD{Õ™ðyŠŠ,ÁÊ¢Óï³¼dÑ²Î•ÜÃÅg/e‡¯eæµÌì«Ì¤–;á˜íÁ~¯5­—ôH–inÎå$¶­kxó»âfÍ¥^ÝiÛÏ¢À¿¨VÔ]wó ‰\\áÁÚ­7(Zb>°\"ÏÁ\r’¸W-ÎHž§\ng¼‡tY*Êÿð‹]Ó±žÄqà’Têšë†æ€ªÐP€¬îÞ˜)£{8èçMB8anbŽFG†u:1*|¹#£otóH†0Ý>MzŽSJ‚xÅkœÿ6Æ¹ÿÇù1èº¼9æjâ¨:Ÿ\\ü²ÿd˜CƒÈ:µEf\r„–gÕ’kÀŠÄ` 4zÉòµiP\"XŸ4õÌÐËkKÕ9ƒp\'íŠ«¸%l¯	èÒ5«ï	NöA¡øðà4|yŸ£0„Ü\"}‰ÈW¬yöbúí¼‡ÞÏ07®iÔ—Ò–œ S¢%ÖžŠóð‰bþqtDv›z~Í¶,<²à¢Åšyv…§â÷Œ¨écRYï¿T7,u#eú\rQ5÷÷§M|¶æ‹A–Ö¸—ñ´GÝ1Íö¼k>íŽ\\Û‡—Ák7\\í¹×Š¯néÎÃè°ËèÆCwìh¥»­cø­–<ô8è%E9Ù,JòÊ3 Jš(£¤ê¼+QÒÔËoÃÊn^2L¶ÒAê—Ë0Òrw¬´U¡è$zÐ‹n·B/ºÓW-¤ZíŽTôdœb­‡>y‹@Q)_ë¡UÞPtÊ×zÈ\"¿à+ÉúàåïÕ*V¾ØC»ì½YQ.[êáÃÙ[±â¿ÙÒ‹ÉRë.y=R•r¹íŸ¯ÚÉ›L¬7ue[·7ŒÛPÕ–­žÆª\'Ý¥¾lˆý\nâÆéLtUz±ðšÎ^d:Sz’¦†Å“×¹£™¿lo”ë1:äÄ&ÂF{–-6Å¤\r-»6¤î¸]Ÿ‹úæÞX½ŒîFÇJ¥“õ)K¢YÑRê›!¦7*lwëªœ°o)åF\nä]—-+Ð[fÈUI­³X4Ë¶í@éÍ!Ó‘¾¥Œ²W¤õ„ÆyfýÈªÑ°É¶Ø(ñH<Ñ¬9š¡#ñ|”þš½¡U;ÀßÉÇ<kôÛß¾×æ^_ÎªÇí6ˆ:à[Å6GB‰°ðÚï­ó~&—Ú)P\Z°eÖ¯Ð6òŠ×2Ã¹±ˆu#šCA&0ÓÛîüåÜâ$äN\\PþF6ôŒÙÆ¡@ÒLÉ`ˆj2q(„>2Gø¬2Ï1X\'e\\c°,æ4Æp(eþa°^òxÃ`ÿ•§º¸@ÖÝ]†M½í,•èƒnCDjŒ<J©¦Ð^SÊKN)5ó[ÿÓôÔžŒ\"))“3°æjbÿ‘â[³_ïZ ¬Ë<ýØ:´þÜR­ëì{Té…Ü¼ö6|´‹9£ìÕsØX€Â±Beâ3!6áª/âF«é*\"Ì%!¢u:™}‹¾ÕVœ@ÉBò‡\"ñ0Þ¤{_þ:;%OÍ¿×«÷˜–>DÒÐ:Õ^Ù[f±²®¼Þ‹›9|ÏA­¶9­ZøþC\\tíW#uÇ¦S^u^ðXÓPVÍwÖDÑe;“]fwbHú·sî˜,+ÑƒdØU¢§Ü3c‹ ˆlM¢b‹V	Î1Ü¤ ´N\"NÈåðØÅ °˜WýŒh’^$î±7c—	*cÿž*ó¯\"´ñOÇ×T™Ç—a:4½\r@L¸}q|É>$„z¥Üg5m—‘eòò*Î’‹2»|*‘.Ö(7_™o0\\1,¾dsôˆ‡ÈvãOx‰Ü§¢ÇÚ²þ T³?´Œç=ü	>ìù«wÿ…ö×ª}A\0\0','6.2.0-61023'),('201903290000473_cliente','MandAjuda.Migrations.Configuration','‹\0\0\0\0\0\0í[Yoã6~/Ðÿ è±H­d-ÚÀÞEÖ›F7GãdÑ·€‘h‡-Ei%*pPô—õ¡?©¡C<$Y’¤h—„â|spj4ùç¯¿ÇïW>µq“€Mì£Ñ¡maæaË‰ðÅ·?Øïß}ýÕøÔóWÖçbß[±(Y<±8\'v°â‘OÜ(ˆƒ¹ï /pÞþè9 lÀ²¬ñuÂ8ñqúü9\r˜‹Cž zx˜Æù:<™§¨Öòq\"OìsÄ¼“ß²½¶uB	9æ˜.l1pÄAÊãÛÏy°å<„DožBûˆÆ8—þ¸ÚÞU‘Ã7B§\", Ü$æßðèmnG\'d_»´ØîlÌŸ„Ö©ý&öôù@`[:¯ã)Ä>Óº£œæÀ*Ÿ”n\0Þ\"~¬iByá	Ã	=°®’{JÜŸñÓMð;f–P*‹ÂÁ3e–®¢ ÄºÆUàÙGÛrTrG§/©MÒL³ãoßØÖˆ‚î).ý@²Âœþ	3!Ž½+Ä9ŽàgN-i¡±„=	\rJ#glÁ!”l0ßêfKþ l¼²­3²Â^±’‹rËDž@Š¼Ž›‡c7\".ÚÃ/žd÷È³Tò‰ùÎ¹†ã	0:y„)ZçA2ØØ©¢®=)¯Âýb1£y¦XÌ˜Ï¼±X‘î+/ïÜOæÁ}„÷Âi\Z.vÏãôjç<N™‡#ìî>„? E»g3%òvüˆö‘m§RìC„íƒƒHß=ŸSºûL€ÙÚ2—Î¥dYXTD{Õ™ðyŠŠ,ÁÊ¢Óï³¼dÑ²Î•ÜÃÅg/e‡¯eæµÌì«Ì¤–;á˜íÁ~¯5­—ôH–inÎå$¶­kxó»âfÍ¥^ÝiÛÏ¢À¿¨VÔ]wó ‰\\áÁÚ­7(Zb>°\"ÏÁ\r’¸W-ÎHž§\ng¼‡tY*Êÿð‹]Ó±žÄqà’Têšë†æ€ªÐP€¬îÞ˜)£{8èçMB8anbŽFG†u:1*|¹#£otóH†0Ý>MzŽSJ‚xÅkœÿ6Æ¹ÿÇù1èº¼9æjâ¨:Ÿ\\ü²ÿd˜CƒÈ:µEf\r„–gÕ’kÀŠÄ` 4zÉòµiP\"XŸ4õÌÐËkKÕ9ƒp\'íŠ«¸%l¯	èÒ5«ï	NöA¡øðà4|yŸ£0„Ü\"}‰ÈW¬yöbúí¼‡ÞÏ07®iÔ—Ò–œ S¢%ÖžŠóð‰bþqtDv›z~Í¶,<²à¢Åšyv…§â÷Œ¨écRYï¿T7,u#eú\rQ5÷÷§M|¶æ‹A–Ö¸—ñ´GÝ1Íö¼k>íŽ\\Û‡—Ák7\\í¹×Š¯néÎÃè°ËèÆCwìh¥»­cø­–<ô8è%E9Ù,JòÊ3 Jš(£¤ê¼+QÒÔËoÃÊn^2L¶ÒAê—Ë0Òrw¬´U¡è$zÐ‹n·B/ºÓW-¤ZíŽTôdœb­‡>y‹@Q)_ë¡UÞPtÊ×zÈ\"¿à+ÉúàåïÕ*V¾ØC»ì½YQ.[êáÃÙ[±â¿ÙÒ‹ÉRë.y=R•r¹íŸ¯ÚÉ›L¬7ue[·7ŒÛPÕ–­žÆª\'Ý¥¾lˆý\nâÆéLtUz±ðšÎ^d:Sz’¦†Å“×¹£™¿lo”ë1:äÄ&ÂF{–-6Å¤\r-»6¤î¸]Ÿ‹úæÞX½ŒîFÇJ¥“õ)K¢YÑRê›!¦7*lwëªœ°o)åF\nä]—-+Ð[fÈUI­³X4Ë¶í@éÍ!Ó‘¾¥Œ²W¤õ„ÆyfýÈªÑ°É¶Ø(ñH<Ñ¬9š¡#ñ|”þš½¡U;ÀßÉÇ<kôÛß¾×æ^_ÎªÇí6ˆ:à[Å6GB‰°ðÚï­ó~&—Ú)P\Z°eÖ¯Ð6òŠ×2Ã¹±ˆu#šCA&0ÓÛîüåÜâ$äN\\PþF6ôŒÙÆ¡@ÒLÉ`ˆj2q(„>2Gø¬2Ï1X\'e\\c°,æ4Æp(eþa°^òxÃ`ÿ•§º¸@ÖÝ]†M½í,•èƒnCDjŒ<J©¦Ð^SÊKN)5ó[ÿÓôÔžŒ\"))“3°æjbÿ‘â[³_ïZ ¬Ë<ýØ:´þÜR­ëì{Té…Ü¼ö6|´‹9£ìÕsØX€Â±Beâ3!6áª/âF«é*\"Ì%!¢u:™}‹¾ÕVœ@ÉBò‡\"ñ0Þ¤{_þ:;%OÍ¿×«÷˜–>DÒÐ:Õ^Ù[f±²®¼Þ‹›9|ÏA­¶9­ZøþC\\tíW#uÇ¦S^u^ðXÓPVÍwÖDÑe;“]fwbHú·sî˜,+ÑƒdØU¢§Ü3c‹ ˆlM¢b‹V	Î1Ü¤ ´N\"NÈåðØÅ °˜WýŒh’^$î±7c—	*cÿž*ó¯\"´ñOÇ×T™Ç—a:4½\r@L¸}q|É>$„z¥Üg5m—‘eòò*Î’‹2»|*‘.Ö(7_™o0\\1,¾dsôˆ‡ÈvãOx‰Ü§¢ÇÚ²þ T³?´Œç=ü	>ìù«wÿ…ö×ª}A\0\0','6.2.0-61023'),('201903290001370_chamado','MandAjuda.Migrations.Configuration','‹\0\0\0\0\0\0í[Yoã6~/Ðÿ è±H­d-ÚÀÞEÖ›F7GãdÑ·€‘h‡-Ei%*pPô—õ¡?©¡C<$Y’¤h—„â|spj4ùç¯¿ÇïW>µq“€Mì£Ñ¡maæaË‰ðÅ·?Øïß}ýÕøÔóWÖçbß[±(Y<±8\'v°â‘OÜ(ˆƒ¹ï /pÞþè9 lÀ²¬ñuÂ8ñqúü9\r˜‹Cž zx˜Æù:<™§¨Öòq\"OìsÄ¼“ß²½¶uB	9æ˜.l1pÄAÊãÛÏy°å<„DožBûˆÆ8—þ¸ÚÞU‘Ã7B§\", Ü$æßðèmnG\'d_»´ØîlÌŸ„Ö©ý&öôù@`[:¯ã)Ä>Óº£œæÀ*Ÿ”n\0Þ\"~¬iByá	Ã	=°®’{JÜŸñÓMð;f–P*‹ÂÁ3e–®¢ ÄºÆUàÙGÛrTrG§/©MÒL³ãoßØÖˆ‚î).ý@²Âœþ	3!Ž½+Ä9ŽàgN-i¡±„=	\rJ#glÁ!”l0ßêfKþ l¼²­3²Â^±’‹rËDž@Š¼Ž›‡c7\".ÚÃ/žd÷È³Tò‰ùÎ¹†ã	0:y„)ZçA2ØØ©¢®=)¯Âýb1£y¦XÌ˜Ï¼±X‘î+/ïÜOæÁ}„÷Âi\Z.vÏãôjç<N™‡#ìî>„? E»g3%òvüˆö‘m§RìC„íƒƒHß=ŸSºûL€ÙÚ2—Î¥dYXTD{Õ™ðyŠŠ,ÁÊ¢Óï³¼dÑ²Î•ÜÃÅg/e‡¯eæµÌì«Ì¤–;á˜íÁ~¯5­—ôH–inÎå$¶­kxó»âfÍ¥^ÝiÛÏ¢À¿¨VÔ]wó ‰\\áÁÚ­7(Zb>°\"ÏÁ\r’¸W-ÎHž§\ng¼‡tY*Êÿð‹]Ó±žÄqà’Têšë†æ€ªÐP€¬îÞ˜)£{8èçMB8anbŽFG†u:1*|¹#£otóH†0Ý>MzŽSJ‚xÅkœÿ6Æ¹ÿÇù1èº¼9æjâ¨:Ÿ\\ü²ÿd˜CƒÈ:µEf\r„–gÕ’kÀŠÄ` 4zÉòµiP\"XŸ4õÌÐËkKÕ9ƒp\'íŠ«¸%l¯	èÒ5«ï	NöA¡øðà4|yŸ£0„Ü\"}‰ÈW¬yöbúí¼‡ÞÏ07®iÔ—Ò–œ S¢%ÖžŠóð‰bþqtDv›z~Í¶,<²à¢Åšyv…§â÷Œ¨écRYï¿T7,u#eú\rQ5÷÷§M|¶æ‹A–Ö¸—ñ´GÝ1Íö¼k>íŽ\\Û‡—Ák7\\í¹×Š¯néÎÃè°ËèÆCwìh¥»­cø­–<ô8è%E9Ù,JòÊ3 Jš(£¤ê¼+QÒÔËoÃÊn^2L¶ÒAê—Ë0Òrw¬´U¡è$zÐ‹n·B/ºÓW-¤ZíŽTôdœb­‡>y‹@Q)_ë¡UÞPtÊ×zÈ\"¿à+ÉúàåïÕ*V¾ØC»ì½YQ.[êáÃÙ[±â¿ÙÒ‹ÉRë.y=R•r¹íŸ¯ÚÉ›L¬7ue[·7ŒÛPÕ–­žÆª\'Ý¥¾lˆý\nâÆéLtUz±ðšÎ^d:Sz’¦†Å“×¹£™¿lo”ë1:äÄ&ÂF{–-6Å¤\r-»6¤î¸]Ÿ‹úæÞX½ŒîFÇJ¥“õ)K¢YÑRê›!¦7*lwëªœ°o)åF\nä]—-+Ð[fÈUI­³X4Ë¶í@éÍ!Ó‘¾¥Œ²W¤õ„ÆyfýÈªÑ°É¶Ø(ñH<Ñ¬9š¡#ñ|”þš½¡U;ÀßÉÇ<kôÛß¾×æ^_ÎªÇí6ˆ:à[Å6GB‰°ðÚï­ó~&—Ú)P\Z°eÖ¯Ð6òŠ×2Ã¹±ˆu#šCA&0ÓÛîüåÜâ$äN\\PþF6ôŒÙÆ¡@ÒLÉ`ˆj2q(„>2Gø¬2Ï1X\'e\\c°,æ4Æp(eþa°^òxÃ`ÿ•§º¸@ÖÝ]†M½í,•èƒnCDjŒ<J©¦Ð^SÊKN)5ó[ÿÓôÔžŒ\"))“3°æjbÿ‘â[³_ïZ ¬Ë<ýØ:´þÜR­ëì{Té…Ü¼ö6|´‹9£ìÕsØX€Â±Beâ3!6áª/âF«é*\"Ì%!¢u:™}‹¾ÕVœ@ÉBò‡\"ñ0Þ¤{_þ:;%OÍ¿×«÷˜–>DÒÐ:Õ^Ù[f±²®¼Þ‹›9|ÏA­¶9­ZøþC\\tíW#uÇ¦S^u^ðXÓPVÍwÖDÑe;“]fwbHú·sî˜,+ÑƒdØU¢§Ü3c‹ ˆlM¢b‹V	Î1Ü¤ ´N\"NÈåðØÅ °˜WýŒh’^$î±7c—	*cÿž*ó¯\"´ñOÇ×T™Ç—a:4½\r@L¸}q|É>$„z¥Üg5m—‘eòò*Î’‹2»|*‘.Ö(7_™o0\\1,¾dsôˆ‡ÈvãOx‰Ü§¢ÇÚ²þ T³?´Œç=ü	>ìù«wÿ…ö×ª}A\0\0','6.2.0-61023'),('201903290002129_status','MandAjuda.Migrations.Configuration','‹\0\0\0\0\0\0í[Yoã6~/Ðÿ è±H­d-ÚÀÞEÖ›F7GãdÑ·€‘h‡-Ei%*pPô—õ¡?©¡C<$Y’¤h—„â|spj4ùç¯¿ÇïW>µq“€Mì£Ñ¡maæaË‰ðÅ·?Øïß}ýÕøÔóWÖçbß[±(Y<±8\'v°â‘OÜ(ˆƒ¹ï /pÞþè9 lÀ²¬ñuÂ8ñqúü9\r˜‹Cž zx˜Æù:<™§¨Öòq\"OìsÄ¼“ß²½¶uB	9æ˜.l1pÄAÊãÛÏy°å<„DožBûˆÆ8—þ¸ÚÞU‘Ã7B§\", Ü$æßðèmnG\'d_»´ØîlÌŸ„Ö©ý&öôù@`[:¯ã)Ä>Óº£œæÀ*Ÿ”n\0Þ\"~¬iByá	Ã	=°®’{JÜŸñÓMð;f–P*‹ÂÁ3e–®¢ ÄºÆUàÙGÛrTrG§/©MÒL³ãoßØÖˆ‚î).ý@²Âœþ	3!Ž½+Ä9ŽàgN-i¡±„=	\rJ#glÁ!”l0ßêfKþ l¼²­3²Â^±’‹rËDž@Š¼Ž›‡c7\".ÚÃ/žd÷È³Tò‰ùÎ¹†ã	0:y„)ZçA2ØØ©¢®=)¯Âýb1£y¦XÌ˜Ï¼±X‘î+/ïÜOæÁ}„÷Âi\Z.vÏãôjç<N™‡#ìî>„? E»g3%òvüˆö‘m§RìC„íƒƒHß=ŸSºûL€ÙÚ2—Î¥dYXTD{Õ™ðyŠŠ,ÁÊ¢Óï³¼dÑ²Î•ÜÃÅg/e‡¯eæµÌì«Ì¤–;á˜íÁ~¯5­—ôH–inÎå$¶­kxó»âfÍ¥^ÝiÛÏ¢À¿¨VÔ]wó ‰\\áÁÚ­7(Zb>°\"ÏÁ\r’¸W-ÎHž§\ng¼‡tY*Êÿð‹]Ó±žÄqà’Têšë†æ€ªÐP€¬îÞ˜)£{8èçMB8anbŽFG†u:1*|¹#£otóH†0Ý>MzŽSJ‚xÅkœÿ6Æ¹ÿÇù1èº¼9æjâ¨:Ÿ\\ü²ÿd˜CƒÈ:µEf\r„–gÕ’kÀŠÄ` 4zÉòµiP\"XŸ4õÌÐËkKÕ9ƒp\'íŠ«¸%l¯	èÒ5«ï	NöA¡øðà4|yŸ£0„Ü\"}‰ÈW¬yöbúí¼‡ÞÏ07®iÔ—Ò–œ S¢%ÖžŠóð‰bþqtDv›z~Í¶,<²à¢Åšyv…§â÷Œ¨écRYï¿T7,u#eú\rQ5÷÷§M|¶æ‹A–Ö¸—ñ´GÝ1Íö¼k>íŽ\\Û‡—Ák7\\í¹×Š¯néÎÃè°ËèÆCwìh¥»­cø­–<ô8è%E9Ù,JòÊ3 Jš(£¤ê¼+QÒÔËoÃÊn^2L¶ÒAê—Ë0Òrw¬´U¡è$zÐ‹n·B/ºÓW-¤ZíŽTôdœb­‡>y‹@Q)_ë¡UÞPtÊ×zÈ\"¿à+ÉúàåïÕ*V¾ØC»ì½YQ.[êáÃÙ[±â¿ÙÒ‹ÉRë.y=R•r¹íŸ¯ÚÉ›L¬7ue[·7ŒÛPÕ–­žÆª\'Ý¥¾lˆý\nâÆéLtUz±ðšÎ^d:Sz’¦†Å“×¹£™¿lo”ë1:äÄ&ÂF{–-6Å¤\r-»6¤î¸]Ÿ‹úæÞX½ŒîFÇJ¥“õ)K¢YÑRê›!¦7*lwëªœ°o)åF\nä]—-+Ð[fÈUI­³X4Ë¶í@éÍ!Ó‘¾¥Œ²W¤õ„ÆyfýÈªÑ°É¶Ø(ñH<Ñ¬9š¡#ñ|”þš½¡U;ÀßÉÇ<kôÛß¾×æ^_ÎªÇí6ˆ:à[Å6GB‰°ðÚï­ó~&—Ú)P\Z°eÖ¯Ð6òŠ×2Ã¹±ˆu#šCA&0ÓÛîüåÜâ$äN\\PþF6ôŒÙÆ¡@ÒLÉ`ˆj2q(„>2Gø¬2Ï1X\'e\\c°,æ4Æp(eþa°^òxÃ`ÿ•§º¸@ÖÝ]†M½í,•èƒnCDjŒ<J©¦Ð^SÊKN)5ó[ÿÓôÔžŒ\"))“3°æjbÿ‘â[³_ïZ ¬Ë<ýØ:´þÜR­ëì{Té…Ü¼ö6|´‹9£ìÕsØX€Â±Beâ3!6áª/âF«é*\"Ì%!¢u:™}‹¾ÕVœ@ÉBò‡\"ñ0Þ¤{_þ:;%OÍ¿×«÷˜–>DÒÐ:Õ^Ù[f±²®¼Þ‹›9|ÏA­¶9­ZøþC\\tíW#uÇ¦S^u^ðXÓPVÍwÖDÑe;“]fwbHú·sî˜,+ÑƒdØU¢§Ü3c‹ ˆlM¢b‹V	Î1Ü¤ ´N\"NÈåðØÅ °˜WýŒh’^$î±7c—	*cÿž*ó¯\"´ñOÇ×T™Ç—a:4½\r@L¸}q|É>$„z¥Üg5m—‘eòò*Î’‹2»|*‘.Ö(7_™o0\\1,¾dsôˆ‡ÈvãOx‰Ü§¢ÇÚ²þ T³?´Œç=ü	>ìù«wÿ…ö×ª}A\0\0','6.2.0-61023');
+INSERT INTO `__migrationhistory` VALUES ('201905222224502_profissional','MandAjuda.Migrations.Configuration',_binary '‹\0\0\0\0\0\0\í][oÜ¸~/\Ðÿ \èq‘õ\ØY´hñ.œ±S\Ý\Äi\Æ	ú\Ðg¬­FšJT`£\è/\ëCRÿB©;\ï\"©\ÛL2ð‹‡\â9¼}\ç<<<ü\ßþ»ü\åy:_a’qt\å^œ»Œ¼\Ø¢í•›¡Írùù÷¿[\Þú»g\çs\ï§<¦Œ\Ò+÷	¡ý\åb‘zOpÒ³]\à%q\ZoÐ™\ïÀ¯\Ï\Ïÿ¼¸¸X@\Ì\ÂÅ¼gù1‹P°ƒ\ÅüsGÜ£„\ïb†i•Ž¿¬®\Î{°ƒ\éxð\Ê}\"ÿú·\Ìge^×¹€ë±†\á\Æu@\Å \\\Ë\ËO)\\£$Ž¶\ë=N\0\á\Ã\Ë\â|¦°ªýe›]·!\ç¯ó†,ZÂš•—¥(\Þ2¼ø©\ê™KnÕ¿n\Ós¸\ïnq£—¼\ÕEÿ]¹«\'°\Ã®Ã–u¹\n“<ß»g\Í+§ùòªFKþ÷\ÊYe!\ÊxÁ% |\å|\È\ÃÀû+|yˆÿ£«(C²j¸rø•€“>$ñ&\è\å#\Ü\Ð¾»qM¾`\éjž´l\Ù]„~z\í:\ïqUÀc½°Fqÿ#˜\0ý\0!˜\àa¼óaÑ“\\%˜\"\ß&ñ®.\rK‹{\íùWm\ÑSÞµÏ®ó6x†~R\Õ\àS`\ÃD(\É`W!ñ\0Ep .s=þ=4}Áobÿe\ìR—‹VNº¤™ŠšMnÐo%4\ÝTƒn‚4\ïv—«\æµ\n\\(\ì\Ë\æx„x*™_Dq©\ïÁ\×`[`N<\ì®ó†\Å÷ô)Ø—‹B\0¿4ò‘ý‡\Ì\ëô/\ë8K<üù!||\0\É\"ýÚ€–W‰\Î\ÅÔ‹ü(®•CTC}•V÷‰V+ifRl­\ë6]ý0œz{\ï\à³uü˜ÀyŠ^\í73zûaúBo#&Ð›a1öI2C¹«Àþ˜ºMQ±g™¼½ñn\Â–ôñ\'k¼ÿ\Å\Zg†F\Þ\î@Î ¢`ôfaOO\ÇS!I8\Ï|\È. M\'E³ø°3c)`s ¾j5˜C«\Ì2C\Âýi†<Í\Ç<C–m¼F0š£‡Ë‘­ô\Ó\ê`’bq\'g\éðH\Ö1©\ÐZ@\íô™\ì­\Ù@ž‹³(²ö3$dIxY˜\í\Ìl	\r\Ùiùd²|ºM½8\ÉPóM‡úÉ’t|¥¸\åY\à\r²*\ë\è¾gü+€‘¡f:\ì\É1Š/\Æ7(\Ã\çQŠé¡»ZÙ–k.Y\Þ\î)\Ë\ØKký-a°ÁKŒ´VK6\ÖjË·9¥©Og£s6:ÿ9‹¶\à|„|„6\î\å<\âCUÁf\Ö\çL%D\Ú>\r“œ”\ÞÀ\ÔKš¯\r‹þ\Â8™õÔ±†¾`\â£\àñ¥\É\Ù\Îz\ÂÜ”\'\Îez ©:eJ\à\ÏI…º*ª895\Ñ/!fg6-\×D³i•¢tK…\ÒÐž\\/Ž`ðý,	z\è–\ÒµB}i:\Ã\ànM	2WayE‡sÉ¨­PŠ¯$™G\í•e\Û\ìCZ\Ê#s\Ç\Ð\Ö\ë4½ ¨5\áZ\×]\Í\Û\ÈwTŽIe…k\ï!\\g<–Á.ø\Êýk¶„_\rK’_-œ4\Ë—øû\è†A\ç\Ú+]›W õ\n\ã;\ì¸p:c&ù\0p…e£/ˆ¬ ò‚=gh\Ìüƒòª5…°_n\à>·\ìGH1½Ko\na:¬«–LjŒ)\Ì\Å2„\èØŽ[¼\ÐÚ’\Íù\ÙÙ…Š\Z–gÍ‚~`EP»x\ç;¥\àˆUOi\Îš-?¹5AG<\Ô\Övs	\Ï0õ˜@V¥\æQ)z:m¥2‰\ã#)\í´³Ž.£\âÝ³¬¾[é¶²Œ\ÅJ_h\Õ\ÛpZˆx\Ï/³\ÊhMk²[8F\"«ª\ÞÕ˜@b\Å\æM\Ü\È\×tC!óWy\ÊL·\ÜS\Õ1¬û¸Í¶2’7…\Ç\ÊöfEñ†ýHP(¬ü¤\0\ËQaOk]\ÝaV…Ç½\ÆV6c\âu¶r¼t­]Zd\n§¹ ‚	\áDŸE8?¥°²­¥•‰‡X\Îo\r{öÓš~\Ø% QŽ“ó6NŽ¶”÷TD_k\Ø4ü96ô\ç®\ê;\r¾B\Ä\Ç>¤+Ç‡ü\ØÁ‡YMq¬˜\ï\Ý\Ü*-$bT}\ê\àQt9õ†ž@5˜Ö”Nd\ÝtdE¬Ã¾\ØT¸&\'£E’AƒNV7\Ò\Í\Òh²\Ê÷‘\ï\0]Ó—©ñ‹h›J.LM]šl-ºMpÁTù„­i\n3Žp^±+¤h‚\Ñ2Ç˜d\Èþ‘jB3ó\Ëx%ñZ\à{J\Ã@c`¢!\Z¤T\Í6\Z–B=ß»{\äšX\ÃJ``\'¢{&\Ñ\Öüy¯°k\ÛT½*\Ý!\ÂXog:r7ti`m“Á\ÆÉºWF\Ò\Èõ±h³o¾-eD§*a¹„~Z¾û}m‰PPUŠ³.\ã@­~\\›‡HÚ•<¥\Ø\Ù-CSŠ°…\Ì\×|/\áÃ·A’¢€À#\ÈÏˆWþN­\ÜrHÖ‡u)ô®‚´z\ÙX\ç\Ïÿ/idÁš;³Šø-nO~a«h\ZhJŽ\Ò\Écp$r_\ÄUŒ\'¬¨\ÓH+\çU:þl\Ê}¹WIÿ Ðr\ê\Æa‡d\Ñ$\êó)rH&e\n\Ïa¹`„\Ûs\ã\Î\Ù\Zhé‚Œ3!#Ld„Ð€—€L­\",AH#\Öô@r\ë2K(\ê\Ö\ÚÛ¨\ê\É\Ípr^\'\ÜO…ûz†\ï‡}ñ²Eþ2\Ê)PVº=‘l\Êœ´e(¤´\Éò“_€§Ú”\'\Ð\ç\Ñ^(ú<AŸ¾½–N2iS\rP_]3§p_¥´§º\ÄG5©J3hUuœjS•fPòB7U!òƒ	¿\ê\â2Í«J4h]y™j\\™d€\áòR1…\ß2\é`´T\ÇVÀ@S©8i¨+5ù´ó-)„\Õb\í\ãuˆ…Uf\ï«\Íò\È}žp\Òf‡¨\Í\è|\Ý\ê/¦½%\âHùö5®”GuFB1ž›<fZ]¶\Æ\Ý~\ëK)%¦‚xZM\' \å„üb€\ê2…\é2IŸ_€\äD}0h%C€j$ùÁ`/X\Æ	 6ƒe’Án°Š@\í«´ƒ‘\â0·—´\ÈùhH‹ŠXÖ»ô\Åy²Uò•c~\ÚÿOƒ9ú\ì¤ì”¬4\×A/\ëb\î\Î9\Ù\Û7\ÚU|‡4\ãi´ .—“¼ˆd}^\Õmq’O•tH\0-OmúbS\ÈE–R\"›K\Ë%¡U\ÜN\Æ\Ú.\ê\ïFYW\ëû^’ \æ¡!2Bõ…UŸ²[±*NúfÚ±Ç…>Ö•Û¨X¯\ZMƒKfb}\ÊÏ°šC\ìˆ\Ãw`/ô¥KŽÀ5ó^\r:ý®C•u^Å‘>\ßwi~?»¹m\ÙE¬\ç€1\n\åž]Z\Û\ë\Ø\å6Àð‰‹}].gG=\í\î\éF\çº\Âfi´o•\Òün\\W*·‘\î§\Ì8?’2‹\ë\àF|\rüÜ‡\ä\Ý\ËúŸ\áYþý¬ø·\\º´90Êƒ\rLQ\ÅÁý\Ã\Ù™÷\Ð\çm²Ešú”8\É(£\Çlò§Â‚¼‡;ƒMôˆn\ÆÑ¶¼\Ð21^#\â`¯Îš|F“‰\ÙK[v\àÙ«QFŸUKDQÜ…”»È‡\ÏW\î¿\n\ÒK\ç\î\ïŒR{\å\Ü\'Xô/s\ç\ßýc5\éÖ¡!\ìUüøR`¡É–Í¨2 ¼\Ê9ù#I£ˆ\Ç^‘±\ÏYs\"\Þd°\ç\Ñ>BdÍƒ}1Á^7S Ø·‰Š/m\ß,\êyû\Úð¯\r\Ø\Ê-Pß¾ed||{ “\á\î‡V#ò­Ìœ\ÒG\Ó*\ì›2ÖƒBxƒ‚vip9i—C\×.¢§Jzö\ÒPÌŽ^\ï	¸P¯vØŽ™\Òxe¿V\×\\¸k¾\Â 3q®\ãeŒôkgó,È·=÷ˆ\ä°^\ïm\Ø2<§a­\Ïø\×2lYQaXoÿ¨·.ô¸\Ø<	a\Ø\á_fø\ÎMQs\ï\Â\Þ\Zó>60\n.Ä†P9¥&<f\Ó÷ž5°©\ç	F€¤ÀScŽ õ\'C\é\ÉP:¿ŠylL»|+\éø\Ñ\È\ëP¢S#FM££\ÆX„\\¶m,½\Ýi`awLƒEŒ?¹‡ŠV\\ñ1Bˆ—‡Ûš|Bˆ\Ê-\Äbk„®\í¦\åkøLõZ;»€¾54\'È´\Òa`\É>‚ú0ÁÒ­ :\Ôl¥º+6™&Ò›½L|×¦\ã\Ýa¾	¸E‹ÿ\è¡\Þ%\á¼ú„·}ñAr\Ó\ÅÀ\Ë`]7l\Ë=¸\Èðó/«gF\Ô\ämDJT\í£\0SpŽÆ‘fø\îã\ìj\Õ£\ç\èV\Ús€i\Î·¬fX=1¾ðÿO\ãˆ\é¥\çû•\ë?\æRi\à\Z$œº„±v uUœu!\ï1‚°‹\n¢st5F7L»°I#„q•3^˜wQi#D‚—3Pœx÷9b\È\ÓrAÅ·\ãUkD!‰DRxðq\âû‡„/M—š\\!|ÿ\æ5ö“Ex·	\æn\Õm‡¹Q¯ªˆ\êª\í%A­Ö¹•\ÝV\ÉM\Úô!®÷h05/*cR@õþJm¨¦K\ço–\âµ}†©w\åy/\Þ_¤Á¶e‘ßž G­\ê›<w\Ñ&®7L\ê,Ì‰ô;ˆ€—ü\×	\n6ÀCø³qW\åias\×\àG\è\ßE÷\Úg7\îC*¸D¾IQ•_D„§ë¼¼\ßÏ·\Ñ\\\Í\07\ÞGo² ô›z¿x HXä»Ÿ\ê˜?K”÷o_\ZN\ï\ãH“Q\Õ}Í¦\í\îö!f–\ÞGkð\Ú\Ô\íS\n…[\à½|¨\îË™t\Ý\íË›\0l°K+-=þ‰1\ì\ïžþ?%\ßó‡Qª\0\0','6.2.0-61023');
 /*!40000 ALTER TABLE `__migrationhistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -47,25 +47,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `chamado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `chamado` (
   `ChamadoID` int(11) NOT NULL AUTO_INCREMENT,
-  `tituloChamado` longtext,
-  `descricaoChamado` longtext,
-  `qualificacaoChamado` longtext,
-  `descricaoQualificacao` longtext,
-  `pontucaoEstrela` int(11) NOT NULL,
-  `ProfissionalID` int(11) DEFAULT NULL,
-  `ClienteID` int(11) DEFAULT NULL,
-  `StatusID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ChamadoID`),
-  KEY `ProfissionalID_idx` (`ProfissionalID`),
-  KEY `ClienteID_idx` (`ClienteID`),
-  KEY `StatusID_idx` (`StatusID`),
-  CONSTRAINT `ClienteID` FOREIGN KEY (`ClienteID`) REFERENCES `cliente` (`ClienteId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `ProfissionalID` FOREIGN KEY (`ProfissionalID`) REFERENCES `profissional` (`ProfissionalId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `StatusID` FOREIGN KEY (`StatusID`) REFERENCES `status` (`StatusID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `From` longtext,
+  `To` longtext NOT NULL,
+  `Subject` longtext NOT NULL,
+  `Body` longtext NOT NULL,
+  PRIMARY KEY (`ChamadoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,28 +68,60 @@ LOCK TABLES `chamado` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `chat`
+--
+
+DROP TABLE IF EXISTS `chat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `chat` (
+  `ChatId` int(11) NOT NULL AUTO_INCREMENT,
+  `ProfissionalId` int(11) NOT NULL,
+  `ClienteId` int(11) NOT NULL,
+  `From` longtext,
+  `To` longtext,
+  `Subject` longtext,
+  `Body` longtext NOT NULL,
+  PRIMARY KEY (`ChatId`),
+  KEY `FK_Chat_Cliente_ClienteId` (`ClienteId`),
+  KEY `FK_Chat_Profissional_ProfissionalId` (`ProfissionalId`),
+  CONSTRAINT `FK_Chat_Cliente_ClienteId` FOREIGN KEY (`ClienteId`) REFERENCES `cliente` (`ClienteId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_Chat_Profissional_ProfissionalId` FOREIGN KEY (`ProfissionalId`) REFERENCES `profissional` (`ProfissionalId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `chat`
+--
+
+LOCK TABLES `chat` WRITE;
+/*!40000 ALTER TABLE `chat` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `cliente`
 --
 
 DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `cliente` (
   `ClienteId` int(11) NOT NULL AUTO_INCREMENT,
-  `Nome` longtext,
-  `SobreNome` longtext,
-  `Cpf` longtext,
-  `CEP` longtext,
-  `Endereco` longtext,
-  `Bairro` longtext,
-  `Cidade` longtext,
-  `Estado` longtext,
+  `Nome` longtext NOT NULL,
+  `SobreNome` longtext NOT NULL,
+  `Cpf` longtext NOT NULL,
+  `CEP` longtext NOT NULL,
+  `Endereco` longtext NOT NULL,
+  `Bairro` longtext NOT NULL,
+  `Cidade` longtext NOT NULL,
+  `Estado` longtext NOT NULL,
   `Complemento` longtext,
-  `Contato` longtext,
-  `Email` longtext,
-  `Senha` longtext,
+  `Contato` longtext NOT NULL,
+  `Email` longtext NOT NULL,
+  `Senha` longtext NOT NULL,
   PRIMARY KEY (`ClienteId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +130,36 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'PEDRO HENRIQUE','SANTOS','2345345345','12606-480','Rua IpÃª, N 130, Bairro Da Cruz, 153, 153, 153, 153, 153, 153, 153, 153, 153, 153, 153, 153, 153, 153','Cruz','Lorena','SP','153','94992789239','pedrosantos0509@gmail.com','1234');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `curriculum`
+--
+
+DROP TABLE IF EXISTS `curriculum`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `curriculum` (
+  `ProfissionalId` int(11) NOT NULL AUTO_INCREMENT,
+  `Escolaridade` longtext,
+  `Curso` longtext,
+  `Instituicao` longtext,
+  `Experiencia` longtext,
+  `Foto1` longtext,
+  `Texto1` longtext,
+  PRIMARY KEY (`ProfissionalId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `curriculum`
+--
+
+LOCK TABLES `curriculum` WRITE;
+/*!40000 ALTER TABLE `curriculum` DISABLE KEYS */;
+/*!40000 ALTER TABLE `curriculum` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -117,27 +168,32 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `profissional`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `profissional` (
   `ProfissionalId` int(11) NOT NULL AUTO_INCREMENT,
-  `NomeCompleto` longtext,
-  `Profissao` longtext,
-  `Cpf` longtext,
-  `Cep` longtext,
-  `Endereco` longtext,
-  `Bairro` longtext,
-  `Cidade` longtext,
-  `Estado` longtext,
+  `NomeCompleto` longtext NOT NULL,
+  `Profissao` longtext NOT NULL,
+  `Cpf` longtext NOT NULL,
+  `Cep` longtext NOT NULL,
+  `Endereco` longtext NOT NULL,
+  `Bairro` longtext NOT NULL,
+  `Cidade` longtext NOT NULL,
+  `Estado` longtext NOT NULL,
   `Complemento` longtext,
-  `CidadeAtende` longtext,
-  `Contato` longtext,
-  `Email` longtext,
-  `Senha` longtext,
+  `EstadoAtende` longtext NOT NULL,
+  `CidadeAtende` longtext NOT NULL,
+  `Contato` longtext NOT NULL,
+  `Email` longtext NOT NULL,
+  `Senha` longtext NOT NULL,
+  `Status` longtext,
   `Profissional_ProfissionalId` int(11) DEFAULT NULL,
+  `Curriculum_ProfissionalId` int(11) DEFAULT NULL,
   PRIMARY KEY (`ProfissionalId`),
-  KEY `IX_Profissional_ProfissionalId` (`Profissional_ProfissionalId`) USING HASH,
+  KEY `FK_Profissional_Profissional_Profissional_ProfissionalId` (`Profissional_ProfissionalId`),
+  KEY `FK_Profissional_Curriculum_Curriculum_ProfissionalId` (`Curriculum_ProfissionalId`),
+  CONSTRAINT `FK_Profissional_Curriculum_Curriculum_ProfissionalId` FOREIGN KEY (`Curriculum_ProfissionalId`) REFERENCES `curriculum` (`ProfissionalId`),
   CONSTRAINT `FK_Profissional_Profissional_Profissional_ProfissionalId` FOREIGN KEY (`Profissional_ProfissionalId`) REFERENCES `profissional` (`ProfissionalId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +202,96 @@ CREATE TABLE `profissional` (
 
 LOCK TABLES `profissional` WRITE;
 /*!40000 ALTER TABLE `profissional` DISABLE KEYS */;
+INSERT INTO `profissional` VALUES (1,'PEDRO HENRIQUE DAMASCENA SANTOS','TI','2345345345','12606-480','Rua do IpÃª','Cruz','Lorena','SP','153','PA','Terra Santa','94992789239','pedrosantos0509@gmail.com','123','1',NULL,NULL);
 /*!40000 ALTER TABLE `profissional` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `qualificar`
+--
+
+DROP TABLE IF EXISTS `qualificar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `qualificar` (
+  `QualificarID` int(11) NOT NULL AUTO_INCREMENT,
+  `From` longtext,
+  `To` longtext NOT NULL,
+  `Subject` longtext,
+  `Body` longtext NOT NULL,
+  PRIMARY KEY (`QualificarID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `qualificar`
+--
+
+LOCK TABLES `qualificar` WRITE;
+/*!40000 ALTER TABLE `qualificar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qualificar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recebechamado`
+--
+
+DROP TABLE IF EXISTS `recebechamado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `recebechamado` (
+  `RecebeChamadoId` int(11) NOT NULL AUTO_INCREMENT,
+  `ChamadoID` int(11) NOT NULL,
+  `ClienteId` int(11) NOT NULL,
+  `Descricao` longtext NOT NULL,
+  `Valor` longtext NOT NULL,
+  PRIMARY KEY (`RecebeChamadoId`),
+  KEY `FK_RecebeChamado_Chamado_ChamadoID` (`ChamadoID`),
+  KEY `FK_RecebeChamado_Cliente_ClienteId` (`ClienteId`),
+  CONSTRAINT `FK_RecebeChamado_Chamado_ChamadoID` FOREIGN KEY (`ChamadoID`) REFERENCES `chamado` (`ChamadoID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_RecebeChamado_Cliente_ClienteId` FOREIGN KEY (`ClienteId`) REFERENCES `cliente` (`ClienteId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recebechamado`
+--
+
+LOCK TABLES `recebechamado` WRITE;
+/*!40000 ALTER TABLE `recebechamado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `recebechamado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reclamar`
+--
+
+DROP TABLE IF EXISTS `reclamar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `reclamar` (
+  `ReclamarId` int(11) NOT NULL AUTO_INCREMENT,
+  `ProfissionalId` int(11) NOT NULL,
+  `ClienteId` int(11) NOT NULL,
+  `From` longtext,
+  `To` longtext,
+  `Subject` longtext,
+  `Body` longtext NOT NULL,
+  PRIMARY KEY (`ReclamarId`),
+  KEY `FK_Reclamar_Cliente_ClienteId` (`ClienteId`),
+  KEY `FK_Reclamar_Profissional_ProfissionalId` (`ProfissionalId`),
+  CONSTRAINT `FK_Reclamar_Cliente_ClienteId` FOREIGN KEY (`ClienteId`) REFERENCES `cliente` (`ClienteId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_Reclamar_Profissional_ProfissionalId` FOREIGN KEY (`ProfissionalId`) REFERENCES `profissional` (`ProfissionalId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reclamar`
+--
+
+LOCK TABLES `reclamar` WRITE;
+/*!40000 ALTER TABLE `reclamar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reclamar` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -155,12 +300,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `status` (
   `StatusID` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` longtext,
   PRIMARY KEY (`StatusID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,4 +326,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-28 21:06:14
+-- Dump completed on 2019-05-28  8:17:38
