@@ -4,21 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Collections;
 
 namespace MandAjuda.Models
 {
     public class Context:DbContext
     {
-        public Context() : base("MandAjuda")
+		internal readonly IEnumerable Chamados;
+
+		public Context() : base("MandAjuda")
         {
             Configuration.ProxyCreationEnabled = false;
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
-        public DbSet<Profissional> Profissionais { get; set; }
+        public DbSet<Profissional> Profissional { get; set; }
 
         public DbSet<Cliente> Clientes { get; set; }
 
-        public DbSet<Chamado> Chamados { get; set; }
+        public DbSet<Chamado> Chamado { get; set; }
 
         public DbSet<Status> Status { get; set; }
 
@@ -29,6 +32,8 @@ namespace MandAjuda.Models
         public DbSet<Curriculum> Curriculum { get; set; }
 
 		public DbSet<Chat> Chat { get; set; }
+
+		public DbSet<RecebeChamado> RecebeChamado { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

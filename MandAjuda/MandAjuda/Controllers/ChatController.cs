@@ -28,7 +28,7 @@ namespace MandAjuda.Controllers
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
-            ViewBag.ProfissionalId = new SelectList(db.Profissionais, "ProfissionalId", "NomeCompleto");
+            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
             return View();
         }
 

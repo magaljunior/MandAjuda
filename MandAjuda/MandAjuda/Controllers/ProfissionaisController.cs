@@ -16,7 +16,7 @@ namespace MandAjuda.Controllers
 
         public ActionResult Search()
         {
-            return View(db.Profissionais.ToList());
+            return View(db.Profissional.ToList());
         }
 
         public ActionResult Pesquisar()
@@ -24,7 +24,17 @@ namespace MandAjuda.Controllers
             return View();
         }
 
+        public ActionResult CidadeEstado()
+        {
+            return View();
+        }
+
         public ActionResult Cadastro()
+        {
+            return View();
+        }
+
+        public ActionResult Atualizado()
         {
             return View();
         }
@@ -37,7 +47,7 @@ namespace MandAjuda.Controllers
         // GET: Profissionais
         public ActionResult Index()
         {
-            return View(db.Profissionais.ToList());
+            return ViewBag(db.Profissional.ToList());
         }
 
         // GET: Profissionais/Details/5
@@ -47,7 +57,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();
@@ -66,11 +76,11 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
+        public ActionResult Create([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,EstadoAtende,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
-                db.Profissionais.Add(profissional);
+                db.Profissional.Add(profissional);
                 db.SaveChanges();
                 return RedirectToAction("Cadastro");
             }
@@ -85,7 +95,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();
@@ -98,13 +108,13 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
+        public ActionResult Edit([Bind(Include = "ProfissionalId,NomeCompleto,Profissao,Cpf,Cep,Endereco,Bairro,Cidade,Estado,Complemento,EstadoAtende,CidadeAtende,Contato,Email,Senha,Status")] Profissional profissional)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(profissional).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Atualizado");
             }
             return View(profissional);
         }
@@ -116,7 +126,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();
@@ -129,8 +139,8 @@ namespace MandAjuda.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Profissional profissional = db.Profissionais.Find(id);
-            db.Profissionais.Remove(profissional);
+            Profissional profissional = db.Profissional.Find(id);
+            db.Profissional.Remove(profissional);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -150,7 +160,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
+            Profissional profissional = db.Profissional.Find(id);
             if (profissional == null)
             {
                 return HttpNotFound();

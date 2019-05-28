@@ -46,16 +46,35 @@ namespace MandAjuda.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProfissionalId,Escolaridade,Foto1,Texto1,Foto2,Texto2,Foto3,Texto3")] Curriculum curriculum)
+        public ActionResult Create([Bind(Include = "ProfissionalID,Escolaridade,Foto1,Texto1")] Curriculum curriculum, HttpPostedFileBase foto)
         {
-            if (ModelState.IsValid)
+            ViewBag.FotoMensagem = "";
+            try
             {
-                db.Curriculum.Add(curriculum);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    string fileName = "";
+                    string contentType = "";
+                    string path = "";
+                    if (foto != null && foto.ContentLength > 0)
+                    {
+                        fileName = System.IO.Path.GetFileName(foto.FileName);
+                        contentType = foto.ContentType;
+                        path = System.Configuration.ConfigurationManager.AppSettings["PathFiles"] + "\\Curriculum\\" + fileName;
+                        foto.SaveAs(path);
+                        curriculum.Foto1 = fileName;
+                    }                    
+                    db.Curriculum.Add(curriculum);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch (Exception ex)
+            {
+                ViewBag.FotoMensagem = "Não foi possível salvar a foto";
+            }
             return View(curriculum);
+
         }
 
         // GET: Curriculum/Edit/5

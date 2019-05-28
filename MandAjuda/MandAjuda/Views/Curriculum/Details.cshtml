@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalhes do Curriculum</h2>
 
 <div>
     <h4>Curriculum</h4>
@@ -32,43 +32,11 @@
 
         <dd>
             @Html.DisplayFor(model => model.Texto1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Foto2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Texto2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Texto2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Foto3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Texto3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Texto3)
-        </dd>
+        </dd>       
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProfissionalId }) |
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ProfissionalId }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -18,7 +18,7 @@ namespace MandAjuda.Controllers
         // GET: Chamados
         public ActionResult Index()
         {
-            return View(db.Chamados.ToList());
+            return View(db.Chamado.ToList());
         }
 
         public ActionResult Cancelar()
@@ -33,7 +33,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Chamado chamado = db.Chamados.Find(id);
+            Chamado chamado = db.Chamado.Find(id);
             if (chamado == null)
             {
                 return HttpNotFound();
@@ -56,7 +56,7 @@ namespace MandAjuda.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Chamados.Add(chamado);
+                db.Chamado.Add(chamado);
                 db.SaveChanges();
 
                 MailMessage mail = new MailMessage();
@@ -89,7 +89,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Chamado chamado = db.Chamados.Find(id);
+            Chamado chamado = db.Chamado.Find(id);
             if (chamado == null)
             {
                 return HttpNotFound();
@@ -120,7 +120,7 @@ namespace MandAjuda.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Chamado chamado = db.Chamados.Find(id);
+            Chamado chamado = db.Chamado.Find(id);
             if (chamado == null)
             {
                 return HttpNotFound();
@@ -133,8 +133,8 @@ namespace MandAjuda.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Chamado chamado = db.Chamados.Find(id);
-            db.Chamados.Remove(chamado);
+            Chamado chamado = db.Chamado.Find(id);
+            db.Chamado.Remove(chamado);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

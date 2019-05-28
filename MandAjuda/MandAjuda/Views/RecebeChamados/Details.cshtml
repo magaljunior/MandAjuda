@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -66,14 +65,15 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
+						<a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown submenu active">
 
-							<li><a href="http://localhost:51258">Home</a></li>
+							<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
 
 							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
 
@@ -93,90 +93,60 @@
 		</div>
 	</header>
 	<!--================Header Area =================-->
-
 	<div class="container-fluid">
-		@model MandAjuda.Models.Reclamar
+		<div class="col-sm-12">
+			@model MandAjuda.Models.RecebeChamado
 
-		@{
-			ViewBag.Title = "Create";
-		}
+			@{
+				ViewBag.Title = "Details";
+			}
 
-			
+			<h2>Resposta do Chamado</h2>
 
-		@using (Html.BeginForm())
-		{
-			@Html.AntiForgeryToken()
-		<div class="container-fluid">
-			<center><h3>Canal de reclamações</h3></center>
+			<div>
+				
+				<hr />
+				<dl class="dl-horizontal">
+					<dt>
+						@Html.DisplayNameFor(model => model.Chamado.From)
+					</dt>
 
-			@*<div class="col-md-6 col-sm-6">
-				<img src="~/img/bonequinho para  post  vício redibitório.jpg" />
-			</div>*@
+					<dd>
+						@Html.DisplayFor(model => model.Chamado.From)
+					</dd>
 
-			<div class="col-md-2 col-sm-2">
-				<p></p>
+					<dt>
+						@Html.DisplayNameFor(model => model.Cliente.Nome)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.Cliente.Nome)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.Descricao)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.Descricao)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.Valor)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.Valor)
+					</dd>
+
+				</dl>
 			</div>
-			<hr />
-			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-			<div class="form-group">
-				@Html.LabelFor(model => model.ProfissionalId, "ProfissionalId", htmlAttributes: new { @class = "control-label col-md-2" })
-				
-					@Html.DropDownList("ProfissionalId", null, htmlAttributes: new { @class = "form-control" })
-					@Html.ValidationMessageFor(model => model.ProfissionalId, "", new { @class = "text-danger" })
-				
-			</div>
-
-			<div class="form-group">
-				@Html.LabelFor(model => model.ClienteId, "ClienteId", htmlAttributes: new { @class = "control-label col-md-2" })
-				
-					@Html.DropDownList("ClienteId", null, htmlAttributes: new { @class = "form-control" })
-					@Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
-				
-			</div>
-
-			<div class="form-group">
-				@Html.LabelFor(model => model.From, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
-				
-					@Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
-				
-			</div>
-
-			<div class="form-group">
-				@Html.LabelFor(model => model.To, htmlAttributes: new { @class = "control-label col-md-2" })
-				<div>
-					@Html.EditorFor(model => model.To, new { @*style = "display:none;", @Value = "pedrosantos0509@gmail.com",*@ htmlAttributes = new { @class = "form-control" } })
-					@Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
-				</div>
-			</div>
-
-			<div class="form-group">
-				@Html.LabelFor(model => model.Subject, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
-				<div>
-					@Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Reclamação Mand'Ajuda", htmlAttributes = new { @class = "form-control" } })
-
-				</div>
-			</div>
-
-
-			<div class="form-group" style="margin-top:100px">
-				@Html.LabelFor(model => model.Body, htmlAttributes: new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
-				<div class="col-md-4">
-					@Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", style = "height:150px", placeholder = "Digite sua mensagem" } })
-					@Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
-				</div>
-			</div>
-
-			
-				
-			<input type="submit" value="Enviar" class="btn btn-warning" style="margin-top:55px" />
-				
-			
 		</div>
-		}
-
 	</div>
-
+	@*<p>
+		@Html.ActionLink("Edit", "Edit", new { id = Model.RecebeChamadoId }) |
+		@Html.ActionLink("Back to List", "Index")
+	</p>*@
 	<!--================Address Area =================-->
 	<section class="address_area">
 		<div class="container">
@@ -187,7 +157,7 @@
 							<img src="~/img/icon/place-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h4>Endereço:</h4>
+							<h4>Endereço :</h4>
 							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
 						</div>
 					</div>
@@ -199,6 +169,7 @@
 						</div>
 						<div class="media-body">
 							<h5>(XX) XXXXX-XXXX</h5>
+
 						</div>
 					</div>
 				</div>
@@ -208,7 +179,7 @@
 							<img src="~/img/icon/inbox-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h6 style="font-size:17px">mandajudaservico@gmail.com</h6>
+							<h5>mandajudaservico@gmail.com</h5>
 
 						</div>
 					</div>
@@ -242,7 +213,9 @@
 	<script src="~/js/gmaps.min.js"></script>
 
 	<script src="~/js/theme.js"></script>
+
+	<script src="~/Scripts/jquery-3.3.1.js"></script>
+	<script src="~/js/Cep.js"></script>
+
 </body>
 </html>
-
-

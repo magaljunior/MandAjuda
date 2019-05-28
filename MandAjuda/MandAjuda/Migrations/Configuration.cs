@@ -10,6 +10,7 @@ namespace MandAjuda.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(MandAjuda.Models.Context context)

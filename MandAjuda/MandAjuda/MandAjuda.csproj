@@ -165,42 +165,15 @@
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
     <Compile Include="Controllers\QualificarController.cs" />
+    <Compile Include="Controllers\RecebeChamadosController.cs" />
     <Compile Include="Controllers\ReclamacaoController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905050057456_cliente.cs" />
-    <Compile Include="Migrations\201905050057456_cliente.Designer.cs">
-      <DependentUpon>201905050057456_cliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050058197_profissional.cs" />
-    <Compile Include="Migrations\201905050058197_profissional.Designer.cs">
-      <DependentUpon>201905050058197_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050058398_status.cs" />
-    <Compile Include="Migrations\201905050058398_status.Designer.cs">
-      <DependentUpon>201905050058398_status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050058576_chamado.cs" />
-    <Compile Include="Migrations\201905050058576_chamado.Designer.cs">
-      <DependentUpon>201905050058576_chamado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050059394_curriculum.cs" />
-    <Compile Include="Migrations\201905050059394_curriculum.Designer.cs">
-      <DependentUpon>201905050059394_curriculum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050100282_qualificar.cs" />
-    <Compile Include="Migrations\201905050100282_qualificar.Designer.cs">
-      <DependentUpon>201905050100282_qualificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050102575_reclamar.cs" />
-    <Compile Include="Migrations\201905050102575_reclamar.Designer.cs">
-      <DependentUpon>201905050102575_reclamar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905050205339_chat.cs" />
-    <Compile Include="Migrations\201905050205339_chat.Designer.cs">
-      <DependentUpon>201905050205339_chat.cs</DependentUpon>
+    <Compile Include="Migrations\201905222224502_profissional.cs" />
+    <Compile Include="Migrations\201905222224502_profissional.Designer.cs">
+      <DependentUpon>201905222224502_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -209,9 +182,11 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curriculum.cs" />
+    <Compile Include="Models\CurriculumProfissional.cs" />
     <Compile Include="Models\Integra.cs" />
     <Compile Include="Models\Profissional.cs" />
     <Compile Include="Models\Qualificar.cs" />
+    <Compile Include="Models\RecebeChamado.cs" />
     <Compile Include="Models\Reclamar.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -313,6 +288,7 @@
     <Content Include="img\clients\client-6.png" />
     <Content Include="img\comment-user\comment-user-1.jpg" />
     <Content Include="img\comment-user\comment-user-2.jpg" />
+    <Content Include="img\face.png" />
     <Content Include="img\favicon.ico" />
     <Content Include="img\footer-bg.jpg" />
     <Content Include="img\footer-logo.png" />
@@ -353,7 +329,7 @@
     <Content Include="img\Mandajuda.jpeg" />
     <Content Include="img\map-marker.png" />
     <Content Include="img\megafone.png" />
-    <Content Include="img\Pedro.jpeg" />
+    <Content Include="img\Pedro.png" />
     <Content Include="img\pre-cons-left.jpg" />
     <Content Include="img\pre-cons-right.jpg" />
     <Content Include="img\project\project-1.jpg" />
@@ -419,6 +395,7 @@
     <Content Include="img\team\team-2\team-3.jpg" />
     <Content Include="img\team\team-3.jpg" />
     <Content Include="img\testimonials\test-1.jpg" />
+    <Content Include="img\twitter.png" />
     <Content Include="img\video-1.jpg" />
     <Content Include="img\who-we.jpg" />
     <Content Include="img\work-bg.jpg" />
@@ -426,6 +403,7 @@
     <Content Include="js\Cep.js" />
     <Content Include="js\gmaps.min.js" />
     <Content Include="js\jquery-2.2.4.js" />
+    <Content Include="js\LatLong.js" />
     <Content Include="js\theme.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -566,6 +544,7 @@
     <Content Include="vendors\tweet\tweet-carousel.css" />
     <Content Include="vendors\tweet\tweetie.min.js" />
     <Content Include="Views\Home\index.html" />
+    <Content Include="Views\Profissionais\Edit.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -651,7 +630,6 @@
     <Content Include="Views\Cancelar\Confirmacao.cshtml" />
     <Content Include="Views\Profissionais\Create.cshtml" />
     <Content Include="Views\Profissionais\Details.cshtml" />
-    <Content Include="Views\Profissionais\Edit.cshtml" />
     <Content Include="Views\Profissionais\Index.cshtml" />
     <Content Include="Views\Profissionais\Cadastro.cshtml" />
     <Content Include="Views\Profissionais\Pesquisar.cshtml" />
@@ -676,6 +654,11 @@
     <Content Include="Views\Chat\Create.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Chat\Confirmacao.cshtml" />
+    <Content Include="Views\RecebeChamados\Create.cshtml" />
+    <Content Include="Views\RecebeChamados\Details.cshtml" />
+    <Content Include="Views\RecebeChamados\Index.cshtml" />
+    <Content Include="Views\RecebeChamados\Confirma.cshtml" />
+    <Content Include="Views\Profissionais\Atualizado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -695,29 +678,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905050057456_cliente.resx">
-      <DependentUpon>201905050057456_cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050058197_profissional.resx">
-      <DependentUpon>201905050058197_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050058398_status.resx">
-      <DependentUpon>201905050058398_status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050058576_chamado.resx">
-      <DependentUpon>201905050058576_chamado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050059394_curriculum.resx">
-      <DependentUpon>201905050059394_curriculum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050100282_qualificar.resx">
-      <DependentUpon>201905050100282_qualificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050102575_reclamar.resx">
-      <DependentUpon>201905050102575_reclamar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050205339_chat.resx">
-      <DependentUpon>201905050205339_chat.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905222224502_profissional.resx">
+      <DependentUpon>201905222224502_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -39,128 +39,73 @@
 
 
     <!--================Header Area =================-->
-    <header class="main_header_area">
-        <div class="header_top_area">
-            <div class="container">
-                <div class="pull-left">
-                    <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
-                    <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+    <div class="header_top_area">
+        <div class="container">
+            <div class="pull-left">
+                <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+                <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+
+            </div>
+            <div class="pull-right">
+                <ul class="header_social">
+                    <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_menu_area">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
                 </div>
-                <div class="pull-right">
-                    <ul class="header_social">
-                        <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="http://localhost:51258">Home</a></li>
+
                     </ul>
-                </div>
-            </div>
+                </div><!-- /.navbar-collapse -->
+            </nav>
         </div>
-        <div class="main_menu_area">
-            <div class="container">
-                <nav class="navbar navbar-default">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"><img src="~/img/logoMA.png" alt=""></a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="http://localhost:51258">Home</a></li>
-
-                            <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-
-                            <li class="dropdown submenu active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
-                                </ul>
-                            </li>
-
-                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
-
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </nav>
-            </div>
-        </div>
+    </div>
     </header>
     <!--================Header Area =================-->
 
-    <div class="container-fluid">
+    <div class="row" style="margin-bottom: 25px;">
         <div class="col-sm-12">
-            @model IEnumerable<MandAjuda.Models.Chamado>
+            @model MandAjuda.Models.Profissional
 
             @{
-                ViewBag.Title = "Index";
+                ViewBag.Title = "Cadastro";
             }
 
-            <center>
-                <hr />
-                <h2 style="margin-top:20px;">Meus Chamados</h2>
-                <hr />
-            </center>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
+                <div class="container">
+                    <hr />
+                    <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Cadastro atualizado com sucesso</h2></center>
+                    <hr />
+                </div>
+            }
 
-            <table class="table">
-                <tr>
-                    @*<th>
-                        @Html.DisplayNameFor(model => model.To)
-                    </th>*@
-                    <th>
-                        @Html.DisplayNameFor(model => model.Subject)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Body)
-                    </th>
-                    <th></th>
-
-                    @foreach (var item in Model)
-                    {
-                <tr>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.To)
-                    </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Body)
-                    </td>
-                    <td>
-                        @*<strong>
-                        <p style="margin-left: 50px; color:red">
-                        OBS: Para cancelar o chamado copie o E-mail do profissional listado ao lado
-                        </p>
-                        </strong>*@
-                        <p>
-                            <a>@Html.ActionLink("Detalhes", "Details", new { id = item.ChamadoID })</a>
-                        </p>
-                        <p>
-                            <a>@Html.ActionLink("Qualificar", "Create", "Qualificar")</a>
-                        </p>
-                        <p>
-                            <a>@Html.ActionLink("Cancelar", "Cancelar", "Cancelar")</a>
-                        </p>
-						<p>
-							<a>@Html.ActionLink("Details", "Details", "RecebeChamado")</a>
-						</p>
-
-                    </td>
-                </tr>
-
-                }
-                </table>
-                <hr />
-            </div>
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
     </div>
-
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">
@@ -229,4 +174,5 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
+
 

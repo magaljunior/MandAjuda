@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using MandAjuda.Models;
@@ -31,7 +32,7 @@ namespace MandAjuda.Controllers
         {
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
-            ViewBag.ProfissionalId = new SelectList(db.Profissionais, "ProfissionalId", "NomeCompleto");
+            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
             return View();
         }
 
@@ -41,17 +42,35 @@ namespace MandAjuda.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReclamarId,ProfissionalId,ClienteId,From,To,Subject,Body")] Reclamar reclamar)
+        public ActionResult Create([Bind(Include = "ReclamarId,ProfissionalId,ClienteId,From,To,Subject,Body")] Reclamar reclamar, MandAjuda.Models.Reclamar _objModelMail)
         {
             if (ModelState.IsValid)
             {
                 db.Reclamar.Add(reclamar);
                 db.SaveChanges();
+
+                MailMessage mail = new MailMessage();
+                mail.To.Add(_objModelMail.To);
+                mail.From = new MailAddress(_objModelMail.From);
+                mail.Subject = _objModelMail.Subject;
+                string Body = _objModelMail.Body;
+                mail.Body = Body;
+                mail.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential
+                ("mandajudaservico@gmail.com", "Mand@judaPI");
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
+
                 return RedirectToAction("Confirmacao");
             }
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", reclamar.ClienteId);
-            ViewBag.ProfissionalId = new SelectList(db.Profissionais, "ProfissionalId", "NomeCompleto", reclamar.ProfissionalId);
+            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", reclamar.ProfissionalId);
             return View(reclamar);
         }
 

@@ -30,7 +30,7 @@ namespace MandAjuda.Repositories
         public static bool AutenticarUsuarioProfissional(string login, string senha)
         {
             Context _db = new Context();
-            var query = (from u in _db.Profissionais
+            var query = (from u in _db.Profissional
                          where u.Email == login &&
                          u.Senha == senha
                          select u).SingleOrDefault();
@@ -89,7 +89,7 @@ namespace MandAjuda.Repositories
                 else
                 {
                     Context _db = new Context();
-                    Profissional profissional = (from u in _db.Profissionais
+                    Profissional profissional = (from u in _db.Profissional
                                                  where u.Email == _login
                                                  select u).SingleOrDefault();
                     return profissional;
@@ -126,7 +126,7 @@ namespace MandAjuda.Repositories
             else
             {
                 Context _db = new Context();
-                Profissional profissional = (from u in _db.Profissionais
+                Profissional profissional = (from u in _db.Profissional
                                              where u.Email == _login
                                              select u).SingleOrDefault();
                 return profissional;
