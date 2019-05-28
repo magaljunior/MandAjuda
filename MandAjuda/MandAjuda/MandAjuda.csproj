@@ -171,9 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905180005462_curriculum.cs" />
-    <Compile Include="Migrations\201905180005462_curriculum.Designer.cs">
-      <DependentUpon>201905180005462_curriculum.cs</DependentUpon>
+    <Compile Include="Migrations\201905222224502_profissional.cs" />
+    <Compile Include="Migrations\201905222224502_profissional.Designer.cs">
+      <DependentUpon>201905222224502_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -629,8 +629,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905180005462_curriculum.resx">
-      <DependentUpon>201905180005462_curriculum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905222224502_profissional.resx">
+      <DependentUpon>201905222224502_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
