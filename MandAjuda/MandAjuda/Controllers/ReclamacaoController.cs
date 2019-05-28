@@ -31,8 +31,15 @@ namespace MandAjuda.Controllers
 		public ActionResult Create()
         {
 
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
-            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
+            //ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
+            //ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
+
+            string Email = Session["Usuario"].ToString();
+
+            ViewBag.ClienteId = db.Clientes.Where(c => c.Email == Email).FirstOrDefault().ClienteId;
+
+            ViewBag.ProfissionalId = Convert.ToInt32(Request.QueryString["id"]);
+
             return View();
         }
 
@@ -46,11 +53,13 @@ namespace MandAjuda.Controllers
         {
             if (ModelState.IsValid)
             {
+                string Email = db.Profissional.Where(p => p.ProfissionalId == reclamar.ProfissionalId).FirstOrDefault().Email;
+                reclamar.To = Email;
                 db.Reclamar.Add(reclamar);
                 db.SaveChanges();
 
                 MailMessage mail = new MailMessage();
-                mail.To.Add(_objModelMail.To);
+                mail.To.Add(Email);
                 mail.From = new MailAddress(_objModelMail.From);
                 mail.Subject = _objModelMail.Subject;
                 string Body = _objModelMail.Body;

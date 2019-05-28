@@ -162,6 +162,7 @@
 
                     <dt>
                         @Html.DisplayNameFor(model => model.Bairro)
+                        @Html.HiddenFor(model => model.ProfissionalId)
                     </dt>
 
                     <dd>
@@ -242,7 +243,7 @@
             </p>
             <hr />
             <p style="margin-left: 50px;">
-                <a class="btn btn-default" href="http://localhost:51258/Reclamacao/Create">Reclamar</a>
+                <a class="btn btn-default" href='http://localhost:51258/Reclamacao/Create?id=@Model.ProfissionalId'>Reclamar</a>
             </p>
             <hr />
         </div>
