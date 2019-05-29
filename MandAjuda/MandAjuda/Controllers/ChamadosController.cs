@@ -44,15 +44,25 @@ namespace MandAjuda.Controllers
         // GET: Chamados/Create
         public ActionResult Create()
         {
+            string Email = Session["Usuario"].ToString();
+
+            ViewBag.ClienteId = db.Clientes.Where(c => c.Email == Email).FirstOrDefault().ClienteId;
+
+            ViewBag.ProfissionalId = Convert.ToInt32(Request.QueryString["id"]);
+
+            ViewBag.To = db.Profissional.Where(p => p.ProfissionalId == p.ProfissionalId).FirstOrDefault().Email;
+
             return View();
         }
 
-        // POST: Chamados/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        public ActionResult Confirmacao()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ChamadoID,From,To,Subject,Body")] Chamado chamado, MandAjuda.Models.Chamado _objModelMail)
+        public ActionResult Create([Bind(Include = "ChamadoID,ProfissionalId,ClienteId,From,To,Subject,Body")] Chamado chamado, MandAjuda.Models.Chamado _objModelMail)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +86,7 @@ namespace MandAjuda.Controllers
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Confirmacao");
             }
 
             return View(chamado);

@@ -171,9 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905222224502_profissional.cs" />
-    <Compile Include="Migrations\201905222224502_profissional.Designer.cs">
-      <DependentUpon>201905222224502_profissional.cs</DependentUpon>
+    <Compile Include="Migrations\201905291842551_profissional.cs" />
+    <Compile Include="Migrations\201905291842551_profissional.Designer.cs">
+      <DependentUpon>201905291842551_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -659,6 +659,7 @@
     <Content Include="Views\RecebeChamados\Index.cshtml" />
     <Content Include="Views\RecebeChamados\Confirma.cshtml" />
     <Content Include="Views\Profissionais\Atualizado.cshtml" />
+    <Content Include="Views\Chamados\Confirmacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -678,8 +679,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905222224502_profissional.resx">
-      <DependentUpon>201905222224502_profissional.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905291842551_profissional.resx">
+      <DependentUpon>201905291842551_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
