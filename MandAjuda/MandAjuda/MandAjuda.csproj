@@ -660,6 +660,7 @@
     <Content Include="Views\RecebeChamados\Confirma.cshtml" />
     <Content Include="Views\Profissionais\Atualizado.cshtml" />
     <Content Include="Views\Chamados\Confirmacao.cshtml" />
+    <Content Include="Views\Chamados\MeusChamados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

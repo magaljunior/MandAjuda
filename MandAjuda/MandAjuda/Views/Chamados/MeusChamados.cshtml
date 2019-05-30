@@ -1,0 +1,65 @@
+﻿<div class="container-fluid">
+    <div class="col-sm-12">
+
+        @model IEnumerable<MandAjuda.Models.Chamado>
+
+        @{
+            ViewBag.Title = "MeusChamados";
+        }
+
+        <br />
+        <br />
+        <br />
+
+        <center>
+            <hr />
+            <h2 style="margin-top:20px;">Meus Chamados</h2>
+            <hr />
+        </center>
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.To)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Body)
+                </th>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.To)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </td>
+                    <td>
+                        <p>
+                            <a>@Html.ActionLink("Detalhes", "Details", new { id = item.ChamadoID })</a>
+                        </p>
+                        <p>
+                            <a>@Html.ActionLink("Qualificar", "Create", "Qualificar")</a>
+                        </p>
+                        <p>
+                            <a>@Html.ActionLink("Cancelar", "Cancelar", "Cancelar")</a>
+                        </p>
+                        <p>
+                            <a>@Html.ActionLink("Details", "Details", "RecebeChamado")</a>
+                        </p>
+                    </td>
+                </tr>
+
+            }
+            </table>
+            <hr />
+        </div>
+    </div>

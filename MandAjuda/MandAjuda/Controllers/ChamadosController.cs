@@ -21,6 +21,15 @@ namespace MandAjuda.Controllers
             return View(db.Chamado.ToList());
         }
 
+        public ActionResult MeusChamados()
+        {
+            string Email = Session["Usuario"].ToString();
+
+            int ClienteLogado = db.Clientes.Where(c => c.Email == Email).FirstOrDefault().ClienteId;
+
+            return View(db.Chamado.ToList().Where(c => c.ClienteId == ClienteLogado));
+        }
+
         public ActionResult Cancelar()
         {
             return View();
