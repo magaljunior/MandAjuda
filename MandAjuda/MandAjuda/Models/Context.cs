@@ -23,6 +23,8 @@ namespace MandAjuda.Models
 
         public DbSet<Chamado> Chamado { get; set; }
 
+        public DbSet<Mensagem> Mensagem { get; set; }
+
         public DbSet<Status> Status { get; set; }
 
 		public DbSet<Qualificar> Qualificar { get; set; }

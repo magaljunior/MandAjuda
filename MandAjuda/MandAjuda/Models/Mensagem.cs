@@ -8,33 +8,33 @@ using System.Web;
 
 namespace MandAjuda.Models
 {
-    public class Chamado
+    public class Mensagem
     {
         [Key]
-        public int ChamadoId { get; set; }
+        public int MensagemId { get; set; }
 
         public int ProfissionalId { get; set; }
 
         public int ClienteId { get; set; }
 
+        public int ChamadoId { get; set; }
+
+        public string Descricao { get; set; }
+
         [DisplayName("De:")]
         public string From { get; set; }
-        [Required(ErrorMessage = "Por favor digite o email do profissional como exibido acima")]
+
         [DisplayName("Para:")]
         public string To { get; set; }
-        [DisplayName("Situacão:")]
-        public int Situacao { get; set; }
-        [Required(ErrorMessage = "Por favor digite um título para a requisição")]
-        [DisplayName("Título:")]
-        public string Subject { get; set; }
-        [Required(ErrorMessage = "Por favor digite uma breve descrição para a requisição")]
-        [DisplayName("Requisição:")]
-        public string Body { get; set; }
 
         [ForeignKey("ProfissionalId")]
         public virtual Profissional Profissional { get; set; }
 
         [ForeignKey("ClienteId")]
         public virtual Cliente Cliente { get; set; }
+
+        [ForeignKey("ChamadoId")]
+        public virtual Chamado Chamado { get; set; }
+
     }
 }

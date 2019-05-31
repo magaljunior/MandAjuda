@@ -162,6 +162,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutClienteController.cs" />
     <Compile Include="Controllers\LayoutProfissionalController.cs" />
+    <Compile Include="Controllers\MensagensController.cs" />
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
     <Compile Include="Controllers\QualificarController.cs" />
@@ -171,9 +172,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905291842551_profissional.cs" />
-    <Compile Include="Migrations\201905291842551_profissional.Designer.cs">
-      <DependentUpon>201905291842551_profissional.cs</DependentUpon>
+    <Compile Include="Migrations\201905311523091_chamado.cs" />
+    <Compile Include="Migrations\201905311523091_chamado.Designer.cs">
+      <DependentUpon>201905311523091_chamado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\Curriculum.cs" />
     <Compile Include="Models\CurriculumProfissional.cs" />
     <Compile Include="Models\Integra.cs" />
+    <Compile Include="Models\Mensagem.cs" />
     <Compile Include="Models\Profissional.cs" />
     <Compile Include="Models\Qualificar.cs" />
     <Compile Include="Models\RecebeChamado.cs" />
@@ -659,8 +661,11 @@
     <Content Include="Views\RecebeChamados\Index.cshtml" />
     <Content Include="Views\RecebeChamados\Confirma.cshtml" />
     <Content Include="Views\Profissionais\Atualizado.cshtml" />
-    <Content Include="Views\Chamados\Confirmacao.cshtml" />
-    <Content Include="Views\Chamados\MeusChamados.cshtml" />
+    <Content Include="Views\Mensagens\Create.cshtml" />
+    <Content Include="Views\Mensagens\Delete.cshtml" />
+    <Content Include="Views\Mensagens\Details.cshtml" />
+    <Content Include="Views\Mensagens\Edit.cshtml" />
+    <Content Include="Views\Mensagens\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -680,8 +685,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905291842551_profissional.resx">
-      <DependentUpon>201905291842551_profissional.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905311523091_chamado.resx">
+      <DependentUpon>201905311523091_chamado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

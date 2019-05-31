@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using MandAjuda.Models;
 
-namespace MandAjuda.Controllers
+namespace MandAjuda.css
 {
     public class ChamadosController : Controller
     {
@@ -18,11 +18,6 @@ namespace MandAjuda.Controllers
         // GET: Chamados
         public ActionResult Index()
         {
-            return View(db.Chamado.ToList());
-        }
-
-        public ActionResult MeusChamados()
-        {
             string Email = Session["Usuario"].ToString();
 
             int ClienteLogado = db.Clientes.Where(c => c.Email == Email).FirstOrDefault().ClienteId;
@@ -30,14 +25,19 @@ namespace MandAjuda.Controllers
             return View(db.Chamado.ToList().Where(c => c.ClienteId == ClienteLogado));
         }
 
-        public ActionResult Cancelar()
-        {
-            return View();
-        }
-
         // GET: Chamados/Details/5
         public ActionResult Details(int? id)
         {
+            string Email = Session["Usuario"].ToString();
+
+            int ClienteLogado = db.Clientes.Where(c => c.Email == Email).FirstOrDefault().ClienteId;
+
+            ViewBag.Cliente = db.Clientes.Where(c => c.ClienteId == ClienteLogado).FirstOrDefault().Nome;
+
+            int Profissional = Convert.ToInt32(Request.QueryString["idp"]);
+
+            ViewBag.Profissional = db.Profissional.Where(p => p.ProfissionalId == Profissional).FirstOrDefault().NomeCompleto;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -64,42 +64,39 @@ namespace MandAjuda.Controllers
             return View();
         }
 
-        public ActionResult Confirmacao()
-        {
-            return View();
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ChamadoID,ProfissionalId,ClienteId,From,To,Subject,Body")] Chamado chamado, MandAjuda.Models.Chamado _objModelMail)
+        public ActionResult Create([Bind(Include = "ChamadoId,ProfissionalId,ClienteId,From,To,Situacao,Subject,Body")] Chamado chamado, MandAjuda.Models.Chamado _objModelMail)
         {
-            if (ModelState.IsValid)
-            {
-                db.Chamado.Add(chamado);
-                db.SaveChanges();
+                if (ModelState.IsValid)
+                {
+                    db.Chamado.Add(chamado);
+                    db.SaveChanges();
 
-                MailMessage mail = new MailMessage();
-                mail.To.Add(_objModelMail.To);
-                mail.From = new MailAddress(_objModelMail.From);
-                mail.Subject = _objModelMail.Subject;
-                string Body = _objModelMail.Body;
-                mail.Body = Body;
-                mail.IsBodyHtml = true;
+                    MailMessage mail = new MailMessage();
+                    mail.To.Add(_objModelMail.To);
+                    mail.From = new MailAddress(_objModelMail.From);
+                    mail.Subject = _objModelMail.Subject;
+                    string Body = _objModelMail.Body;
+                    mail.Body = Body;
+                    mail.IsBodyHtml = true;
 
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new System.Net.NetworkCredential
-                ("mandajudaservico@gmail.com", "Mand@judaPI");
-                smtp.EnableSsl = true;
-                smtp.Send(mail);
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new System.Net.NetworkCredential
+                    ("mandajudaservico@gmail.com", "Mand@judaPI");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
 
-                return RedirectToAction("Confirmacao");
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", chamado.ClienteId);
+                ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", chamado.ProfissionalId);
+                return View(chamado);
             }
-
-            return View(chamado);
-        }
 
         // GET: Chamados/Edit/5
         public ActionResult Edit(int? id)
@@ -113,15 +110,14 @@ namespace MandAjuda.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", chamado.ClienteId);
+            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", chamado.ProfissionalId);
             return View(chamado);
         }
 
-        // POST: Chamados/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ChamadoID,From,To,Subject,Body")] Chamado chamado)
+        public ActionResult Edit([Bind(Include = "ChamadoId,ProfissionalId,ClienteId,SituacaoId,From,To,Subject,Body")] Chamado chamado)
         {
             if (ModelState.IsValid)
             {
@@ -129,6 +125,8 @@ namespace MandAjuda.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", chamado.ClienteId);
+            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", chamado.ProfissionalId);
             return View(chamado);
         }
 
