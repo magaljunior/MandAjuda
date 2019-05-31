@@ -129,37 +129,19 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
 
-							<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
-							<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-							<li>@Html.ActionLink("Qualificar", "Create", "Qualificar")</li>
-							<li>@Html.ActionLink("Perfil", "Index", "Clientes")</li>
+                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+                            <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+                            <li>@Html.ActionLink("Qualificar", "Create", "Qualificar")</li>
+                            <li>@Html.ActionLink("Perfil", "Index", "Clientes")</li>
+                            <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
 
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 
-							<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
-								<ul class="dropdown-menu">
-									<li>@Html.ActionLink("Abrir Chamado", "Create", "Chamados")</li>
-									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
-								</ul>
+                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
 
-							</li>
-
-							<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/img/megafone.png" width="30px" /></a>
-								<ul class="dropdown-menu">
-
-									<li>@Html.ActionLink("Reclamar", "Create", "Reclamar Plataforma")</li>
-								</ul>
-
-							</li>
-
-							<li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
-
-							<div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
-
-						</ul>
+                        </ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
 			</div>

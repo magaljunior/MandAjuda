@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MandAjuda.Models.Mensagem>
+
+@{
+    ViewBag.Title = "IndexProfissional";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Cliente:</p>
+            <input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.Cliente" />
+        </th>
+        <th>
+            <p>Profissional:</p>
+            <input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.Profissional" />
+        </th>
+        <th>
+            <p>Descrição:</p>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profissional.NomeCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+        </tr>
+    }
+
+</table>

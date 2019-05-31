@@ -25,6 +25,15 @@ namespace MandAjuda.css
             return View(db.Chamado.ToList().Where(c => c.ClienteId == ClienteLogado));
         }
 
+        public ActionResult IndexProfissional()
+        {
+            string Email = Session["Usuario"].ToString();
+
+            int ProfissionalLogado = db.Profissional.Where(c => c.Email == Email).FirstOrDefault().ProfissionalId;
+
+            return View(db.Chamado.ToList().Where(c => c.ProfissionalId == ProfissionalLogado));
+        }
+
         // GET: Chamados/Details/5
         public ActionResult Details(int? id)
         {

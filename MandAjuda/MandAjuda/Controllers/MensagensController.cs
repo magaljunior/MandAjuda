@@ -32,6 +32,28 @@ namespace MandAjuda.Controllers
             return View(db.Mensagem.ToList().Where(c => c.ChamadoId == Chamado));
         }
 
+        public ActionResult IndexProfissional()
+        {
+            string Email = Session["Usuario"].ToString();
+
+            int ProfissionalLogado = db.Profissional.Where(c => c.Email == Email).FirstOrDefault().ProfissionalId;
+
+            ViewBag.ProfissionalId = db.Profissional.Where(c => c.ProfissionalId == ProfissionalLogado).FirstOrDefault().NomeCompleto;
+
+            int Chamado = Convert.ToInt32(Request.QueryString["idc"]);
+
+            int Profissional = Convert.ToInt32(Request.QueryString["idp"]);
+
+            ViewBag.Profissional = db.Profissional.Where(c => c.ProfissionalId == Profissional).FirstOrDefault().NomeCompleto;
+
+            return View(db.Mensagem.ToList().Where(c => c.ChamadoId == Chamado));
+        }
+
+        public ActionResult Confirmacao()
+        {
+            return View();
+        }
+
         // GET: Mensagens/Details/5
         public ActionResult Details(int? id)
         {
@@ -71,9 +93,6 @@ namespace MandAjuda.Controllers
             return View();
         }
 
-        // POST: Mensagens/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem)
@@ -82,7 +101,7 @@ namespace MandAjuda.Controllers
             {
                 db.Mensagem.Add(mensagem);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Confirmacao");
             }
 
             ViewBag.ChamadoId = new SelectList(db.Chamado, "ChamadoId", "From", mensagem.ChamadoId);

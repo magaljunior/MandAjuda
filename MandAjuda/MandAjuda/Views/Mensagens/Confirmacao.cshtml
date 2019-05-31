@@ -1,0 +1,24 @@
+﻿@model MandAjuda.Models.Mensagem
+
+@{
+    ViewBag.Title = "Confirmacao";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <hr />
+        <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Mensagem enviada com sucesso</h2></center>
+        <hr />
+        <br />
+        <br />
+        <br />
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

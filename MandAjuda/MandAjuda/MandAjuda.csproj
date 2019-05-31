@@ -625,7 +625,6 @@
     <Content Include="Views\Clientes\Cadastro.cshtml" />
     <Content Include="Views\Chamados\Create.cshtml" />
     <Content Include="Views\Chamados\Details.cshtml" />
-    <Content Include="Views\Chamados\Edit.cshtml" />
     <Content Include="Views\Chamados\Index.cshtml" />
     <Content Include="Views\Publico\AcessoNegado.cshtml" />
     <Content Include="Views\Cancelar\Cancelar.cshtml" />
@@ -662,10 +661,12 @@
     <Content Include="Views\RecebeChamados\Confirma.cshtml" />
     <Content Include="Views\Profissionais\Atualizado.cshtml" />
     <Content Include="Views\Mensagens\Create.cshtml" />
-    <Content Include="Views\Mensagens\Delete.cshtml" />
     <Content Include="Views\Mensagens\Details.cshtml" />
-    <Content Include="Views\Mensagens\Edit.cshtml" />
     <Content Include="Views\Mensagens\Index.cshtml" />
+    <Content Include="Views\Chamados\IndexProfissional.cshtml" />
+    <Content Include="Views\Mensagens\IndexProfissional.cshtml" />
+    <Content Include="Views\Mensagens\Confirmacao.cshtml" />
+    <Content Include="Views\Chamados\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
