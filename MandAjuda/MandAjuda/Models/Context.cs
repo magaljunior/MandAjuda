@@ -35,9 +35,11 @@ namespace MandAjuda.Models
 
 		public DbSet<Chat> Chat { get; set; }
 
-		public DbSet<RecebeChamado> RecebeChamado { get; set; }
+        public DbSet<RecebeChamado> RecebeChamado { get; set; }
 
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public DbSet<RelatAtend> RelatAtend { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

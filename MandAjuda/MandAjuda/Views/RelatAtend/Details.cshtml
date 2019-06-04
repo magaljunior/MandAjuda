@@ -1,0 +1,66 @@
+﻿@model MandAjuda.Models.RelatAtend
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RelatAtend</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Chamado.From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chamado.From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profissional.NomeCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profissional.NomeCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraTermino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RelatAtendId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -168,13 +168,14 @@
     <Compile Include="Controllers\QualificarController.cs" />
     <Compile Include="Controllers\RecebeChamadosController.cs" />
     <Compile Include="Controllers\ReclamacaoController.cs" />
+    <Compile Include="Controllers\RelatAtendController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905311523091_chamado.cs" />
-    <Compile Include="Migrations\201905311523091_chamado.Designer.cs">
-      <DependentUpon>201905311523091_chamado.cs</DependentUpon>
+    <Compile Include="Migrations\201906032351563_profissional.cs" />
+    <Compile Include="Migrations\201906032351563_profissional.Designer.cs">
+      <DependentUpon>201906032351563_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Models\Qualificar.cs" />
     <Compile Include="Models\RecebeChamado.cs" />
     <Compile Include="Models\Reclamar.cs" />
+    <Compile Include="Models\RelatAtend.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Funcoes.cs" />
@@ -667,6 +669,10 @@
     <Content Include="Views\Mensagens\IndexProfissional.cshtml" />
     <Content Include="Views\Mensagens\Confirmacao.cshtml" />
     <Content Include="Views\Chamados\Edit.cshtml" />
+    <Content Include="Views\RelatAtend\Create.cshtml" />
+    <Content Include="Views\RelatAtend\Details.cshtml" />
+    <Content Include="Views\RelatAtend\Edit.cshtml" />
+    <Content Include="Views\RelatAtend\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -686,8 +692,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905311523091_chamado.resx">
-      <DependentUpon>201905311523091_chamado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906032351563_profissional.resx">
+      <DependentUpon>201906032351563_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
