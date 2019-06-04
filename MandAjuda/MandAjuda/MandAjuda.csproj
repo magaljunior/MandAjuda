@@ -177,6 +177,10 @@
     <Compile Include="Migrations\201906032351563_profissional.Designer.cs">
       <DependentUpon>201906032351563_profissional.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906040041013_relatAtend.cs" />
+    <Compile Include="Migrations\201906040041013_relatAtend.Designer.cs">
+      <DependentUpon>201906040041013_relatAtend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
     <Compile Include="Models\Chamado.cs" />
@@ -694,6 +698,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906032351563_profissional.resx">
       <DependentUpon>201906032351563_profissional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906040041013_relatAtend.resx">
+      <DependentUpon>201906040041013_relatAtend.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

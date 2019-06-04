@@ -94,7 +94,7 @@ namespace MandAjuda.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RelatAtendId,ProfissionalId,ClienteId,ChamadoId,DataHoraInicio,DataHoraTermino,Descricao")] RelatAtend relatAtend)
+        public ActionResult Edit([Bind(Include = "RelatAtendId,ProfissionalId,ClienteId,ChamadoId,DataHoraInicio,DataHoraTermino,Descricao,Situacao")] RelatAtend relatAtend)
         {
             if (ModelState.IsValid)
             {
