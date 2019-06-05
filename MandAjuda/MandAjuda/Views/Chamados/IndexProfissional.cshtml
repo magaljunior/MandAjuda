@@ -77,7 +77,7 @@
                             <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
                             <li>@Html.ActionLink("Qualificar", "Create", "Qualificar")</li>
                             <li>@Html.ActionLink("Perfil", "Index", "Clientes")</li>
-                            <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+                            <li>@Html.ActionLink("Meus Chamados", "IndexProfissional", "Chamados")</li>
                             <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 
                         </ul>
@@ -121,7 +121,7 @@
                             @Html.DisplayFor(modelItem => item.Body)
                         </td>
                         <td>
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.ChamadoId, idc = item.ChamadoId, idp = item.ProfissionalId })
+                            @Html.ActionLink("Detalhes", "DetailsPro", new { id = item.ChamadoId, idc = item.ChamadoId, idcli = item.ClienteId })
                         </td>
                     </tr>
                 }

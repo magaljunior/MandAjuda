@@ -39,6 +39,10 @@ namespace MandAjuda.Models
 
         public DbSet<RelatAtend> RelatAtend { get; set; }
 
+        public DbSet<CentralAjudaCli> CentralAjudaCli { get; set; }
+
+        public DbSet<CentralAjudaPro> CentralAjudaPro { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();

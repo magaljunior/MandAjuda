@@ -12,18 +12,33 @@ namespace MandAjuda.Models
     {
         [Key]
         public int RelatAtendId { get; set; }
+
         public int ProfissionalId { get; set; }
+
         public int ClienteId { get; set; }
+
         public int ChamadoId { get; set; }
-        [Required(ErrorMessage = "Por favor digite uma data e hora inicial")]
-        [DisplayName("Data e Hora Inicial:")]
-        public DateTime DataHoraInicio { get; set; }
-        [Required(ErrorMessage = "Por favor digite uma data e hora de término")]
-        [DisplayName("Data e Hora Término:")]
-        public DateTime DataHoraTermino { get; set; }
+
+        [Required(ErrorMessage = "Por favor digite uma data inicial")]
+        [DisplayName("Data Inicial:")]
+        public string DataInicio { get; set; }
+
+        [Required(ErrorMessage = "Por favor digite uma data de término")]
+        [DisplayName("Data Término:")]
+        public string DataTermino { get; set; }
+
+        [Required(ErrorMessage = "Por favor digite uma hora inicial")]
+        [DisplayName("Hora Inicial:")]
+        public string HoraInicial { get; set; }
+
+        [Required(ErrorMessage = "Por favor digite uma hora de término")]
+        [DisplayName("Hora Término:")]
+        public string HoraTermino { get; set; }
+
         [Required(ErrorMessage = "Por favor digite uma descrição do atendimento")]
         [DisplayName("Descrição:")]
         public string Descricao { get; set; }
+
         [Required(ErrorMessage = "Por favor selecione uma situação do atendimento")]
         [DisplayName("Situação:")]
         public bool Situacao { get; set; }

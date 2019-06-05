@@ -154,6 +154,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig3.cs" />
     <Compile Include="Controllers\CancelarController.cs" />
+    <Compile Include="Controllers\CentralAjudaCliController.cs" />
+    <Compile Include="Controllers\CentralAjudaProController.cs" />
     <Compile Include="Controllers\CepController.cs" />
     <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
@@ -168,21 +170,18 @@
     <Compile Include="Controllers\QualificarController.cs" />
     <Compile Include="Controllers\RecebeChamadosController.cs" />
     <Compile Include="Controllers\ReclamacaoController.cs" />
-    <Compile Include="Controllers\RelatAtendController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906032351563_profissional.cs" />
-    <Compile Include="Migrations\201906032351563_profissional.Designer.cs">
-      <DependentUpon>201906032351563_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906040041013_relatAtend.cs" />
-    <Compile Include="Migrations\201906040041013_relatAtend.Designer.cs">
-      <DependentUpon>201906040041013_relatAtend.cs</DependentUpon>
+    <Compile Include="Migrations\201906051453507_profissional.cs" />
+    <Compile Include="Migrations\201906051453507_profissional.Designer.cs">
+      <DependentUpon>201906051453507_profissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancelar.cs" />
+    <Compile Include="Models\CentralAjudaCli.cs" />
+    <Compile Include="Models\CentralAjudaPro.cs" />
     <Compile Include="Models\Chamado.cs" />
     <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -673,10 +672,19 @@
     <Content Include="Views\Mensagens\IndexProfissional.cshtml" />
     <Content Include="Views\Mensagens\Confirmacao.cshtml" />
     <Content Include="Views\Chamados\Edit.cshtml" />
-    <Content Include="Views\RelatAtend\Create.cshtml" />
-    <Content Include="Views\RelatAtend\Details.cshtml" />
-    <Content Include="Views\RelatAtend\Edit.cshtml" />
-    <Content Include="Views\RelatAtend\Index.cshtml" />
+    <Content Include="Views\CentralAjudaCli\Create.cshtml" />
+    <Content Include="Views\CentralAjudaCli\Details.cshtml" />
+    <Content Include="Views\CentralAjudaCli\Index.cshtml" />
+    <Content Include="Views\CentralAjudaPro\Create.cshtml" />
+    <Content Include="Views\CentralAjudaPro\Details.cshtml" />
+    <Content Include="Views\CentralAjudaPro\Index.cshtml" />
+    <Content Include="Views\Chamados\DetailsPro.cshtml" />
+    <Content Include="Views\Chamados\Cancelado.cshtml" />
+    <Content Include="Views\Mensagens\CreatePro.cshtml" />
+    <Content Include="Views\Chamados\EditPro.cshtml" />
+    <Content Include="Views\Chamados\CanceladoPro.cshtml" />
+    <Content Include="Views\Chamados\Finalizar.cshtml" />
+    <Content Include="Views\Chamados\Finalizado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -696,11 +704,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906032351563_profissional.resx">
-      <DependentUpon>201906032351563_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906040041013_relatAtend.resx">
-      <DependentUpon>201906040041013_relatAtend.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906051453507_profissional.resx">
+      <DependentUpon>201906051453507_profissional.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

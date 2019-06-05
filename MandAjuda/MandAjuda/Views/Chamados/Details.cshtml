@@ -104,6 +104,15 @@
                 </center>
 
                 <dl class="dl-horizontal">
+
+                    <dt>
+                        <p>Número de Protocolo:</p>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ChamadoId)
+                    </dd>
+
                     <dt>
                         <p>Cliente:</p>
                         <input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.Cliente" />
@@ -164,10 +173,16 @@
 
                 <a class="btn btn-default" href='http://localhost:51258/Mensagens/Create?idp=@Model.ProfissionalId&idc=@Model.ChamadoId'>Contatar Profissional</a>
 
-                <a class="btn btn-default" href='http://localhost:51258/RelatAtend/Create?idp=@Model.ProfissionalId&idc=@Model.ChamadoId'>Enviar Relatório de Atendimento</a>
-            </p>
-            <hr />
-        </div>
+                @*<a class="btn btn-default" href='http://localhost:51258/RelatAtend/Create?idp=@Model.ProfissionalId&idc=@Model.ChamadoId'>Enviar Relatório de Atendimento</a>*@
+
+                @if (Model.Situacao == 1)
+                {
+                <a class="btn btn-default" href='http://localhost:51258/Chamados/Edit/@Model.ChamadoId?idp=@Model.ProfissionalId'>Cancelar Chamado</a>
+                }
+            
+                </p>
+                <hr />
+            </div>
     </div>
     <!--================Address Area =================-->
     <section class="address_area">

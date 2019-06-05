@@ -90,12 +90,11 @@
 
     <div class="container-fluid" style="margin-bottom: 25px;">
         <div class="col-sm-12">
-            @model MandAjuda.Models.RelatAtend
+            @model MandAjuda.Models.CentralAjudaCli
 
             @{
                 ViewBag.Title = "Create";
             }
-
 
             @using (Html.BeginForm())
             {
@@ -105,7 +104,7 @@
 
                 <center>
                     <hr />
-                    <h3>Relatório de Atendimento</h3>
+                    <h2>Central de Ajuda</h2>
                     <hr />
                 </center>
 
@@ -113,41 +112,35 @@
 
                 <input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.Cliente" />
 
-                <input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.Profissional" />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.To, new { style = "display:none;" })
 
-                <input type="hidden" name="ChamadoId" id="ChamadoId" value="@ViewBag.Chamado" />
+                    @Html.TextBoxFor(model => model.To, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+
+                </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DataHoraInicio, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-4">
-                        @Html.EditorFor(model => model.DataHoraInicio, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DataHoraInicio, "", new { @class = "text-danger" })
+                    @Html.LabelFor(model => model.From, new { style = "display:none;" })
+
+                    @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject, new { style = "display:none;" })
+                    <div>
+                        @Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Central de Ajuda Clientes", htmlAttributes = new { @class = "form-control" } })
+
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DataHoraTermino, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Body, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-4">
-                        @Html.EditorFor(model => model.DataHoraTermino, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DataHoraTermino, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-4">
-                        @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="col-sm-6 form-group">
-                    <div style="margin-left: 138px;" class="col-md-6">
-                        Situação: <select class="form-control" name="Situacao" id="Situacao">
-                            <option value="">Selecione</option>
-                            <option value="0">Atendimento realizado com sucesso</option>
-                            <option value="1">Atendimento não realizado com sucesso</option>
-                        </select>
+                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -232,7 +225,6 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
-
 
 
 

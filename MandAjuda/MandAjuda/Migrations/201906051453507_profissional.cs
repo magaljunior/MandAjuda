@@ -8,21 +8,18 @@ namespace MandAjuda.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Chamado",
+                "dbo.CentralAjudaCli",
                 c => new
                     {
-                        ChamadoId = c.Int(nullable: false, identity: true),
-                        ProfissionalId = c.Int(nullable: false),
+                        CentralAjudaCliId = c.Int(nullable: false, identity: true),
                         ClienteId = c.Int(nullable: false),
                         From = c.String(unicode: false),
-                        To = c.String(nullable: false, unicode: false),
-                        Situacao = c.Int(nullable: false),
-                        Subject = c.String(nullable: false, unicode: false),
+                        To = c.String(unicode: false),
+                        Subject = c.String(unicode: false),
                         Body = c.String(nullable: false, unicode: false),
                     })
-                .PrimaryKey(t => t.ChamadoId)
-                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .PrimaryKey(t => t.CentralAjudaCliId)
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true);
             
             CreateTable(
                 "dbo.Cliente",
@@ -43,6 +40,20 @@ namespace MandAjuda.Migrations
                         Senha = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.ClienteId);
+            
+            CreateTable(
+                "dbo.CentralAjudaPro",
+                c => new
+                    {
+                        CentralAjudaProId = c.Int(nullable: false, identity: true),
+                        ProfissionalId = c.Int(nullable: false),
+                        From = c.String(unicode: false),
+                        To = c.String(unicode: false),
+                        Subject = c.String(unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.CentralAjudaProId)
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
             
             CreateTable(
                 "dbo.Profissional",
@@ -70,6 +81,23 @@ namespace MandAjuda.Migrations
                 .PrimaryKey(t => t.ProfissionalId)
                 .ForeignKey("dbo.Profissional", t => t.Profissional_ProfissionalId)
                 .ForeignKey("dbo.Curriculum", t => t.Curriculum_ProfissionalId);
+            
+            CreateTable(
+                "dbo.Chamado",
+                c => new
+                    {
+                        ChamadoId = c.Int(nullable: false, identity: true),
+                        ProfissionalId = c.Int(nullable: false),
+                        ClienteId = c.Int(nullable: false),
+                        From = c.String(unicode: false),
+                        To = c.String(nullable: false, unicode: false),
+                        Situacao = c.Int(nullable: false),
+                        Subject = c.String(nullable: false, unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.ChamadoId)
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
             
             CreateTable(
                 "dbo.Chat",
@@ -168,9 +196,12 @@ namespace MandAjuda.Migrations
                         ProfissionalId = c.Int(nullable: false),
                         ClienteId = c.Int(nullable: false),
                         ChamadoId = c.Int(nullable: false),
-                        DataHoraInicio = c.DateTime(nullable: false, precision: 0),
-                        DataHoraTermino = c.DateTime(nullable: false, precision: 0),
+                        DataInicio = c.String(nullable: false, unicode: false),
+                        DataTermino = c.String(nullable: false, unicode: false),
+                        HoraInicial = c.String(nullable: false, unicode: false),
+                        HoraTermino = c.String(nullable: false, unicode: false),
                         Descricao = c.String(nullable: false, unicode: false),
+                        Situacao = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.RelatAtendId)
                 .ForeignKey("dbo.Chamado", t => t.ChamadoId, cascadeDelete: true)
@@ -204,8 +235,10 @@ namespace MandAjuda.Migrations
             DropForeignKey("dbo.Chat", "ProfissionalId", "dbo.Profissional");
             DropForeignKey("dbo.Chat", "ClienteId", "dbo.Cliente");
             DropForeignKey("dbo.Chamado", "ProfissionalId", "dbo.Profissional");
-            DropForeignKey("dbo.Profissional", "Profissional_ProfissionalId", "dbo.Profissional");
             DropForeignKey("dbo.Chamado", "ClienteId", "dbo.Cliente");
+            DropForeignKey("dbo.CentralAjudaPro", "ProfissionalId", "dbo.Profissional");
+            DropForeignKey("dbo.Profissional", "Profissional_ProfissionalId", "dbo.Profissional");
+            DropForeignKey("dbo.CentralAjudaCli", "ClienteId", "dbo.Cliente");
             DropIndex("dbo.RelatAtend", new[] { "ChamadoId" });
             DropIndex("dbo.RelatAtend", new[] { "ClienteId" });
             DropIndex("dbo.RelatAtend", new[] { "ProfissionalId" });
@@ -218,10 +251,12 @@ namespace MandAjuda.Migrations
             DropIndex("dbo.Mensagem", new[] { "ProfissionalId" });
             DropIndex("dbo.Chat", new[] { "ClienteId" });
             DropIndex("dbo.Chat", new[] { "ProfissionalId" });
-            DropIndex("dbo.Profissional", new[] { "Curriculum_ProfissionalId" });
-            DropIndex("dbo.Profissional", new[] { "Profissional_ProfissionalId" });
             DropIndex("dbo.Chamado", new[] { "ClienteId" });
             DropIndex("dbo.Chamado", new[] { "ProfissionalId" });
+            DropIndex("dbo.Profissional", new[] { "Curriculum_ProfissionalId" });
+            DropIndex("dbo.Profissional", new[] { "Profissional_ProfissionalId" });
+            DropIndex("dbo.CentralAjudaPro", new[] { "ProfissionalId" });
+            DropIndex("dbo.CentralAjudaCli", new[] { "ClienteId" });
             DropTable("dbo.Status");
             DropTable("dbo.RelatAtend");
             DropTable("dbo.Reclamar");
@@ -230,9 +265,11 @@ namespace MandAjuda.Migrations
             DropTable("dbo.Mensagem");
             DropTable("dbo.Curriculum");
             DropTable("dbo.Chat");
-            DropTable("dbo.Profissional");
-            DropTable("dbo.Cliente");
             DropTable("dbo.Chamado");
+            DropTable("dbo.Profissional");
+            DropTable("dbo.CentralAjudaPro");
+            DropTable("dbo.Cliente");
+            DropTable("dbo.CentralAjudaCli");
         }
     }
 }

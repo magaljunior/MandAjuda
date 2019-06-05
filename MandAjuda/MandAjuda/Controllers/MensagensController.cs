@@ -42,9 +42,9 @@ namespace MandAjuda.Controllers
 
             int Chamado = Convert.ToInt32(Request.QueryString["idc"]);
 
-            int Profissional = Convert.ToInt32(Request.QueryString["idp"]);
+            int Cliente = Convert.ToInt32(Request.QueryString["idcli"]);
 
-            ViewBag.Profissional = db.Profissional.Where(c => c.ProfissionalId == Profissional).FirstOrDefault().NomeCompleto;
+            ViewBag.Cliente = db.Clientes.Where(c => c.ClienteId == Cliente).FirstOrDefault().Nome;
 
             return View(db.Mensagem.ToList().Where(c => c.ChamadoId == Chamado));
         }
@@ -93,9 +93,49 @@ namespace MandAjuda.Controllers
             return View();
         }
 
+        public ActionResult CreatePro()
+        {
+            //<CARREGA ID DO CLIENTE
+            string Email = Session["Usuario"].ToString();
+            ViewBag.ProfissionalId = db.Profissional.Where(c => c.Email == Email).FirstOrDefault().ProfissionalId;
+            //CARREGA ID DO CLIENTE>
+
+            //<CARREGA ID DO PROFISSIONAL
+            ViewBag.ClienteId = Convert.ToInt32(Request.QueryString["idcli"]);
+            //CARREGA ID DO PROFISSIONAL>
+
+            //<CARREGA EMAIL DO PROFISSIONAL
+            int Cliente = Convert.ToInt32(Request.QueryString["idcli"]);
+            ViewBag.To = db.Clientes.Where(p => p.ClienteId == Cliente).FirstOrDefault().Email;
+            //CARREGA EMAIL DO PROFISSIONAL>
+
+            //<CARREGA ID DO CHAMADO
+            ViewBag.ChamadoId = Convert.ToInt32(Request.QueryString["idc"]);
+            //CARREGA ID DO CHAMADO>
+
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Mensagem.Add(mensagem);
+                db.SaveChanges();
+                return RedirectToAction("Confirmacao");
+            }
+
+            ViewBag.ChamadoId = new SelectList(db.Chamado, "ChamadoId", "From", mensagem.ChamadoId);
+            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", mensagem.ClienteId);
+            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", mensagem.ProfissionalId);
+            return View(mensagem);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePro([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem)
         {
             if (ModelState.IsValid)
             {
