@@ -35,7 +35,6 @@
                 <div class="pull-left">
                     <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
                     <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
-
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
@@ -58,19 +57,21 @@
                         </button>
                         <a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
                     </div>
+
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
 
-                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
                             <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-                            <li>@Html.ActionLink("Qualificar", "Create", "Qualificar")</li>
-                            <li>@Html.ActionLink("Perfil", "Index", "Clientes")</li>
                             <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaCli")</li>
+
                             <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 
+                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
+
                         </ul>
-                    </div>
+                    </div><!-- /.navbar-collapse -->
                 </nav>
             </div>
         </div>
@@ -89,52 +90,52 @@
             {
                 @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                <center>
-                    <hr />
-                    <h2>Chamado</h2>
-                    <hr />
-                </center>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-horizontal">
+                    <center>
+                        <hr />
+                        <h2>Chamado</h2>
+                        <hr />
+                    </center>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.ClienteId" />
+                    <input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.ClienteId" />
 
-                <input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.ProfissionalId" />
+                    <input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.ProfissionalId" />
 
-                <input type="hidden" name="Situacao" id="Situacao" value="1" />
+                    <input type="hidden" name="Situacao" id="Situacao" value="1" />
 
-                <input type="hidden" name="To" id="To" value="@ViewBag.To" />
+                    <input type="hidden" name="To" id="To" value="@ViewBag.To" />
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.From, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.From, new { style = "display:none;" }@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
 
-                    @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
-
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Subject, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
-                    <div>
-                        @Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Chamado Mand'Ajuda", htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
 
                     </div>
-                </div>
 
-                <div class="form-group" style="margin-top:100px">
-                    @Html.LabelFor(model => model.Body, htmlAttributes: new { style = "display:none; margin-top: -100px;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
-                    <div class="col-md-4">
-                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", style = "height:150px", placeholder = "Digite sua mensagem" } })
-                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Subject, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                        <div>
+                            @Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Chamado Mand'Ajuda", htmlAttributes = new { @class = "form-control" } })
+
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top:100px">
+                        @Html.LabelFor(model => model.Body, htmlAttributes: new { style = "display:none; margin-top: -100px;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", style = "height:150px", placeholder = "Digite sua mensagem" } })
+                            @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input style="margin-left:-220px;" type="submit" value="Requisitar" class="btn btn-default" />
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input style="margin-left:-220px;" type="submit" value="Requisitar" class="btn btn-default" />
-                    </div>
-                </div>
-            </div>
             }
 
             @section Scripts {

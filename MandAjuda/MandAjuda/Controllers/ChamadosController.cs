@@ -298,7 +298,7 @@ namespace MandAjuda.css
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
-                return RedirectToAction("Create", "RelatAtend");
+                return RedirectToAction("IndexProfissional", "Chamados");
             }
 
             return View(chamado);

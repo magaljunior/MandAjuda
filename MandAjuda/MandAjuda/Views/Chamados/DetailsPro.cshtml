@@ -105,8 +105,17 @@
                 </center>
 
                 <dl class="dl-horizontal">
+
                     <dt>
-                        @Html.DisplayNameFor(model => model.Cliente.Nome)
+                        <p>Número de Protocolo:</p>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ChamadoId)
+                    </dd>
+
+                    <dt>
+                        <p>Cliente:</p>
                     </dt>
 
                     <dd>
@@ -114,27 +123,11 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Profissional.NomeCompleto)
+                        <p>Profissional:</p>
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.Profissional.NomeCompleto)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.From)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.From)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.To)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.To)
                     </dd>
 
                     <dt>
@@ -157,14 +150,6 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Subject)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Subject)
-                    </dd>
-
-                    <dt>
                         @Html.DisplayNameFor(model => model.Body)
                     </dt>
 
@@ -177,7 +162,7 @@
             <p>
                 <a class="btn btn-default" href="http://localhost:51258/Mensagens/IndexProfissional?idc=@Model.ChamadoId&idcli=@Model.ClienteId">Histórico de Mensagens</a>
 
-                <a class="btn btn-default" href='http://localhost:51258/Mensagens/CreatePro?idcli=@Model.ChamadoId&idc=@Model.ChamadoId'>Contatar Cliente</a>
+                <a class="btn btn-default" href='http://localhost:51258/Mensagens/CreatePro?idcli=@Model.ClienteId&idc=@Model.ChamadoId'>Contatar Cliente</a>
 
                 @if (Model.Situacao == 1)
                 {
@@ -187,6 +172,11 @@
                 @if (Model.Situacao == 1)
                 {
                     <a class="btn btn-default" href='http://localhost:51258/Chamados/Finalizar/@Model.ChamadoId?idcli=@Model.ClienteId'>Finalizar Chamado</a>
+                }
+
+                @if (Model.Situacao == 3)
+                {
+                    <a class="btn btn-default" href='http://localhost:51258/RelatAtend/Create?idcli=@Model.ClienteId&idc=@Model.ChamadoId'>Enviar Relatório de Atendimento</a>
                 }
 
             </p>

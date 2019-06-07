@@ -36,12 +36,22 @@ namespace MandAjuda.Controllers
             return View(relatAtend);
         }
 
+        public ActionResult Relatorio()
+        {
+            return View();
+        }
+
         // GET: RelatAtend/Create
         public ActionResult Create()
         {
-            ViewBag.ChamadoId = new SelectList(db.Chamado, "ChamadoId", "From");
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome");
-            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto");
+            string Email = Session["Usuario"].ToString();
+
+            ViewBag.Profissional = db.Profissional.Where(c => c.Email == Email).FirstOrDefault().ProfissionalId;
+
+            ViewBag.Cliente = Convert.ToInt32(Request.QueryString["idcli"]);
+
+            ViewBag.Chamado = Convert.ToInt32(Request.QueryString["idc"]);
+
             return View();
         }
 
@@ -56,12 +66,9 @@ namespace MandAjuda.Controllers
             {
                 db.RelatAtend.Add(relatAtend);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexProfissional", "Chamados");
             }
 
-            ViewBag.ChamadoId = new SelectList(db.Chamado, "ChamadoId", "From", relatAtend.ChamadoId);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", relatAtend.ClienteId);
-            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", relatAtend.ProfissionalId);
             return View(relatAtend);
         }
 

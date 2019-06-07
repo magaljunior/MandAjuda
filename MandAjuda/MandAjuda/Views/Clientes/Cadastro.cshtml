@@ -45,11 +45,13 @@
                 <div class="pull-left">
                     <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
                     <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
                         <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -72,6 +74,22 @@
                         <ul class="nav navbar-nav navbar-right">
 
                             <li><a href="http://localhost:51258">Home</a></li>
+
+                            <li class="dropdown submenu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logar</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Cliente", "LogarCliente", "Publico")</li>
+                                    <li>@Html.ActionLink("Profissional", "LogarProfissional", "Publico")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown submenu active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastre - se</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Cliente", "Create", "Clientes")</li>
+                                    <li>@Html.ActionLink("Profissional", "Create", "Profissionais")</li>
+                                </ul>
+                            </li>
 
                         </ul>
                     </div><!-- /.navbar-collapse -->

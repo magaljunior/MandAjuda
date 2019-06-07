@@ -19,6 +19,8 @@ namespace MandAjuda.Models
 
         public int ChamadoId { get; set; }
 
+        [Required(ErrorMessage = "Por favor digite uma descrição para a mensagem")]
+        [DisplayName("Descrição:")]
         public string Descricao { get; set; }
 
         [DisplayName("De:")]

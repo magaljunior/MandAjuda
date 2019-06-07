@@ -41,7 +41,7 @@ namespace MandAjuda.Models
 
         [Required(ErrorMessage = "Por favor selecione uma situação do atendimento")]
         [DisplayName("Situação:")]
-        public bool Situacao { get; set; }
+        public string Situacao { get; set; }
 
         [ForeignKey("ProfissionalId")]
         public virtual Profissional Profissional { get; set; }

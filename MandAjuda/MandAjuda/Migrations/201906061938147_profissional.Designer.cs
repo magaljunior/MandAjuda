@@ -13,7 +13,7 @@ namespace MandAjuda.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201906051453507_profissional"; }
+            get { return "201906061938147_profissional"; }
         }
         
         string IMigrationMetadata.Source

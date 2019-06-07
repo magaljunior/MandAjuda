@@ -137,7 +137,7 @@ namespace MandAjuda.Migrations
                         ProfissionalId = c.Int(nullable: false),
                         ClienteId = c.Int(nullable: false),
                         ChamadoId = c.Int(nullable: false),
-                        Descricao = c.String(unicode: false),
+                        Descricao = c.String(nullable: false, unicode: false),
                         From = c.String(unicode: false),
                         To = c.String(unicode: false),
                     })
@@ -201,7 +201,7 @@ namespace MandAjuda.Migrations
                         HoraInicial = c.String(nullable: false, unicode: false),
                         HoraTermino = c.String(nullable: false, unicode: false),
                         Descricao = c.String(nullable: false, unicode: false),
-                        Situacao = c.Boolean(nullable: false),
+                        Situacao = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.RelatAtendId)
                 .ForeignKey("dbo.Chamado", t => t.ChamadoId, cascadeDelete: true)
