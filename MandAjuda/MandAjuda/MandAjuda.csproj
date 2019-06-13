@@ -153,6 +153,7 @@
     <Compile Include="App_Start\FilterConfig3.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig3.cs" />
+    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\CancelarController.cs" />
     <Compile Include="Controllers\CentralAjudaCliController.cs" />
     <Compile Include="Controllers\CentralAjudaProController.cs" />
@@ -174,15 +175,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906061938147_profissional.cs" />
-    <Compile Include="Migrations\201906061938147_profissional.Designer.cs">
-      <DependentUpon>201906061938147_profissional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906111611410_relatAtend.cs" />
-    <Compile Include="Migrations\201906111611410_relatAtend.Designer.cs">
-      <DependentUpon>201906111611410_relatAtend.cs</DependentUpon>
+    <Compile Include="Migrations\201906131930425_agenda.cs" />
+    <Compile Include="Migrations\201906131930425_agenda.Designer.cs">
+      <DependentUpon>201906131930425_agenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Agenda.cs" />
     <Compile Include="Models\Cancelar.cs" />
     <Compile Include="Models\CentralAjudaCli.cs" />
     <Compile Include="Models\CentralAjudaPro.cs" />
@@ -785,6 +783,7 @@
     <Content Include="Lib\jquery-validation-1.19.0\demo\captcha\fonts\Anorexia.ttf" />
     <Content Include="Lib\jquery-validation-1.19.0\package.json" />
     <Content Include="Lib\jquery-validation-1.19.0\README.md" />
+    <Content Include="credentials.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1043,6 +1042,12 @@
     <Content Include="Views\RelatAtend\Details.cshtml" />
     <Content Include="Views\RelatAtend\Edit.cshtml" />
     <Content Include="Views\RelatAtend\Index.cshtml" />
+    <Content Include="Views\Agenda\Create.cshtml" />
+    <Content Include="Views\Agenda\Delete.cshtml" />
+    <Content Include="Views\Agenda\Details.cshtml" />
+    <Content Include="Views\Agenda\Edit.cshtml" />
+    <Content Include="Views\Agenda\Index.cshtml" />
+    <Content Include="Views\Agenda\Agenda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1062,11 +1067,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906061938147_profissional.resx">
-      <DependentUpon>201906061938147_profissional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906111611410_relatAtend.resx">
-      <DependentUpon>201906111611410_relatAtend.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906131930425_agenda.resx">
+      <DependentUpon>201906131930425_agenda.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

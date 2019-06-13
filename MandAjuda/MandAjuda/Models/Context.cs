@@ -43,7 +43,9 @@ namespace MandAjuda.Models
 
         public DbSet<CentralAjudaPro> CentralAjudaPro { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		public DbSet<Agenda> Agenda { get; set; }
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
