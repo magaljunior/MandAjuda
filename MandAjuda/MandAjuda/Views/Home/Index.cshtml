@@ -275,8 +275,8 @@
 				<h2>Cadastre se para <br class="title_br" />prestar seus serviços</h2>
 
 			</div>
-
-			<a class="get_bg_btn" href="#">Acesse</a>
+			@Html.ActionLink("Acesse", "Create", "Profissionais", null, new { @class = "get_bg_btn" })
+			@*<a class="get_bg_btn" href="#">Acesse</a>*@
 		</div>
 	</div>
 </section>
@@ -292,8 +292,8 @@
 				<h2>Cadastre se para encontrar <br class="title_br" />o profissional ideal</h2>
 
 			</div>
-
-			<a class="get_bg_btn" href="#">Acesse</a>
+			@Html.ActionLink("Acesse", "Create", "Clientes", null, new { @class = "get_bg_btn" })
+			@*<a class="get_bg_btn" href="#">Acesse</a>*@
 		</div>
 	</div>
 </section>

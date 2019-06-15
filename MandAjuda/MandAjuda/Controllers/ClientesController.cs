@@ -25,8 +25,13 @@ namespace MandAjuda.Controllers
             return View();
         }
 
-        // GET: Clientes/Details/5
-        public ActionResult Details(int? id)
+		public ActionResult TermoDeUso()
+		{
+			return View();
+		}
+
+		// GET: Clientes/Details/5
+		public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -57,7 +62,7 @@ namespace MandAjuda.Controllers
             {
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Cadastro");
+                return RedirectToAction("TermoDeUso");
             }
 
             return View(cliente);
