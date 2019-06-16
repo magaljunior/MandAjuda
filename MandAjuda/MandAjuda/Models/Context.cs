@@ -43,7 +43,11 @@ namespace MandAjuda.Models
 
         public DbSet<CentralAjudaPro> CentralAjudaPro { get; set; }
 
-		public DbSet<Calendario> Calendario { get; set; }
+        public DbSet<QualificaMA_Cli> QualificaMA_Cli { get; set; }
+
+        public DbSet<QualificaMA_Pro> QualificaMA_Pro { get; set; }
+
+        public DbSet<Calendario> Calendario { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

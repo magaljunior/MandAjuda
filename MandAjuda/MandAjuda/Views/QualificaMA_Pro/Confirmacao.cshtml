@@ -36,70 +36,9 @@
     <![endif]-->
 </head>
 <body>
-    <script>
-        function statusChangeCallback(response) {
-            console.log('statusChangeCallback');
-            console.log(response);
 
-            if (response.status === 'connected') {
-
-                testAPI();
-            } else {
-
-                document.getElementById('status').innerHTML = 'Please log ' +
-                    'into this app.';
-            }
-        }
-
-
-        function checkLoginState() {
-            FB.getLoginStatus(function (response) {
-                statusChangeCallback(response);
-            });
-        }
-
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: "632675940528876",
-                cookie: true,
-                xfbml: true,
-                version: "v3.2"
-            });
-
-            FB.AppEvents.logPageView();
-
-        };
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-
-        function testAPI() {
-            console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function (response) {
-                console.log('Successful login for: ' + response.name);
-                document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
-            });
-        }
-    </script>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=632675940528876&autoLogAppEvents=1"></script>
 
     <!--================Header Area =================-->
-    @*@{
-        MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
-        if (profissional != null)
-        {*@
     <header class="main_header_area">
         <div class="header_top_area">
             <div class="container">
@@ -128,41 +67,49 @@
                         </button>
                         <a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
                     </div>
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
 
-                            <li>@Html.ActionLink("Meus Chamados", "IndexProfissional", "Chamados")</li>
-                            <li>@Html.ActionLink("Meus Relatórios", "Index", "RelatAtend")</li>
-                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaPro")</li>
-                            <li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Pro")</li>
+                            <li>@Html.ActionLink("Home", "Index", "LayoutProfissional")</li>
+
                             <li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
-                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true" on-login="window.location = 'http://localhost:51258/';"></div>
+
                         </ul>
-
-
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div>
         </div>
     </header>
-    @*}
-            else
-            {
-                <script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
-            }
-        }*@
     <!--================Header Area =================-->
 
-    <div class="container-fluid" style="height: 500px;">
+    <div class="row" style="margin-bottom: 25px; margin-top:250px">
         <div class="col-sm-12">
+            @model MandAjuda.Models.Reclamar
 
+            @{
+                ViewBag.Title = "Confirmacao";
+            }
 
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
+                <div class="container">
+                    <hr />
+                    <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Qualificação enviada com sucesso</h2></center>
+                    <hr />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
         </div>
     </div>
-
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">
@@ -173,8 +120,8 @@
                             <img src="~/img/icon/place-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
+                            <h4>Endereço :</h4>
+                            <h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
                         </div>
                     </div>
                 </div>
@@ -184,8 +131,8 @@
                             <img src="~/img/icon/phone-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
+                            <h5>(XX) XXXXX-XXXX</h5>
+
                         </div>
                     </div>
                 </div>
@@ -195,8 +142,8 @@
                             <img src="~/img/icon/inbox-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
+                            <h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
+
                         </div>
                     </div>
                 </div>
@@ -223,17 +170,13 @@
     <script src="~/vendors/counterup/waypoints.min.js"></script>
     <script src="~/vendors/counterup/jquery.counterup.min.js"></script>
     <script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
+
     <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="~/js/gmaps.min.js"></script>
 
     <script src="~/js/theme.js"></script>
-
-    <script src="~/Scripts/jquery-3.0.0.js"></script>
-
 </body>
 </html>
-
 
 

@@ -1,90 +1,283 @@
-﻿@model MandAjuda.Models.RelatAtend
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@{
-    ViewBag.Title = "Details";
-}
 
-<h2>Details</h2>
+    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Construction - WeBuilder Template</title>
 
-<div>
-    <h4>RelatAtend</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Chamado.From)
-        </dt>
+    <!-- Icon css link -->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/materialdesignicons.min.css" rel="stylesheet" />
 
-        <dd>
-            @Html.DisplayFor(model => model.Chamado.From)
-        </dd>
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cliente.Nome)
-        </dt>
+    <!-- Rev slider css -->
+    <link href="~/vendors/revolution/css/settings.css" rel="stylesheet">
+    <link href="~/vendors/revolution/css/layers.css" rel="stylesheet">
+    <link href="~/vendors/revolution/css/navigation.css" rel="stylesheet">
+    <link href="~/vendors/animate-css/animate.css" rel="stylesheet">
+    <link href="~/vendors/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-        <dd>
-            @Html.DisplayFor(model => model.Cliente.Nome)
-        </dd>
+    <!-- Extra plugin css -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Profissional.NomeCompleto)
-        </dt>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
 
-        <dd>
-            @Html.DisplayFor(model => model.Profissional.NomeCompleto)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataInicio)
-        </dt>
+    <!--================Header Area =================-->
+    <header class="main_header_area">
+        <div class="header_top_area">
+            <div class="container">
+                <div class="pull-left">
+                    <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
+                    <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataInicio)
-        </dd>
+                </div>
+                <div class="pull-right">
+                    <ul class="header_social">
+                        <li><a href="https://www.facebook.com/MandAjuda/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/AjudaMand"><i class="fa fa-twitter"></i></a></li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataTermino)
-        </dt>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu_area">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
 
-        <dd>
-            @Html.DisplayFor(model => model.DataTermino)
-        </dd>
+                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+                            <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+                            <li>@Html.ActionLink("Qualificar", "Create", "Qualificar")</li>
+                            <li>@Html.ActionLink("Perfil", "Index", "Clientes")</li>
+                            <li>@Html.ActionLink("Meus Chamados", "IndexProfissional", "Chamados")</li>
+                            <li>@Html.ActionLink("Meus Relatórios", "Index", "RelatAtend")</li>
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HoraInicial)
-        </dt>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--================Header Area =================-->
 
-        <dd>
-            @Html.DisplayFor(model => model.HoraInicial)
-        </dd>
+    <div class="container-fluid" style="margin-bottom: 25px;">
+        <div class="col-sm-12">
+            @model MandAjuda.Models.RelatAtend
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HoraTermino)
-        </dt>
+            @{
+                ViewBag.Title = "Details";
+            }
 
-        <dd>
-            @Html.DisplayFor(model => model.HoraTermino)
-        </dd>
+            <div>
+                
+                <center>
+                    <hr />
+                    <h3>Detalhes</h3>
+                    <hr />
+                </center>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
+                <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
+                    <dt>
+                    <p>Cliente:</p>
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Situacao)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cliente.Nome)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Situacao)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataInicio)
+                    </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.RelatAtendId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataInicio)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataTermino)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DataTermino)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HoraInicial)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HoraInicial)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HoraTermino)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HoraTermino)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Descricao)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Situacao)
+                    </dt>
+
+                    <dd>
+                        @if (Model.Situacao == 0)
+                        {
+                            <p>Atendimento realizado com sucesso</p>
+                        }
+                        @if (Model.Situacao == 1)
+                        {
+                            <p>Atendimento não realizado com sucesso</p>
+                        }
+                    </dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!--================Address Area =================-->
+    <section class="address_area">
+        <div class="container">
+            <div class="row address_inner">
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="~/img/icon/place-icon.png" alt="">
+                        </div>
+                        <div class="media-body">
+                            <h4>Office Address :</h4>
+                            <h5>1234 Cafficic, California, USA</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="~/img/icon/phone-icon.png" alt="">
+                        </div>
+                        <div class="media-body">
+                            <h5>(012) 3456789</h5>
+                            <h5>(012) 3456789</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="~/img/icon/inbox-icon.png" alt="">
+                        </div>
+                        <div class="media-body">
+                            <h5>info@domain.com</h5>
+                            <h5>info@domain.com</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @section Scripts {
+
+        <script src="~/js/jquery-2.2.4.js"></script>
+
+        <script src="~/js/bootstrap.min.js"></script>
+
+        <script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+
+        <script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
+        <script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="~/vendors/counterup/waypoints.min.js"></script>
+        <script src="~/vendors/counterup/jquery.counterup.min.js"></script>
+        <script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="~/js/gmaps.min.js"></script>
+
+        <script src="~/js/theme.js"></script>
+
+        @*<script src="~/Scripts/jquery-3.0.0.js"></script>*@
+
+        <script src="~/Lib/jQuery-Mask-Plugin/src/jquery.mask.js"></script>
+
+        <script src="~/Lib/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
+
+        <script src="~/Lib/jquery-validation-1.19.0/dist/additional-methods.js"></script>
+
+        <script src="~/Lib/jquery-validation-1.19.0/dist/localization/messages_pt_BR.js"></script>
+
+        @*<script type="text/javascript">
+                $(document).ready(function () {
+
+                    $("#form1").validate({
+                        rules: {
+                            txtData: {
+                                required: true,
+                                date: true
+                            }
+                        }
+                    })
+
+                    //MASCARA
+
+                    $('#txtData').mask("00/00/0000", { reverse: true })
+                    $('#txtValor').mask("000.000.000,00", { reverse: true })
+
+                })
+            </script>*@
+
+    }
+</body>
+</html>
+
+
+
+
+
+
+

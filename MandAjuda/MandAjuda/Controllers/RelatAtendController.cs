@@ -17,13 +17,22 @@ namespace MandAjuda.Controllers
         // GET: RelatAtend
         public ActionResult Index()
         {
-            var relatAtend = db.RelatAtend.Include(r => r.Chamado).Include(r => r.Cliente).Include(r => r.Profissional);
-            return View(relatAtend.ToList());
+            string Email = Session["Usuario"].ToString();
+
+            int ProfissionalLogado = db.Profissional.Where(c => c.Email == Email).FirstOrDefault().ProfissionalId;
+
+            //ViewBag.TempoMedio = db.Database.SqlQuery<DataTable>("Select (HoraTermino - HoraInicial) / count(RelatAtendId) from mandajuda.relatatend;");
+
+            return View(db.RelatAtend.ToList().Where(c => c.ProfissionalId == ProfissionalLogado));
         }
 
         // GET: RelatAtend/Details/5
         public ActionResult Details(int? id)
         {
+            int Cliente = Convert.ToInt32(Request.QueryString["idcli"]);
+
+            ViewBag.Cliente = db.Clientes.Where(p => p.ClienteId == Cliente).FirstOrDefault().Nome;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

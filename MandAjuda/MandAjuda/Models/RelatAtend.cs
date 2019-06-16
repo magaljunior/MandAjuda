@@ -29,7 +29,8 @@ namespace MandAjuda.Models
 
         [Required(ErrorMessage = "Por favor digite uma hora inicial")]
         [DisplayName("Hora Inicial:")]
-        public string HoraInicial { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime? HoraInicial { get; set; }
 
         [Required(ErrorMessage = "Por favor digite uma hora de término")]
         [DisplayName("Hora Término:")]
@@ -41,7 +42,7 @@ namespace MandAjuda.Models
 
         [Required(ErrorMessage = "Por favor selecione uma situação do atendimento")]
         [DisplayName("Situação:")]
-        public string Situacao { get; set; }
+        public int Situacao { get; set; }
 
         [ForeignKey("ProfissionalId")]
         public virtual Profissional Profissional { get; set; }

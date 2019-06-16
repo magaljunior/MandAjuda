@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Construction - WeBuilder Template</title>
 
@@ -36,70 +36,7 @@
     <![endif]-->
 </head>
 <body>
-    <script>
-        function statusChangeCallback(response) {
-            console.log('statusChangeCallback');
-            console.log(response);
-
-            if (response.status === 'connected') {
-
-                testAPI();
-            } else {
-
-                document.getElementById('status').innerHTML = 'Please log ' +
-                    'into this app.';
-            }
-        }
-
-
-        function checkLoginState() {
-            FB.getLoginStatus(function (response) {
-                statusChangeCallback(response);
-            });
-        }
-
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: "632675940528876",
-                cookie: true,
-                xfbml: true,
-                version: "v3.2"
-            });
-
-            FB.AppEvents.logPageView();
-
-        };
-        FB.getLoginStatus(function (response) {
-            statusChangeCallback(response);
-        });
-
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-
-        function testAPI() {
-            console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function (response) {
-                console.log('Successful login for: ' + response.name);
-                document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
-            });
-        }
-    </script>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=632675940528876&autoLogAppEvents=1"></script>
-
     <!--================Header Area =================-->
-    @*@{
-        MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
-        if (profissional != null)
-        {*@
     <header class="main_header_area">
         <div class="header_top_area">
             <div class="container">
@@ -133,36 +70,92 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
 
-                            <li>@Html.ActionLink("Meus Chamados", "IndexProfissional", "Chamados")</li>
-                            <li>@Html.ActionLink("Meus Relatórios", "Index", "RelatAtend")</li>
-                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaPro")</li>
-                            <li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Pro")</li>
-                            <li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
-                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true" on-login="window.location = 'http://localhost:51258/';"></div>
+                            <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+                            <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+                            <li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Cli")</li>
+                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaCli")</li>
+
+                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+
+                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
+
                         </ul>
-
-
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div>
         </div>
     </header>
-    @*}
-            else
-            {
-                <script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
-            }
-        }*@
     <!--================Header Area =================-->
 
-    <div class="container-fluid" style="height: 500px;">
+    <div class="container-fluid" style="margin-bottom: 25px;">
         <div class="col-sm-12">
+            @model MandAjuda.Models.QualificaMA_Pro
 
+            @{
+                ViewBag.Title = "Create";
+            }
 
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
+            <div class="form-horizontal">
+
+                <center>
+                    <hr />
+                    <h3>Qualificar Mand'Ajuda</h3>
+                    <hr />
+                </center>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.Profissional" />
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.From, new { style = "display:none;" })
+
+                    @Html.TextBoxFor(model => model.From, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.To, new { style = "display:none;" })
+
+                    @Html.TextBoxFor(model => model.To, new { style = "display:none;", @Value = "mandajudaservico@gmail.com", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Subject, new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                    <div>
+                        @Html.TextBoxFor(model => model.Subject, new { style = "display:none;", @Value = "Qualificação Mand'Ajuda", htmlAttributes = new { @class = "form-control" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:100px">
+                    @Html.LabelFor(model => model.Body, htmlAttributes: new { style = "display:none;" }@* htmlAttributes: new { @class = "control-label col-md-2" }*@)
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", style = "height:150px", placeholder = "Digite sua mensagem" } })
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input style="margin-left: -220px;" type="submit" value="Enviar" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
         </div>
     </div>
-
     <!--================Address Area =================-->
     <section class="address_area">
         <div class="container">
@@ -223,17 +216,11 @@
     <script src="~/vendors/counterup/waypoints.min.js"></script>
     <script src="~/vendors/counterup/jquery.counterup.min.js"></script>
     <script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
+
     <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="~/js/gmaps.min.js"></script>
 
     <script src="~/js/theme.js"></script>
-
-    <script src="~/Scripts/jquery-3.0.0.js"></script>
-
 </body>
 </html>
-
-
-
