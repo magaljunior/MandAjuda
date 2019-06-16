@@ -51,6 +51,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis, Version=1.40.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.40.2\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.40.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.40.2\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.40.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.40.2\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Calendar.v3, Version=1.40.2.1611, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Calendar.v3.1.40.2.1611\lib\net45\Google.Apis.Calendar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.40.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.40.2\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.40.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.40.2\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=8.0.5.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.8.0.5.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
@@ -153,13 +171,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agenda.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\BundleConfig3.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FilterConfig3.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig3.cs" />
-    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\CancelarController.cs" />
     <Compile Include="Controllers\CentralAjudaCliController.cs" />
     <Compile Include="Controllers\CentralAjudaProController.cs" />
@@ -182,7 +200,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Agenda.cs" />
+    <Compile Include="Models\Calendario.cs" />
     <Compile Include="Models\Cancelar.cs" />
     <Compile Include="Models\CentralAjudaCli.cs" />
     <Compile Include="Models\CentralAjudaPro.cs" />
@@ -785,7 +803,9 @@
     <Content Include="Lib\jquery-validation-1.19.0\demo\captcha\fonts\Anorexia.ttf" />
     <Content Include="Lib\jquery-validation-1.19.0\package.json" />
     <Content Include="Lib\jquery-validation-1.19.0\README.md" />
-    <Content Include="credentials.json" />
+    <Content Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1044,13 +1064,9 @@
     <Content Include="Views\RelatAtend\Details.cshtml" />
     <Content Include="Views\RelatAtend\Edit.cshtml" />
     <Content Include="Views\RelatAtend\Index.cshtml" />
-    <Content Include="Views\Agenda\Create.cshtml" />
-    <Content Include="Views\Agenda\Delete.cshtml" />
-    <Content Include="Views\Agenda\Details.cshtml" />
-    <Content Include="Views\Agenda\Edit.cshtml" />
-    <Content Include="Views\Agenda\Index.cshtml" />
-    <Content Include="Views\Agenda\Agenda.cshtml" />
     <Content Include="Views\Clientes\TermoDeUso.cshtml" />
+    <Content Include="Views\Profissionais\TermoDeUso.cshtml" />
+    <Content Include="Views\Profissionais\Calendario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

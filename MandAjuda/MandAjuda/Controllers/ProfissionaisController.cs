@@ -44,14 +44,24 @@ namespace MandAjuda.Controllers
             return View();
         }
 
-        // GET: Profissionais
-        public ActionResult Index()
+		public ActionResult Calendario()
+		{
+			return View();
+		}
+
+		// GET: Profissionais
+		public ActionResult Index()
         {
             return ViewBag(db.Profissional.ToList());
         }
 
-        // GET: Profissionais/Details/5
-        public ActionResult Details(int? id)
+		public ActionResult TermoDeUso()
+		{
+			return View();
+		}
+
+		// GET: Profissionais/Details/5
+		public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -82,7 +92,7 @@ namespace MandAjuda.Controllers
             {
                 db.Profissional.Add(profissional);
                 db.SaveChanges();
-                return RedirectToAction("Cadastro");
+                return RedirectToAction("TermoDeUso");
             }
 
             return View(profissional);
