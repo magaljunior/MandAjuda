@@ -201,25 +201,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906161925376_qualificaMA_Cli.cs" />
-    <Compile Include="Migrations\201906161925376_qualificaMA_Cli.Designer.cs">
-      <DependentUpon>201906161925376_qualificaMA_Cli.cs</DependentUpon>
+    <Compile Include="Migrations\201906162355592_chamado.cs" />
+    <Compile Include="Migrations\201906162355592_chamado.Designer.cs">
+      <DependentUpon>201906162355592_chamado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906161935443_qualificaMA_Cli1.cs" />
-    <Compile Include="Migrations\201906161935443_qualificaMA_Cli1.Designer.cs">
-      <DependentUpon>201906161935443_qualificaMA_Cli1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906162200301_relatAtend.cs" />
-    <Compile Include="Migrations\201906162200301_relatAtend.Designer.cs">
-      <DependentUpon>201906162200301_relatAtend.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906162236357_relatAtend1.cs" />
-    <Compile Include="Migrations\201906162236357_relatAtend1.Designer.cs">
-      <DependentUpon>201906162236357_relatAtend1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906162252101_relatAtend2.cs" />
-    <Compile Include="Migrations\201906162252101_relatAtend2.Designer.cs">
-      <DependentUpon>201906162252101_relatAtend2.cs</DependentUpon>
+    <Compile Include="Migrations\201906170013586_relatAtend.cs" />
+    <Compile Include="Migrations\201906170013586_relatAtend.Designer.cs">
+      <DependentUpon>201906170013586_relatAtend.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Calendario.cs" />
@@ -1114,20 +1102,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906161925376_qualificaMA_Cli.resx">
-      <DependentUpon>201906161925376_qualificaMA_Cli.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906162355592_chamado.resx">
+      <DependentUpon>201906162355592_chamado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906161935443_qualificaMA_Cli1.resx">
-      <DependentUpon>201906161935443_qualificaMA_Cli1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906162200301_relatAtend.resx">
-      <DependentUpon>201906162200301_relatAtend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906162236357_relatAtend1.resx">
-      <DependentUpon>201906162236357_relatAtend1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906162252101_relatAtend2.resx">
-      <DependentUpon>201906162252101_relatAtend2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906170013586_relatAtend.resx">
+      <DependentUpon>201906170013586_relatAtend.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

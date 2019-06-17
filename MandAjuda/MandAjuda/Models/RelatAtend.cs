@@ -30,7 +30,7 @@ namespace MandAjuda.Models
         [Required(ErrorMessage = "Por favor digite uma hora inicial")]
         [DisplayName("Hora Inicial:")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime? HoraInicial { get; set; }
+        public string HoraInicial { get; set; }
 
         [Required(ErrorMessage = "Por favor digite uma hora de término")]
         [DisplayName("Hora Término:")]
