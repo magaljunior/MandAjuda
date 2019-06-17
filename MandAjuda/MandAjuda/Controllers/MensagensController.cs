@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using MandAjuda.Models;
@@ -50,6 +51,11 @@ namespace MandAjuda.Controllers
         }
 
         public ActionResult Confirmacao()
+        {
+            return View();
+        }
+
+        public ActionResult ConfirmacaoPro()
         {
             return View();
         }
@@ -118,35 +124,65 @@ namespace MandAjuda.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem)
+        public ActionResult Create([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem/*, MandAjuda.Models.Chamado _objModelMail*/)
         {
             if (ModelState.IsValid)
             {
                 db.Mensagem.Add(mensagem);
                 db.SaveChanges();
+
+                //MailMessage mail = new MailMessage();
+                //mail.To.Add(_objModelMail.To);
+                //mail.From = new MailAddress(_objModelMail.From);
+                //mail.Subject = _objModelMail.Subject;
+                //string Body = _objModelMail.Body;
+                //mail.Body = Body;
+                //mail.IsBodyHtml = true;
+
+                //SmtpClient smtp = new SmtpClient();
+                //smtp.Host = "smtp.gmail.com";
+                //smtp.Port = 587;
+                //smtp.UseDefaultCredentials = false;
+                //smtp.Credentials = new System.Net.NetworkCredential
+                //("mandajudaservico@gmail.com", "Mand@judaPI");
+                //smtp.EnableSsl = true;
+                //smtp.Send(mail);
+
                 return RedirectToAction("Confirmacao");
             }
 
-            ViewBag.ChamadoId = new SelectList(db.Chamado, "ChamadoId", "From", mensagem.ChamadoId);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", mensagem.ClienteId);
-            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", mensagem.ProfissionalId);
             return View(mensagem);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePro([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem)
+        public ActionResult CreatePro([Bind(Include = "MensagemId,ProfissionalId,ClienteId,ChamadoId,Descricao,From,To")] Mensagem mensagem/*, MandAjuda.Models.Chamado _objModelMail*/)
         {
             if (ModelState.IsValid)
             {
                 db.Mensagem.Add(mensagem);
                 db.SaveChanges();
-                return RedirectToAction("Confirmacao");
+
+                //MailMessage mail = new MailMessage();
+                //mail.To.Add(_objModelMail.To);
+                //mail.From = new MailAddress(_objModelMail.From);
+                //mail.Subject = _objModelMail.Subject;
+                //string Body = _objModelMail.Body;
+                //mail.Body = Body;
+                //mail.IsBodyHtml = true;
+
+                //SmtpClient smtp = new SmtpClient();
+                //smtp.Host = "smtp.gmail.com";
+                //smtp.Port = 587;
+                //smtp.UseDefaultCredentials = false;
+                //smtp.Credentials = new System.Net.NetworkCredential
+                //("mandajudaservico@gmail.com", "Mand@judaPI");
+                //smtp.EnableSsl = true;
+                //smtp.Send(mail);
+
+                return RedirectToAction("ConfirmacaoPro");
             }
 
-            ViewBag.ChamadoId = new SelectList(db.Chamado, "ChamadoId", "From", mensagem.ChamadoId);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "Nome", mensagem.ClienteId);
-            ViewBag.ProfissionalId = new SelectList(db.Profissional, "ProfissionalId", "NomeCompleto", mensagem.ProfissionalId);
             return View(mensagem);
         }
 

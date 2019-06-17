@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+    <link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Construction - WeBuilder Template</title>
 
@@ -37,7 +37,6 @@
 </head>
 <body>
 
-
     <!--================Header Area =================-->
     <header class="main_header_area">
         <div class="header_top_area">
@@ -45,6 +44,7 @@
                 <div class="pull-left">
                     <a href="#"><i class="fa fa-phone"></i>(XX) - XXXXX-XXXX</a>
                     <a href="#"><i class="fa fa-map-marker"></i>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</a>
+
                 </div>
                 <div class="pull-right">
                     <ul class="header_social">
@@ -67,68 +67,50 @@
                         </button>
                         <a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
                     </div>
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
+
+                            <li>@Html.ActionLink("Home", "Index", "LayoutProfissional")</li>
                             <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-                            <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
-                            <li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Cli")</li>
-                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaCli")</li>
+                            <li>@Html.ActionLink("Meus Chamados", "IndexProfissional", "Chamados")</li>
+                            <li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Pro")</li>
+                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaPro")</li>
 
-                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
-
-                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
+                            <li>@Html.ActionLink("Sair", "LogoffProfissional", "Publico")</li>
 
                         </ul>
-                    </div><!-- /.navbar-collapse -->
+                    </div>
                 </nav>
             </div>
         </div>
     </header>
-    <!--================Header Area =================-->
 
-    <div class="container-fluid" style="margin-bottom: 25px;">
+    <div class="row" style="margin-bottom: 25px; margin-top:250px">
         <div class="col-sm-12">
-            @model IEnumerable<MandAjuda.Models.Chamado>
+            @model MandAjuda.Models.Mensagem
 
             @{
-                ViewBag.Title = "Index";
+                ViewBag.Title = "ConfirmacaoPro";
             }
 
-            <hr />
-            <center><h2>Meus Chamados</h2></center>
-            <hr />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Subject)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Body)
-                    </th>
-                    <th></th>
-                </tr>
+                <div class="container">
+                    <hr />
+                    <center style="margin-top: 25px; margin-bottom: 25px;"><h2>Mensagem enviada com sucesso</h2></center>
+                    <hr />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            }
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Subject)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Body)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.ChamadoId, idc = item.ChamadoId, idp = item.ProfissionalId })
-                        </td>
-                    </tr>
-                }
-
-            </table>
-            <br />
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
         </div>
     </div>
     <!--================Address Area =================-->
@@ -141,8 +123,8 @@
                             <img src="~/img/icon/place-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h4>Office Address :</h4>
-                            <h5>1234 Cafficic, California, USA</h5>
+                            <h4>Endereço :</h4>
+                            <h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
                         </div>
                     </div>
                 </div>
@@ -152,8 +134,8 @@
                             <img src="~/img/icon/phone-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>(012) 3456789</h5>
-                            <h5>(012) 3456789</h5>
+                            <h5>(XX) XXXXX-XXXX</h5>
+
                         </div>
                     </div>
                 </div>
@@ -163,8 +145,8 @@
                             <img src="~/img/icon/inbox-icon.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h5>info@domain.com</h5>
-                            <h5>info@domain.com</h5>
+                            <h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
+
                         </div>
                     </div>
                 </div>
@@ -199,6 +181,7 @@
     <script src="~/js/theme.js"></script>
 </body>
 </html>
+
 
 
 
