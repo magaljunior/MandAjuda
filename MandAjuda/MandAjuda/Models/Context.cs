@@ -49,6 +49,10 @@ namespace MandAjuda.Models
 
         public DbSet<Calendario> Calendario { get; set; }
 
+		public DbSet<SampleViewModel> TermoDeUso { get; set; }
+
+		public DbSet<TermoProfissional> TermoProfissional { get; set; }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();

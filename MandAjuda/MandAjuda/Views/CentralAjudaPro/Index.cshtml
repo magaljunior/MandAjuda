@@ -106,15 +106,7 @@
                     <th>
                         Profissional:
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.From)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.To)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Subject)
-                    </th>
+                    
                     <th>
                         @Html.DisplayNameFor(model => model.Body)
                     </th>
@@ -127,21 +119,11 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Profissional.NomeCompleto)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.From)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.To)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Subject)
-                        </td>
+                        
                         <td>
                             @Html.DisplayFor(modelItem => item.Body)
                         </td>
-                        <td>
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.CentralAjudaProId })
-                        </td>
+                        
                     </tr>
                 }
 

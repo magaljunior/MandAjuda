@@ -103,62 +103,62 @@
                     <hr />
                 </center>
 
-                <dl class="dl-horizontal">
+				<dl class="dl-horizontal">
 
-                    <dt>
-                        <p>Número de Protocolo:</p>
-                    </dt>
+					<dt>
+						<p>Número de Protocolo:</p>
+					</dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.ChamadoId)
-                    </dd>
+					<dd>
+						@String.Format("{0:00000}", Model.ChamadoId)
+					</dd>
 
-                    <dt>
-                        <p>Cliente:</p>
-                        <input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.Cliente" />
-                    </dt>
+					<dt>
+						<p>Cliente:</p>
+						<input type="hidden" name="ClienteId" id="ClienteId" value="@ViewBag.Cliente" />
+					</dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Cliente.Nome)
-                    </dd>
+					<dd>
+						@Html.DisplayFor(model => model.Cliente.Nome)
+					</dd>
 
-                    <dt>
-                        <p>Profissional:</p>
-                        <input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.Profissional" />
-                    </dt>
+					<dt>
+						<p>Profissional:</p>
+						<input type="hidden" name="ProfissionalId" id="ProfissionalId" value="@ViewBag.Profissional" />
+					</dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Profissional.NomeCompleto)
-                    </dd>
+					<dd>
+						@Html.DisplayFor(model => model.Profissional.NomeCompleto)
+					</dd>
 
-                    <dt>
-                        <p>Situação:</p>
-                    </dt>
+					<dt>
+						<p>Situação:</p>
+					</dt>
 
-                    <dd>
-                        @if (Model.Situacao == 1)
-                        {
-                            <p>Em Execução</p>
-                        }
-                        @if (Model.Situacao == 2)
-                        {
-                            <p>Cancelado</p>
-                        }
-                        @if (Model.Situacao == 3)
-                        {
-                            <p>Finalizado</p>
-                        }
-                    </dd>
+					<dd>
+						@if (Model.Situacao == 1)
+						{
+							<p>Em Execução</p>
+						}
+						@if (Model.Situacao == 2)
+						{
+							<p>Cancelado</p>
+						}
+						@if (Model.Situacao == 3)
+						{
+							<p>Finalizado</p>
+						}
+					</dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Body)
-                    </dt>
+					<dt>
+						@Html.DisplayNameFor(model => model.Body)
+					</dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Body)
-                    </dd>
+					<dd>
+						@Html.DisplayFor(model => model.Body)
+					</dd>
 
-                </dl>
+				</dl>
             </div>
             <p>
                 <a class="btn btn-default" href="http://localhost:51258/Mensagens/Index?idc=@Model.ChamadoId&idp=@Model.ProfissionalId">Histórico de Mensagens</a>

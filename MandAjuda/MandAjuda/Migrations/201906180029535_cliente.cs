@@ -3,7 +3,7 @@ namespace MandAjuda.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class chamado : DbMigration
+    public partial class cliente : DbMigration
     {
         public override void Up()
         {
@@ -30,7 +30,8 @@ namespace MandAjuda.Migrations
                         Body = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.CentralAjudaCliId)
-                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true);
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
+                .Index(t => t.ClienteId);
             
             CreateTable(
                 "dbo.Cliente",
@@ -64,7 +65,8 @@ namespace MandAjuda.Migrations
                         Body = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.CentralAjudaProId)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId);
             
             CreateTable(
                 "dbo.Profissional",
@@ -91,7 +93,9 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ProfissionalId)
                 .ForeignKey("dbo.Profissional", t => t.Profissional_ProfissionalId)
-                .ForeignKey("dbo.Curriculum", t => t.Curriculum_ProfissionalId);
+                .ForeignKey("dbo.Curriculum", t => t.Curriculum_ProfissionalId)
+                .Index(t => t.Profissional_ProfissionalId)
+                .Index(t => t.Curriculum_ProfissionalId);
             
             CreateTable(
                 "dbo.Chamado",
@@ -108,7 +112,9 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ChamadoId)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId)
+                .Index(t => t.ClienteId);
             
             CreateTable(
                 "dbo.Chat",
@@ -124,7 +130,9 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ChatId)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId)
+                .Index(t => t.ClienteId);
             
             CreateTable(
                 "dbo.Curriculum",
@@ -155,7 +163,10 @@ namespace MandAjuda.Migrations
                 .PrimaryKey(t => t.MensagemId)
                 .ForeignKey("dbo.Chamado", t => t.ChamadoId, cascadeDelete: true)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId)
+                .Index(t => t.ClienteId)
+                .Index(t => t.ChamadoId);
             
             CreateTable(
                 "dbo.QualificaMA_Cli",
@@ -169,7 +180,8 @@ namespace MandAjuda.Migrations
                         Body = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.QualificaMA_Cli_Id)
-                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true);
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
+                .Index(t => t.ClienteId);
             
             CreateTable(
                 "dbo.QualificaMA_Pro",
@@ -183,7 +195,8 @@ namespace MandAjuda.Migrations
                         Body = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.QualificaMA_Pro_Id)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId);
             
             CreateTable(
                 "dbo.Qualificar",
@@ -209,7 +222,9 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.RecebeChamadoId)
                 .ForeignKey("dbo.Chamado", t => t.ChamadoID, cascadeDelete: true)
-                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true);
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
+                .Index(t => t.ChamadoID)
+                .Index(t => t.ClienteId);
             
             CreateTable(
                 "dbo.Reclamar",
@@ -225,7 +240,9 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.ReclamarId)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId)
+                .Index(t => t.ClienteId);
             
             CreateTable(
                 "dbo.RelatAtend",
@@ -237,7 +254,7 @@ namespace MandAjuda.Migrations
                         ChamadoId = c.Int(nullable: false),
                         DataInicio = c.String(nullable: false, unicode: false),
                         DataTermino = c.String(nullable: false, unicode: false),
-                        HoraInicial = c.DateTime(nullable: false, precision: 0),
+                        HoraInicial = c.String(nullable: false, unicode: false),
                         HoraTermino = c.String(nullable: false, unicode: false),
                         Descricao = c.String(nullable: false, unicode: false),
                         Situacao = c.Int(nullable: false),
@@ -245,7 +262,10 @@ namespace MandAjuda.Migrations
                 .PrimaryKey(t => t.RelatAtendId)
                 .ForeignKey("dbo.Chamado", t => t.ChamadoId, cascadeDelete: true)
                 .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true);
+                .ForeignKey("dbo.Profissional", t => t.ProfissionalId, cascadeDelete: true)
+                .Index(t => t.ProfissionalId)
+                .Index(t => t.ClienteId)
+                .Index(t => t.ChamadoId);
             
             CreateTable(
                 "dbo.Status",

@@ -178,6 +178,7 @@
     <Compile Include="App_Start\FilterConfig3.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig3.cs" />
+    <Compile Include="Controllers\CalendarioController.cs" />
     <Compile Include="Controllers\CancelarController.cs" />
     <Compile Include="Controllers\CentralAjudaCliController.cs" />
     <Compile Include="Controllers\CentralAjudaProController.cs" />
@@ -198,16 +199,14 @@
     <Compile Include="Controllers\ReclamacaoController.cs" />
     <Compile Include="Controllers\RelatAtendController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\TermoProfissionalController.cs" />
+    <Compile Include="Controllers\TermosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906162355592_chamado.cs" />
-    <Compile Include="Migrations\201906162355592_chamado.Designer.cs">
-      <DependentUpon>201906162355592_chamado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906170013586_relatAtend.cs" />
-    <Compile Include="Migrations\201906170013586_relatAtend.Designer.cs">
-      <DependentUpon>201906170013586_relatAtend.cs</DependentUpon>
+    <Compile Include="Migrations\201906180029535_cliente.cs" />
+    <Compile Include="Migrations\201906180029535_cliente.Designer.cs">
+      <DependentUpon>201906180029535_cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Calendario.cs" />
@@ -229,7 +228,9 @@
     <Compile Include="Models\RecebeChamado.cs" />
     <Compile Include="Models\Reclamar.cs" />
     <Compile Include="Models\RelatAtend.cs" />
+    <Compile Include="Models\SampleViewModel.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\TermoProfissional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Funcoes.cs" />
     <Compile Include="Repositories\GmailEmailService.cs" />
@@ -1151,6 +1152,13 @@
     <Content Include="Views\QualificaMA_Pro\Create.cshtml" />
     <Content Include="Views\QualificaMA_Pro\Confirmacao.cshtml" />
     <Content Include="Views\Mensagens\ConfirmacaoPro.cshtml" />
+    <Content Include="Views\Calendario\Create.cshtml" />
+    <Content Include="Views\Calendario\Delete.cshtml" />
+    <Content Include="Views\Calendario\Details.cshtml" />
+    <Content Include="Views\Calendario\Edit.cshtml" />
+    <Content Include="Views\Calendario\Index.cshtml" />
+    <Content Include="Views\TermoProfissional\Index.cshtml" />
+    <Content Include="Views\Termos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1170,11 +1178,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906162355592_chamado.resx">
-      <DependentUpon>201906162355592_chamado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906170013586_relatAtend.resx">
-      <DependentUpon>201906170013586_relatAtend.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906180029535_cliente.resx">
+      <DependentUpon>201906180029535_cliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
