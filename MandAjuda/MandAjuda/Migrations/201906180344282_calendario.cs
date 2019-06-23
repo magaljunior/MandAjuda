@@ -3,7 +3,7 @@ namespace MandAjuda.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class cliente : DbMigration
+    public partial class calendario : DbMigration
     {
         public override void Up()
         {
@@ -12,9 +12,9 @@ namespace MandAjuda.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Subject = c.String(unicode: false),
-                        Start = c.String(unicode: false),
-                        End = c.String(unicode: false),
+                        Subject = c.String(nullable: false, unicode: false),
+                        Start = c.String(nullable: false, unicode: false),
+                        End = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -276,6 +276,24 @@ namespace MandAjuda.Migrations
                     })
                 .PrimaryKey(t => t.StatusID);
             
+            CreateTable(
+                "dbo.SampleViewModel",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        TermsAndConditions = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.TermoProfissional",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        TermsAndConditions = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
@@ -320,6 +338,8 @@ namespace MandAjuda.Migrations
             DropIndex("dbo.Profissional", new[] { "Profissional_ProfissionalId" });
             DropIndex("dbo.CentralAjudaPro", new[] { "ProfissionalId" });
             DropIndex("dbo.CentralAjudaCli", new[] { "ClienteId" });
+            DropTable("dbo.TermoProfissional");
+            DropTable("dbo.SampleViewModel");
             DropTable("dbo.Status");
             DropTable("dbo.RelatAtend");
             DropTable("dbo.Reclamar");

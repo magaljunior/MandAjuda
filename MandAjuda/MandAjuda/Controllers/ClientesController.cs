@@ -62,7 +62,7 @@ namespace MandAjuda.Controllers
             {
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("TermoDeUso");
+                return RedirectToAction("Cadastro");
             }
 
             return View(cliente);

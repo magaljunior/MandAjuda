@@ -92,7 +92,7 @@ namespace MandAjuda.Controllers
             {
                 db.Profissional.Add(profissional);
                 db.SaveChanges();
-                return RedirectToAction("TermoDeUso");
+                return RedirectToAction("Cadastro");
             }
 
             return View(profissional);

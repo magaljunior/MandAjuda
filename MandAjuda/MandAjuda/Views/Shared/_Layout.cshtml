@@ -4,6 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
 
 	<link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -69,10 +73,9 @@
 						</a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					@*@{
-							MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuario();
-						}*@
+
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					
 						<ul class="nav navbar-nav navbar-right">
 
 							<li><a href="http://localhost:51258">Home</a></li>
@@ -81,24 +84,12 @@
 							<li><a href="#Team">Nosso Time</a></li>
 							<li><a href="#Avaliacoes">Avaliações</a></li>
 							<li><a href="#Cadastro">Cadastre-se</a></li>
-
-							@*<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cadastre - se</a>
-								<ul class="dropdown-menu">
-									<li>@Html.ActionLink("cliente", "create", "clientes")</li>
-									<li>@Html.ActionLink("profissional", "create", "profissionais")</li>
-								</ul>
-							</li>*@
-							<li class="dropdown submenu active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logar</a>
-								<ul class="dropdown-menu">
-
-									<li>@Html.ActionLink("Cliente", "LogarCliente", "Publico")</li>
-									<li>@Html.ActionLink("Profissional", "LogarProfissional", "Publico")</li>
-								</ul>
-							</li>
+							<li>@Html.ActionLink("Logar", "Logar", "Publico")</li>
 						</ul>
-						</div>
+							
+					</div>
+
+
 				</nav>
 			</div><!-- /.navbar-collapse -->
 		</div>
@@ -109,58 +100,7 @@
 
 	<!--================Footer Area =================-->
 	<footer class="footer_area">
-		@*<div class="footer_widgets_area">
-			<div class="container">
-				<div class="row footer_widgets_inner">
-					<br />
-					<br />
-					<br />*@
-
-
-		@*<div class="col-md-6 col-sm-6">
-				<aside class="f_widget address_widget">
-					<div class="f_w_title">
-						<h3>Endereço:</h3>
-					</div>
-					<div class="address_w_inner">
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-map-marker"></i>
-							</div>
-							<div class="media-body">
-								<p>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</p>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-phone"></i>
-							</div>
-							<div class="media-body">
-								<p>(XX)XXXXX-XXXX </p>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-envelope"></i>
-							</div>
-							<div class="media-body">
-								<p>mandajudaservico@gmail.com</p>
-							</div>
-						</div>
-					</div>
-				</aside>
-			</div>*@
-		@*<div class="col-md-6 col-sm-6">
-					<aside class="f_widget give_us_widget">
-						<h5>Fale conosco</h5>
-						<h4>(XX) XXXXX-XXXX</h4>
-						<h5>ou</h5>
-						<a class="get_bg_btn" href="#">Solicite um orçamento</a>
-					</aside>
-				</div>
-			</div>*@
-		@*</div>
-			</div>*@
+		
 
 		<div class="footer_copy_right">
 			<div class="container">
@@ -179,37 +119,38 @@
 	@RenderSection("scripts", required: false)
 
 	<!--================End Address Area =================-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="~/js/jquery-2.2.4.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="~/js/bootstrap.min.js"></script>
-    <!-- Rev slider js -->
-    <script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="~/js/jquery-2.2.4.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="~/js/bootstrap.min.js"></script>
+	<!-- Rev slider js -->
+	<script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+	<script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 
-    <script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
-    <script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="~/vendors/counterup/waypoints.min.js"></script>
-    <script src="~/vendors/counterup/jquery.counterup.min.js"></script>
-    <script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
+	<script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
+	<script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="~/vendors/counterup/waypoints.min.js"></script>
+	<script src="~/vendors/counterup/jquery.counterup.min.js"></script>
+	<script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
 
-    <!--gmaps Js-->
-    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>*@
-    <script src="~/js/gmaps.min.js"></script>
+	<!--gmaps Js-->
+	@*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>*@
+	<script src="~/js/gmaps.min.js"></script>
 
-    <script src="~/js/theme.js"></script>
+	<script src="~/js/theme.js"></script>
 
-    <script src="~/js/Cep.js"></script>
+	<script src="~/js/Cep.js"></script>
 
-    <script src="~/js/EstadoCidade.js"></script>
+	<script src="~/js/EstadoCidade.js"></script>
 
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
 
 </body>
 </html>
+

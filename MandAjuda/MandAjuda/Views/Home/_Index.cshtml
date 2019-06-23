@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+	<link rel="icon" href="~/img/favicon.ico" type="image/x-icon" />
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Construction - WeBuilder Template</title>
 
@@ -36,9 +36,66 @@
 	<![endif]-->
 </head>
 <body>
+	<script>
+		function statusChangeCallback(response) {
+			console.log('statusChangeCallback');
+			console.log(response);
+
+			if (response.status === 'connected') {
+
+				testAPI();
+			} else {
+
+				document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+			}
+		}
+
+
+		function checkLoginState() {
+			FB.getLoginStatus(function (response) {
+				statusChangeCallback(response);
+			});
+		}
+
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: "632675940528876",
+				cookie: true,
+				xfbml: true,
+				version: "v3.2"
+			});
+
+			FB.AppEvents.logPageView();
+
+		};
+		FB.getLoginStatus(function (response) {
+			statusChangeCallback(response);
+		});
+
+
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) { return; }
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+
+		function testAPI() {
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api('/me', function (response) {
+				console.log('Successful login for: ' + response.name);
+				document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+			});
+		}
+	</script>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=632675940528876&autoLogAppEvents=1"></script>
 
 
 	<!--================Header Area =================-->
+
 	<header class="main_header_area">
 		<div class="header_top_area">
 			<div class="container">
@@ -65,134 +122,58 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
+						<a class="navbar-brand" href="#">
+							<img src="~/img/MALogo.png" />
+						</a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
-				
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-right">
-								<li>@Html.ActionLink("Home", "Index", "LayoutCliente")</li>
-								<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-								<li class="dropdown submenu active">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chamados</a>
-									<ul class="dropdown-menu">
-										<li>@Html.ActionLink("Abrir Chamado", "Create", "Chamados")</li>
-										<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
-									</ul>
-								</li>
 
-								<li class="dropdown submenu active">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/img/megafone.png" width="30px" /></a>
-									<ul class="dropdown-menu">
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						@{
+							MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuarioCliente();
+							MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
+							if (cliente != null || profissional != null)
+							{
+						<ul class="nav navbar-nav navbar-right">
 
-										<li>@Html.ActionLink("Reclamar", "Create", "Reclamar Plataforma")</li>
-									</ul>
+							<li><a href="http://localhost:51258">Home</a></li>
+							
+							<li>@Html.ActionLink("Clientes", "Index", "LayoutCliente")</li>
+							
+							<li>@Html.ActionLink("Profissionais", "Index", "LayoutProfissional")</li>
 
-								</li>
+							<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
 
-								<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
-							</ul>
-						</div><!-- /.navbar-collapse -->
-						
-					</nav>
-			</div>
+						</ul>
+							}
+
+
+						}
+					</div>
+
+
+				</nav>
+			</div><!-- /.navbar-collapse -->
 		</div>
+		
+		
 	</header>
+	@*}
+		else
+		{
+		<script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
+		}
+		}*@
 	<!--================Header Area =================-->
 
 	<div class="container-fluid" style="height: 500px;">
 		<div class="col-sm-12">
-			@model IEnumerable<MandAjuda.Models.Cliente>
 
-			@{
-				ViewBag.Title = "Index";
-			}
 
-			<center>
-				<hr />
-				<h2>Clientes</h2>
-				<hr />
-			</center>
 
-			<table class="table table-striped">
-				<tr>
-					<th>
-						@Html.DisplayNameFor(model => model.Nome)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.SobreNome)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Cpf)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.CEP)
-					</th>
-
-					<th>
-						@Html.DisplayNameFor(model => model.Bairro)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Cidade)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Estado)
-					</th>
-
-					<th>
-						@Html.DisplayNameFor(model => model.Contato)
-					</th>
-					<th>
-						@Html.DisplayNameFor(model => model.Email)
-					</th>
-					<th>
-
-					</th>
-				</tr>
-
-				@foreach (var item in Model)
-				{
-					<tr>
-						<td>
-							@Html.DisplayFor(modelItem => item.Nome)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.SobreNome)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Cpf)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.CEP)
-						</td>
-
-						<td>
-							@Html.DisplayFor(modelItem => item.Bairro)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Cidade)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Estado)
-						</td>
-
-						<td>
-							@Html.DisplayFor(modelItem => item.Contato)
-						</td>
-						<td>
-							@Html.DisplayFor(modelItem => item.Email)
-						</td>
-
-						<td>
-							@*@Html.ActionLink("Editar", "Edit", new { id = item.ClienteId })
-								@Html.ActionLink("Detalhes", "Details", new { id = item.ClienteId })*@
-							@Html.ActionLink("Perfil", "Perfil", new { id = item.ClienteId })
-						</td>
-					</tr>
-				}
-			</table>
 		</div>
 	</div>
+
 	<!--================Address Area =================-->
 	<section class="address_area">
 		<div class="container">
@@ -203,7 +184,7 @@
 							<img src="~/img/icon/place-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h4>Endereço:</h4>
+							<h4>Endereço :</h4>
 							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
 						</div>
 					</div>
@@ -215,6 +196,7 @@
 						</div>
 						<div class="media-body">
 							<h5>(XX) XXXXX-XXXX</h5>
+
 						</div>
 					</div>
 				</div>
@@ -224,7 +206,7 @@
 							<img src="~/img/icon/inbox-icon.png" alt="">
 						</div>
 						<div class="media-body">
-							<h6 style="font-size:17px">mandajudaservico@gmail.com</h6>
+							<h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
 
 						</div>
 					</div>
@@ -260,4 +242,13 @@
 	<script src="~/js/theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 

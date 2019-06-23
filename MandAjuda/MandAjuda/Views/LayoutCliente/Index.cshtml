@@ -95,9 +95,7 @@
 
 
 	<!--================Header Area =================-->
-	@*@{
-		MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuarioCliente();
-		if (cliente != null) {*@
+	
 	<header class="main_header_area">
 		<div class="header_top_area">
 			<div class="container">
@@ -126,109 +124,117 @@
 						</button>
 						<a class="navbar-brand" href="#"><img src="~/img/MALogo.png" alt=""></a>
 					</div>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
+					
+							<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+						@{
+							MandAjuda.Models.Cliente cliente = MandAjuda.Repositories.Funcoes.GetUsuarioCliente();
+							if (cliente != null)
+							{
+								<ul class="nav navbar-nav navbar-right">
 
-                            <li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
-                            <li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
-                            <li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Cli")</li>
-                            <li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaCli")</li>
+									<li>@Html.ActionLink("Pesquisar", "Pesquisar", "Profissionais")</li>
+									<li>@Html.ActionLink("Meus Chamados", "Index", "Chamados")</li>
+									<li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Cli")</li>
+									<li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaCli")</li>
 
-                            <li>@Html.ActionLink("Sair", "LogoffCliente", "Publico")</li>
+									<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
 
-                            <div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
+									<div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false" on-login="window.location = 'http://localhost:51258/';"></div>
 
-                        </ul>
+								</ul>
+							}
+						}
+
 					</div><!-- /.navbar-collapse -->
-				</nav>
-			</div>
-		</div>
-	</header>
-	@*}
-		else
-		{
-		<script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
-		}
-		}*@
-	<!--================Header Area =================-->
-
-	<div class="container-fluid" style="height: 500px;">
-		<div class="col-sm-12">
-
-
-
-		</div>
-	</div>
-
-	<!--================Address Area =================-->
-	<section class="address_area">
-		<div class="container">
-			<div class="row address_inner">
-				<div class="col-md-4">
-					<div class="media">
-						<div class="media-left">
-							<img src="~/img/icon/place-icon.png" alt="">
-						</div>
-						<div class="media-body">
-							<h4>Endereço :</h4>
-							<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="media">
-						<div class="media-left">
-							<img src="~/img/icon/phone-icon.png" alt="">
-						</div>
-						<div class="media-body">
-							<h5>(XX) XXXXX-XXXX</h5>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="media">
-						<div class="media-left">
-							<img src="~/img/icon/inbox-icon.png" alt="">
-						</div>
-						<div class="media-body">
-							<h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
-
-						</div>
-					</div>
+					
+					</nav>
 				</div>
 			</div>
+		</header>
+		@*}
+			else
+			{
+			<script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
+			}
+			}*@
+		<!--================Header Area =================-->
+
+		<div class="container-fluid" style="height: 500px;">
+			<div class="col-sm-12">
+
+
+
+			</div>
 		</div>
-	</section>
-	<!--================End Address Area =================-->
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="~/js/jquery-2.2.4.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="~/js/bootstrap.min.js"></script>
-	<!-- Rev slider js -->
-	<script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-	<script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-	<script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-	<script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-	<script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 
-	<script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-	<script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
-	<script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<script src="~/vendors/counterup/waypoints.min.js"></script>
-	<script src="~/vendors/counterup/jquery.counterup.min.js"></script>
-	<script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
+		<!--================Address Area =================-->
+		<section class="address_area">
+			<div class="container">
+				<div class="row address_inner">
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-left">
+								<img src="~/img/icon/place-icon.png" alt="">
+							</div>
+							<div class="media-body">
+								<h4>Endereço :</h4>
+								<h5>Avenida Professor João Rodrigues - Jardim Esperança, Guaratinguetá - SP</h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-left">
+								<img src="~/img/icon/phone-icon.png" alt="">
+							</div>
+							<div class="media-body">
+								<h5>(XX) XXXXX-XXXX</h5>
 
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="~/js/gmaps.min.js"></script>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-left">
+								<img src="~/img/icon/inbox-icon.png" alt="">
+							</div>
+							<div class="media-body">
+								<h5 style="font-size:15px">mandajudaservico@gmail.com</h5>
 
-	<script src="~/js/theme.js"></script>
-</body>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--================End Address Area =================-->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="~/js/jquery-2.2.4.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="~/js/bootstrap.min.js"></script>
+		<!-- Rev slider js -->
+		<script src="~/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+		<script src="~/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="~/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+		<script src="~/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+		<script src="~/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+		<script src="~/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+
+		<script src="~/vendors/owl-carousel/owl.carousel.min.js"></script>
+		<script src="~/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+		<script src="~/vendors/isotope/isotope.pkgd.min.js"></script>
+		<script src="~/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="~/vendors/counterup/waypoints.min.js"></script>
+		<script src="~/vendors/counterup/jquery.counterup.min.js"></script>
+		<script src="~/vendors/flex-slider/jquery.flexslider-min.js"></script>
+
+		<!--gmaps Js-->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+		<script src="~/js/gmaps.min.js"></script>
+
+		<script src="~/js/theme.js"></script>
+	</body>
 </html>
 
 
