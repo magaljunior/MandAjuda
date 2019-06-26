@@ -14,10 +14,10 @@ namespace MandAjuda.Controllers
     public class CentralAjudaCliController : Controller
     {
         private Context db = new Context();
-        private object _objModelMail;
+		private object _objModelMail;
 
-        // GET: CentralAjudaCli
-        public ActionResult Index()
+		// GET: CentralAjudaCli
+		public ActionResult Index()
         {
             var centralAjudaCli = db.CentralAjudaCli.Include(c => c.Cliente);
             return View(centralAjudaCli.ToList());

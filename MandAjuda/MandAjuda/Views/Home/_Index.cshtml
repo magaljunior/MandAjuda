@@ -134,19 +134,25 @@
 							MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
 							if (cliente != null || profissional != null)
 							{
-						<ul class="nav navbar-nav navbar-right">
+								<ul class="nav navbar-nav navbar-right">
 
-							<li><a href="http://localhost:51258">Home</a></li>
-							
-							<li>@Html.ActionLink("Clientes", "Index", "LayoutCliente")</li>
-							
-							<li>@Html.ActionLink("Profissionais", "Index", "LayoutProfissional")</li>
+									<li><a href="http://localhost:51258">Home</a></li>
 
-							<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
+									<li>@Html.ActionLink("Clientes", "Index", "LayoutCliente")</li>
 
-						</ul>
+									<li>@Html.ActionLink("Profissionais", "Index", "LayoutProfissional")</li>
+
+									<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
+
+								</ul>
 							}
+							else
+							{
+								<script type="text/javascript">
+									Windows.location.href = "@Url.Action("Index", "Home")";
+								</script>
 
+							}
 
 						}
 					</div>
@@ -155,8 +161,8 @@
 				</nav>
 			</div><!-- /.navbar-collapse -->
 		</div>
-		
-		
+
+
 	</header>
 	@*}
 		else
@@ -166,10 +172,13 @@
 		}*@
 	<!--================Header Area =================-->
 
+
 	<div class="container-fluid" style="height: 500px;">
-		<div class="col-sm-12">
+		<div class="col-sm-10">
 
 
+
+			<img src="~/img/serviços-em-geral-png-4.png" />
 
 		</div>
 	</div>
