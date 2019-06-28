@@ -324,6 +324,7 @@
     <Content Include="img\24891639.jpg" />
     <Content Include="img\azulejo editado.png" />
     <Content Include="img\b-company-img.png" />
+    <Content Include="img\bancada.png" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\banner\single-page-banner.jpg" />
     <Content Include="img\banner\single-page-banner2.jpg" />
@@ -354,6 +355,7 @@
     <Content Include="img\crise-construcao.png" />
     <Content Include="img\face.png" />
     <Content Include="img\favicon.ico" />
+    <Content Include="img\ficael.jpg" />
     <Content Include="img\footer-bg.jpg" />
     <Content Include="img\footer-logo.png" />
     <Content Include="img\home-slider\slider-1.jpg" />
@@ -398,6 +400,7 @@
     <Content Include="img\materiais-construção.png" />
     <Content Include="img\Materiais-para-construção-civil.jpg" />
     <Content Include="img\megafone.png" />
+    <Content Include="img\Parede.png" />
     <Content Include="img\Pedro.png" />
     <Content Include="img\planejarreforma-448x224.png" />
     <Content Include="img\pre-cons-left.jpg" />

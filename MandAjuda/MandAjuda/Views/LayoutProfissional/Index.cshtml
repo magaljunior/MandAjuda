@@ -96,10 +96,6 @@
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=632675940528876&autoLogAppEvents=1"></script>
 
 	<!--================Header Area =================-->
-	@*@{
-		MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
-		if (profissional != null)
-		{*@
 	<header class="main_header_area">
 		<div class="header_top_area">
 			<div class="container">
@@ -136,15 +132,20 @@
 							MandAjuda.Models.Profissional profissional = MandAjuda.Repositories.Funcoes.GetUsuarioProfissional();
 							if (profissional != null)
 							{
-								<ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right">
+							@*<li class="dropdown submenu active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Meus Chamados</a>
+								<ul class="dropdown-menu">*@
 									<li>@Html.ActionLink("Agenda", "Calendario", "Profissionais")</li>
 									<li>@Html.ActionLink("Meus Chamados", "IndexProfissional", "Chamados")</li>
-									<li>@Html.ActionLink("Meus Relatórios", "Index", "RelatAtend")</li>
-									<li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaPro")</li>
-									<li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Pro")</li>
-									<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
-									<div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true" on-login="window.location = 'http://localhost:51258/';"></div>
-								</ul>
+								@*</ul>
+							</li>*@
+							<li>@Html.ActionLink("Meus Relatórios", "Index", "RelatAtend")</li>
+							<li>@Html.ActionLink("Dúvidas", "Create", "CentralAjudaPro")</li>
+							<li>@Html.ActionLink("Qualificar Mand'Ajuda", "Create", "QualificaMA_Pro")</li>
+							<li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
+							@*<div class="fb-login-button" data-width="20px" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true" on-login="window.location = 'http://localhost:51258/';"></div>*@
+						</ul>
 							}
 							else
 							{
@@ -154,27 +155,20 @@
 
 							}
 						}
-
-
 					</div><!-- /.navbar-collapse -->
-					}
 				</nav>
 			</div>
 		</div>
 	</header>
-	@*}
-			else
-			{
-				<script type="text/javascript">window.location.href = "@Url.Action("AcessoNegado","Publico")";</script>
-			}
-		}*@
 	<!--================Header Area =================-->
 
-	<div class="container-fluid" style="height: 500px;">
+	<div class="container-fluid" style="height: 300px;">
 		<div class="col-sm-12">
-
-
-
+			<div class="row">
+				<div class="col-md-10">
+					<img src="~/img/quanto_custa_uma_reforma_a54917dcc7b697129646ff08d42248a2-header.png" width="120%" height="100%" />
+				</div>
+			</div>
 		</div>
 	</div>
 
